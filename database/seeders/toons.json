@@ -1,0 +1,226 @@
+{
+    "Lilmissd": {
+        "name": "Lilmissd",
+        "realm": "Mankrik",
+        "guild": "Classic Retirement Home",
+        "gender": "Female",
+        "role": "DPS",
+        "level": 60,
+        "classification": {
+            "faction": "Alliance",
+            "race": "Gnome",
+            "class": "Warlock",
+            "spec": "Affliction"
+        }
+    },
+    "Zewonja": {
+        "name": "Zewonja",
+        "realm": "Mankrik",
+        "guild": "Classic Retirement Home",
+        "gender": "Female",
+        "role": "DPS",
+        "level": 60,
+        "classification": {
+            "faction": "Alliance",
+            "race": "Night Elf",
+            "class": "Hunter",
+            "spec": "Beast Mastery"
+        }
+    },
+    "Kylaria": {
+        "name": "Kylaria",
+        "realm": "Mankrik",
+        "guild": "Classic Retirement Home",
+        "gender": "Female",
+        "role": "DPS",
+        "level": 60,
+        "classification": {
+            "faction": "Alliance",
+            "race": "Human",
+            "class": "Rogue",
+            "spec": "Combat"
+        }
+    },
+    "Kynlasia": {
+        "name": "Kynlasia",
+        "realm": "Mankrik",
+        "guild": "Classic Retirement Home",
+        "gender": "Female",
+        "level": 60,
+        "role": "Healer",
+        "classification": {
+            "faction": "Alliance",
+            "race": "Night Elf",
+            "class": "Druid",
+            "spec": "Restoration"
+        }
+    },
+    "Callithyia": {
+        "name": "Callithyia",
+        "gender": "Female",
+        "realm": "Mankrik",
+        "guild": "Classic Retirement Home",
+        "level": 60,
+        "role": "Healer",
+        "classification": {
+            "faction": "Alliance",
+            "race": "Human",
+            "class": "Priest",
+            "spec": "Discipline"
+        }
+    },
+    "Sojenica": {
+        "name": "Sojenica",
+        "gender": "Female",
+        "realm": "Mankrik",
+        "guild": "Classic Retirement Home",
+        "level": 60,
+        "role": "DPS",
+        "classification": {
+            "faction": "Alliance",
+            "race": "Gnome",
+            "class": "Mage",
+            "spec": "Frost"
+        }
+    },
+    "Hasurmoni": {
+        "name": "Hasurmoni",
+        "gender": "Male",
+        "realm": "Mankrik",
+        "guild": "Relax",
+        "level": 60,
+        "role": "Tank",
+        "classification": {
+            "faction": "Alliance",
+            "race": "Dwarf",
+            "class": "Warrior",
+            "spec": "Fury"
+        }
+    },
+    "Kathera": {
+        "name": "Kathera",
+        "gender": "Female",
+        "realm": "Mankrik",
+        "guild": "Relaxin",
+        "level": 22,
+        "role": "Healer",
+        "classification": {
+            "faction": "Alliance",
+            "race": "Dwarf",
+            "class": "Paladin",
+            "spec": "Holy"
+        }
+    },
+    "Runecartel": {
+        "name": "Runecartel",
+        "gender": "Female",
+        "realm": "Pagle",
+        "guild": null,
+        "level": 14,
+        "role": "Healer",
+        "classification": {
+            "faction": "Alliance",
+            "race": "Dwarf",
+            "class": "Priest",
+            "spec": "Holy"
+        }
+    },
+    "Fixayu": {
+        "name": "Fixayu",
+        "gender": "Female",
+        "realm": "Pagle",
+        "guild": "Relaxed",
+        "level": 35,
+        "role": "Healer",
+        "classification": {
+            "faction": "Alliance",
+            "race": "Dwarf",
+            "class": "Priest",
+            "spec": "Discipline"
+        }
+    },
+    "Hexyu": {
+        "name": "Hexyu",
+        "gender": "Female",
+        "realm": "Pagle",
+        "guild": "2112",
+        "level": 33,
+        "role": "DPS",
+        "classification": {
+            "faction": "Alliance",
+            "race": "Human",
+            "class": "Mage",
+            "spec": "Fire"
+        }
+    },
+    "Fricayu": {
+        "name": "Fricayu",
+        "gender": "Female",
+        "realm": "Pagle",
+        "guild": "UMAH",
+        "level": 40,
+        "role": "DPS",
+        "classification": {
+            "faction": "Alliance",
+            "race": "Gnome",
+            "class": "Rogue",
+            "spec": "Subtlety"
+        }
+    },
+    "Grump": {
+        "name": "Grump",
+        "gender": "Male",
+        "realm": "Pagle",
+        "guild": null,
+        "level": 16,
+        "role": "Tank",
+        "classification": {
+            "faction": "Alliance",
+            "race": "Human",
+            "class": "Warrior",
+            "spec": "Fury"
+        }
+    },
+    "Forestgrump": {
+        "name": "Forestgrump",
+        "gender": "Male",
+        "realm": "Pagle",
+        "guild": null,
+        "level": 16,
+        "role": "DPS",
+        "classification": {
+            "faction": "Alliance",
+            "race": "Night Elf",
+            "class": "Warrior",
+            "spec": "Fury"
+        }
+    },
+    "Bubbette": {
+        "name": "Bubbette",
+        "gender": "Female",
+        "realm": "Pagle",
+        "guild": null,
+        "level": 15,
+        "role": "Healer",
+        "classification": {
+            "faction": "Alliance",
+            "race": "Human",
+            "class": "Paladin",
+            "spec": "Holy"
+        }
+    },
+    "Mishka": {
+        "name": "Mishka",
+        "gender": "Female",
+        "realm": "Pagle",
+        "guild": null,
+        "level": 7,
+        "role": "Tank",
+        "classification": {
+            "faction": "Alliance",
+            "race": "Night Elf",
+            "class": "Druid",
+            "spec": "Feral"
+        }
+    }
+}

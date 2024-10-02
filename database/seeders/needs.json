@@ -1,0 +1,606 @@
+{
+    "Lilmissd": {
+        "11766": {
+            "name": "Flameweave Cuffs of Shadow Wrath",
+            "wowhead_id": 11766,
+            "priority": 1,
+            "notes": "+21 Shadow damage, alternative to Tearful Bracers"
+        },
+        "12930": {
+            "name": "Briarwood Reed",
+            "wowhead_id": 12930,
+            "priority": 1
+        },
+        "13386": {
+            "name": "Archivist Cape of Shadow Wrath",
+            "wowhead_id": 13386,
+            "priority": 1,
+            "notes": "Shadow wrath or owl, extremely rare"
+        },
+        "13396": {
+            "name": "Skuls Ghastly Touch",
+            "wowhead_id": 13396,
+            "priority": 1,
+            "notes": "rare mob sometimes near side entrance"
+        },
+        "14107": {
+            "name": "Felcloth Pants",
+            "wowhead_id": 14107,
+            "priority": 2,
+            "notes": "alternative crafted pants"
+        },
+        "14483": {
+            "name": "Pattern: Felcloth Pants",
+            "wowhead_id": 14483,
+            "priority": 2
+        },
+        "16700": {
+            "name": "Dreadmist Mantle",
+            "wowhead_id": 16700,
+            "priority": 1,
+            "notes": "Needed for 0.5 chain to get Brazier of Invocation"
+        },
+        "18407": {
+            "name": "Felcloth Gloves",
+            "wowhead_id": 18407,
+            "priority": 1,
+            "notes": "alternative to Shadow Wrath gloves, requires recipe from Knot Thimblejacks Cache"
+        },
+        "18415": {
+            "name": "Pattern: Felcloth Gloves",
+            "wowhead_id": 18415,
+            "priority": 1,
+            "notes": "Tailoring pattern for Shadow Wrath gloves, bop - can be gotten on a tribute run"
+        },
+        "18497": {
+            "name": "Sublime Wristguards",
+            "wowhead_id": 18497,
+            "priority": 1,
+            "notes": "alternative to Tearful Bracers with +shadow - non-tribute run to get"
+        },
+        "19595": {
+            "name": "Dryad's Wrist Bindings",
+            "wowhead_id": 19595,
+            "priority": 2,
+            "notes": "requires Warsong Gulch marks"
+        },
+        "20697": {
+            "name": "Crystalline Threaded Cape",
+            "wowhead_id": 20697,
+            "priority": 1,
+            "notes": "alternative to Shadow Wrath cape options"
+        },
+        "22267": {
+            "name": "Spellweavers Turban",
+            "wowhead_id": 22267,
+            "priority": 1
+        },
+        "22268": {
+            "name": "Draconic Infused Emblem",
+            "wowhead_id": 22268,
+            "priority": 1
+        },
+        "22329": {
+            "name": "Scepter of Interminable Focus",
+            "wowhead_id": 22329,
+            "priority": 1,
+            "notes": "Sothos and Jarien requires summon with Brazier of Invocation"
+        },
+        "22403": {
+            "name": "Nacreous Shell Necklace",
+            "wowhead_id": 22403,
+            "priority": 1
+        },
+        "22433": {
+            "name": "Don Mauricios Band of Domination",
+            "wowhead_id": 22433,
+            "priority": 1
+        },
+        "22339": {
+            "name": "Rune Band of Wizardry",
+            "wowhead_id": 22339,
+            "priority": 1,
+            "notes": "requires Valthalak summon"
+        }
+    },
+    "Zewonja": {
+        "11726": {
+            "name": "Savage Gladiator Chain",
+            "wowhead_id": 11726,
+            "priority": 1
+        },
+        "12927": {
+            "name": "Truestrike Shoulders",
+            "wowhead_id": 12927,
+            "priority": 1
+        },
+        "13052": {
+            "name": "Warmonger",
+            "wowhead_id": 13052,
+            "priority": 3,
+            "notes": "+hit alternative weapon, world drop, auction house"
+        },
+        "13098": {
+            "name": "Painweaver Band",
+            "wowhead_id": 13098,
+            "priority": 3,
+            "notes": "alternative to Tarnished Elven Ring"
+        },
+        "13965": {
+            "name": "Blackhands Breadth",
+            "wowhead_id": 13965,
+            "priority": 1,
+            "notes": "pre-raid BiS trinket, quest obtained in LBRS involving UBRS"
+        },
+        "13967": {
+            "name": "Windreaver Greaves",
+            "wowhead_id": 13967,
+            "priority": 3,
+            "notes": "+hit alternative to Beastmaster boots"
+        },
+        "14637": {
+            "name": "Cadaverous Armor",
+            "wowhead_id": 14637,
+            "priority": 1
+        },
+        "15062": {
+            "name": "Devilsaur Leggings",
+            "wowhead_id": 15062,
+            "priority": 1
+        },
+        "15063": {
+            "name": "Devilsaur Gauntlets",
+            "wowhead_id": 15063,
+            "priority": 1
+        },
+        "15411": {
+            "name": "Mark of Fordring",
+            "wowhead_id": 15411,
+            "priority": 2,
+            "notes": "alternative to Valthalak necklace"
+        },
+        "18421": {
+            "name": "Backwood Helm",
+            "wowhead_id": 18421,
+            "priority": 1
+        },
+        "18375": {
+            "name": "Bracers of the Eclipse",
+            "wowhead_id": 18375,
+            "priority": 1
+        },
+        "18500": {
+            "name": "Tarnished Elven Ring",
+            "wowhead_id": 18500,
+            "priority": 1,
+            "quantity": 2,
+            "notes": "+hit, alternative to AV ring or Mauradon ring"
+        },
+        "22232": {
+            "name": "Marksmans Girdle",
+            "wowhead_id": 22232,
+            "priority": 1
+        },
+        "22314": {
+            "name": "Huntsmans Harpoon",
+            "wowhead_id": 22314,
+            "priority": 1
+        },
+        "22340": {
+            "name": "Pendant of Celerity",
+            "wowhead_id": 22340,
+            "priority": 1
+        }
+    },
+    "Kylaria": {
+        "2100": {
+            "name": "Precisely Calibrated Boomstick",
+            "wowhead_id": 2100,
+            "priority": 1,
+            "notes": "pre-raid BiS gun, world drop, auction house"
+        },
+        "6622": {
+            "name": "Sword of Zeal",
+            "wowhead_id": 6622,
+            "priority": 2,
+            "notes": "pre-raid alternative BiS sword, world drop, auction house"
+        },
+        "11815": {
+            "name": "Hand of Justice",
+            "wowhead_id": 11815,
+            "priority": 1,
+            "notes": "pre-raid BiS trinket"
+        },
+        "12651": {
+            "name": "Blackcrow",
+            "wowhead_id": 12651,
+            "priority": 3,
+            "notes": "pre-raid BiS bow, alternative to Satyrs Bow"
+        },
+        "12927": {
+            "name": "Truestrike Shoulders",
+            "wowhead_id": 12927,
+            "priority": 1
+        },
+        "12939": {
+            "name": "Dalrends Sacred Charge",
+            "wowhead_id": 12939,
+            "priority": 1,
+            "notes": "pre-raid BiS swords offhand"
+        },
+        "12940": {
+            "name": "Dalrends Sacred Charge",
+            "wowhead_id": 12940,
+            "priority": 1,
+            "notes": "pre-raid BiS swords mainhand"
+        },
+        "13098": {
+            "name": "Painweaver Band",
+            "wowhead_id": 13098,
+            "priority": 3,
+            "notes": "alternative to Tarnished Elven Ring"
+        },
+        "13512": {
+            "name": "Flask of Supreme Power",
+            "wowhead_id": 13512,
+            "priority": 1,
+            "notes": "Needed for Final Preparations in Dungeon Set 2 chain"
+        },
+        "15411": {
+            "name": "Mark of Fordring",
+            "wowhead_id": 15411,
+            "priority": 2,
+            "notes": "alternative to Celerity Pendant"
+        },
+        "16707": {
+            "name": "Shadowcraft Cap",
+            "wowhead_id": 16707,
+            "priority": 1,
+            "notes": "Needed for 0.5 chain to get Brazier of Invocation"
+        },
+        "16721": {
+            "name": "Shadowcraft Tunic",
+            "wowhead_id": 16721,
+            "priority": 1,
+            "notes": "Needed for 0.5 chain to get Brazier of Invocation"
+        },
+        "18518": {
+            "name": "Pattern: Hide of the Wild",
+            "wowhead_id": 18518,
+            "priority": 1,
+            "notes": "Tailoring pattern for healer BiS cloak - can be gotten by any toon on a tribute run"
+        },
+        "22005": {
+            "name": "Darkmantle Cap",
+            "wowhead_id": 22005,
+            "priority": 1
+        },
+        "22009": {
+            "name": "Darkmantle Tunic",
+            "wowhead_id": 22009,
+            "priority": 1,
+            "notes": "Requires getting Shadowcraft Tunic and cap"
+        },
+        "22138": {
+            "name": "Blackstone Ring",
+            "wowhead_id": 22138,
+            "quantity": 40,
+            "priority": 1
+        },
+        "22340": {
+            "name": "Pendant of Celerity",
+            "wowhead_id": 22340,
+            "priority": 1
+        }
+    },
+    "Kynlasia": {
+        "12930": {
+            "name": "Briarwood Reed",
+            "wowhead_id": 12930,
+            "priority": 1
+        },
+        "13346": {
+            "name": "Robes of the Exalted",
+            "wowhead_id": 13346,
+            "priority": 2
+        },
+        "16706": {
+            "name": "Wildheart Vest",
+            "wowhead_id": 16706,
+            "priority": 1,
+            "notes": "Needed for 0.5 chain to get Brazier of Invocation"
+        },
+        "16720": {
+            "name": "Wildheart Cowl",
+            "wowhead_id": 16720,
+            "priority": 1,
+            "notes": "Needed for 0.5 chain to get Brazier of Invocation"
+        },
+        "18386": {
+            "name": "Padres Trousers",
+            "wowhead_id": 18386,
+            "priority": 1
+        },
+        "18525": {
+            "name": "Bracers of Prosperity",
+            "wowhead_id": 18525,
+            "priority": 1,
+            "note": "can be gotten on a tribute run"
+        },
+        "18723": {
+            "name": "Animated Chain Necklace",
+            "wowhead_id": 18723,
+            "priority": 1
+        },
+        "22268": {
+            "name": "Draconic Infused Emblem",
+            "wowhead_id": 22268,
+            "priority": 4
+        },
+        "22406": {
+            "name": "Redemption",
+            "wowhead_id": 22406,
+            "priority": 1,
+            "notes": "Alternative to mh-oh"
+        }
+    },
+    "Callithyia": {
+        "12930": {
+            "name": "Briarwood Reed",
+            "wowhead_id": 12930,
+            "priority": 4
+        },
+        "16690": {
+            "name": "Devout Robe",
+            "wowhead_id": 16690,
+            "priority": 1,
+            "notes": "Needed for 0.5 chain to get Brazier of Invocation"
+        },
+        "16693": {
+            "name": "Devout Crown",
+            "wowhead_id": 16693,
+            "priority": 1,
+            "notes": "Needed for 0.5 chain to get Brazier of Invocation"
+        },
+        "18327": {
+            "name": "Whipvine Cord",
+            "wowhead_id": 18327,
+            "priority": 1
+        },
+        "22268": {
+            "name": "Draconic Infused Emblem",
+            "wowhead_id": 22268,
+            "priority": 4
+        },
+        "22406": {
+            "name": "Redemption",
+            "wowhead_id": 22406,
+            "priority": 9,
+            "notes": "Alternative to mh-oh"
+        }
+    },
+    "Sojenica": {
+        "942": {
+            "name": "Freezing Band",
+            "wowhead_id": 942,
+            "priority": 2,
+            "notes": "second item alternate frost damage"
+        },
+        "10247": {
+            "name": "Master's Boots of Frozen Wrath",
+            "wowhead_id": 10247,
+            "priority": 1,
+            "notes": "+30 Frost damage, alternative to Omnicast Boots"
+        },
+        "10249": {
+            "name": "Masters Cloak of Frozen Wrath",
+            "wowhead_id": 10249,
+            "priority": 1,
+            "notes": "+21 Frost damage, alternative to Archivist Cape of Frozen Wrath"
+        },
+        "11766": {
+            "name": "Flameweave Cuffs of Frozen Wrath",
+            "wowhead_id": 11766,
+            "priority": 1,
+            "notes": "+21 Frost damage, alternative to Tearful Bracers"
+        },
+        "11822": {
+            "name": "Omnicast Boots",
+            "wowhead_id": 11822,
+            "priority": 1
+        },
+        "11832": {
+            "name": "Burst of Knowledge",
+            "wowhead_id": 11832,
+            "priority": 3,
+            "notes": "alternative to caster trinket"
+        },
+        "13001": {
+            "name": "Maiden's Circle",
+            "wowhead_id": 13001,
+            "priority": 2,
+            "notes": "pre-raid BiS ring, auction house"
+        },
+        "13386": {
+            "name": "Archivist Cape of Frozen Wrath",
+            "wowhead_id": 13386,
+            "priority": 1,
+            "notes": "Frost wrath or owl, extremely rare"
+        },
+        "13409": {
+            "name": "Tearful Bracers",
+            "wowhead_id": 13409,
+            "priority": 1,
+            "notes": "Frozen wrath or owl, extremely rare"
+        },
+        "13871": {
+            "name": "Frostweave Pants",
+            "wowhead_id": 13871,
+            "priority": 2,
+            "notes": "alternative +frost pants"
+        },
+        "13938": {
+            "name": "Bonecreeper Stylus",
+            "wowhead_id": 13938,
+            "priority": 5,
+            "notes": "int alternative to frost wand from AV"
+        },
+        "13968": {
+            "name": "Eye of the Beast",
+            "wowhead_id": 13968,
+            "priority": 1,
+            "notes": "pre-raid BiS trinket, quest obtained in LBRS involving UBRS"
+        },
+        "19595": {
+            "name": "Dryad's Wrist Bindings",
+            "wowhead_id": 19595,
+            "priority": 2,
+            "notes": "requires Warsong Gulch marks"
+        },
+        "16688": {
+            "name": "Magisters Robes",
+            "wowhead_id": 16688,
+            "priority": 1,
+            "notes": "Needed for 0.5 chain to get Brazier of Invocation"
+        },
+        "16689": {
+            "name": "Magisters Mantle",
+            "wowhead_id": 16689,
+            "priority": 1,
+            "notes": "Needed for 0.5 chain to get Brazier of Invocation"
+        },
+        "18350": {
+            "name": "Amplifying Cloak",
+            "wowhead_id": 18350,
+            "priority": 3,
+            "notes": "alternative to Masters Cloak of Frozen Wrath, Mindtap Talisman and Big Bag of Enchantment recipe on same boss"
+        },
+        "18483": {
+            "name": "Mana Channeling Wand",
+            "wowhead_id": 18483,
+            "priority": 5,
+            "notes": "drinking set wand with mana gain - non-tribute run to get"
+        },
+        "18497": {
+            "name": "Sublime Wristguards",
+            "wowhead_id": 18497,
+            "priority": 2,
+            "notes": "alternative to Tearful Bracers with +frost - non-tribute run to get"
+        },
+        "18534": {
+            "name": "Rod of the Ogre Magi",
+            "wowhead_id": 18534,
+            "priority": 5,
+            "notes": "alternative to mh-oh"
+        },
+        "20697": {
+            "name": "Crystalline Threaded Cape",
+            "wowhead_id": 20697,
+            "priority": 1,
+            "notes": "alternative to Frozen Wrath cape options"
+        },
+        "22267": {
+            "name": "Spellweavers Turban",
+            "wowhead_id": 22267,
+            "priority": 1
+        },
+        "22268": {
+            "name": "Draconic Infused Emblem",
+            "wowhead_id": 22268,
+            "priority": 1
+        },
+        "22339": {
+            "name": "Rune Band of Wizardry",
+            "wowhead_id": 22339,
+            "priority": 1,
+            "notes": "requires Valthalak summon"
+        }
+    },
+    "Hasurmoni": {
+        "11726": {
+            "name": "Savage Gladiator Chain",
+            "wowhead_id": 11726,
+            "priority": 2,
+            "notes": "Alternative to Heroic chest"
+        },
+        "11815": {
+            "name": "Hand of Justice",
+            "wowhead_id": 11815,
+            "priority": 1,
+            "notes": "pre-raid BiS trinket"
+        },
+        "12590": {
+            "name": "Felstriker",
+            "wowhead_id": 12590,
+            "priority": 1,
+            "notes": "pre-raid BiS dagger - rare"
+        },
+        "13951": {
+            "name": "Vigorsteel Vambraces",
+            "wowhead_id": 13951,
+            "priority": 3,
+            "notes": "Alternative to Heroic bracers"
+        },
+        "14616": {
+            "name": "Bloodmail Boots",
+            "wowhead_id": 14616,
+            "priority": 3,
+            "notes": "Alternative to Heroic boots"
+        },
+        "16730": {
+            "name": "Breastplate of Valor",
+            "wowhead_id": 16730,
+            "priority": 1,
+            "notes": "Many heroic pieces are pre-raid BiS for Warrior Tanks"
+        },
+        "16733": {
+            "name": "Spaulders of Valor",
+            "wowhead_id": 16733,
+            "priority": 1,
+            "notes": "Many heroic pieces are pre-raid BiS for Warrior Tanks"
+        },
+        "18500": {
+            "name": "Tarnished Elven Ring",
+            "wowhead_id": 18500,
+            "priority": 1,
+            "quantity": 2,
+            "notes": "+hit, alternative to AV ring or Mauradon ring"
+        }
+    },
+    "Kathera": {
+
+    },
+    "Runecartel": {
+
+    },
+    "Fixayu": {
+
+    },
+    "Hexyu": {
+
+    },
+    "Fricayu": {
+        "15772": {
+            "name": "Pattern: Devilsaur Leggings",
+            "wowhead_id": 15772,
+            "priority": 1
+        },
+        "17713": {
+            "name": "Blackstone Ring",
+            "wowhead_id": 17713,
+            "priority": 1
+        }
+    },
+    "Grump": {
+
+    },
+    "Forestgrump": {
+
+    },
+    "Bubbette": {
+
+    },
+    "Mishka": {
+
+    }
+}
