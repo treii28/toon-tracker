@@ -18,6 +18,8 @@ class NeedsByInstance extends Page implements Tables\Contracts\HasTable
 
     protected static string $view = 'filament.resources.need-resource.pages.needs-by-instance';
 
+    protected static bool $shouldRegisterNavigation = false;
+
     protected static ?string $navigationGroup = 'Item Needs';
     protected static ?int $navigationSort = 5;
     //protected static ?string $navigationIcon = 'heroicon-o-globe-alt';

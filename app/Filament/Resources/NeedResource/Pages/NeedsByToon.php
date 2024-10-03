@@ -7,9 +7,13 @@ use App\Filament\Tables\Columns\WowTooltip;
 use App\Models\Need;
 use App\Models\Item;
 use App\Models\Toon;
+use Filament\Panel;
 use Filament\Resources\Pages\Page;
+use Filament\Resources\Pages\PageRegistration;
 use Filament\Tables;
 use Filament\Tables\Table;
+use Illuminate\Routing\Route;
+use Illuminate\Support\Facades\Route as RouteFacade;
 
 class NeedsByToon extends Page implements Tables\Contracts\HasTable
 {
@@ -17,11 +21,10 @@ class NeedsByToon extends Page implements Tables\Contracts\HasTable
 
     protected static string $model = Need::class;
     protected static string $resource = NeedResource::class;
-
+    protected static bool $shouldRegisterNavigation = false;
     protected static ?string $navigationGroup = 'Item Needs';
     protected static ?int $navigationSort = 4;
     //protected static ?string $navigationIcon = 'heroicon-o-user-group';
-
 
     protected static string $view = 'filament.resources.need-resource.pages.needs-by-toon';
 

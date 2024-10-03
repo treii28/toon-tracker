@@ -14,6 +14,7 @@
         //console.log('refreshing wowhead tooltips');
         WH.Tooltips.refreshLinks();
     }
+
     window.onload = function() {
         setTimeout(function() {
             Livewire.hook('morph.updated', ({ el, component }) => {
@@ -23,9 +24,28 @@
     };
 </script>
 <script src="https://wow.zamimg.com/js/tooltips.js"></script>
-<style>
-    .instancename {
-        color: green; /* Set the color to green */
-        font-weight: bold;
-    }
-</style>
+
+@if ($heading = $this->getHeading())
+    @php
+        $subheading = $this->getSubheading();
+    @endphp
+
+    <x-filament-panels::header
+        :actions="$this->getCachedHeaderActions()"
+        :breadcrumbs="filament()->hasBreadcrumbs() ? $this->getBreadcrumbs() : []"
+        :heading="$heading"
+        :subheading="$subheading"
+    >
+        @if ($heading instanceof \Illuminate\Contracts\Support\Htmlable)
+            <x-slot name="heading">
+                {{ $heading }}
+            </x-slot>
+        @endif
+
+        @if ($subheading instanceof \Illuminate\Contracts\Support\Htmlable)
+            <x-slot name="subheading">
+                {{ $subheading }}
+            </x-slot>
+        @endif
+    </x-filament-panels::header>
+@endif

@@ -47,12 +47,12 @@ class NeedResource extends Resource
             Forms\Components\Textarea::make('notes')
         ];
     }
+
     public static function form(Form $form): Form
     {
         return $form
             ->schema(static::getSchema());
     }
-
 
     public static function getViewColumns(): array
     {
@@ -88,6 +88,7 @@ class NeedResource extends Resource
                 ->sortable()
         ];
     }
+
     public static function getColumns(): array
     {
         return [
@@ -115,7 +116,6 @@ class NeedResource extends Resource
         ];
     }
 
-
     public static function table(Table $table): Table
     {
         return $table
@@ -138,7 +138,8 @@ class NeedResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+            //RelationManagers\ToonRelationManager::make('toon'),
+            //RelationManagers\ItemRelationManager::make('item'),
         ];
     }
 
@@ -173,7 +174,6 @@ class NeedResource extends Resource
             'index' => Pages\ListNeeds::route('/'),
             'create' => Pages\CreateNeed::route('/create'),
             'view' => Pages\ViewNeed::route('/{record}'),
-            'view-with-item' => Pages\ViewNeedItem::route('/{record}/item'),
             'edit' => Pages\EditNeed::route('/{record}/edit'),
             'by-toon' => Pages\NeedsByToon::route('/by-toon/{toon?}'),
             'by-instance' => Pages\NeedsByInstance::route('/by-instance/{instance?}'),

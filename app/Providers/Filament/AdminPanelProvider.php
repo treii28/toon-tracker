@@ -30,6 +30,13 @@ class AdminPanelProvider extends PanelProvider
     {
         if (app()->runningInConsole()) return [];
         $needLinks = [];
+
+        // add create link for items by toon
+        $needLinks[] = NavigationItem::make('Needs By Toon')
+            ->url('/admin/needs-by-toon')
+            ->group('Item Needs')
+            ->sort(9);
+
         $sort = 10;
         foreach(\App\Models\Toon::ToonsWithNeeds() as $name => $toon) {
             $sort++;
@@ -38,7 +45,14 @@ class AdminPanelProvider extends PanelProvider
                 ->group('Needs By Toon')
                 ->sort($sort);
         }
-        $sort = 10;
+
+        // add create link for items by instance
+        $needLinks[] = NavigationItem::make('Needs By Instance')
+            ->url('/admin/needs-by-instance')
+            ->group('Item Needs')
+            ->sort(29);
+
+        $sort = 30;
         foreach(\App\Models\Item::getNeedInstanceList() as $instance => $item) {
             $needLinks[] = NavigationItem::make($instance.' Needs')
                 ->url('/admin/needs/by-instance/'.$instance)
@@ -72,6 +86,7 @@ class AdminPanelProvider extends PanelProvider
             ->colors([
                 'primary' => Color::Amber,
             ])
+            ->viteTheme('resources/css/filament/admin/theme.css')
             ->navigationItems($this->getNeedList())
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
