@@ -1,0 +1,1302 @@
+{
+    "1": {
+        "id": 1,
+        "priority": 1,
+        "quantity": 1,
+        "toon_id": "1",
+        "item_id": 7,
+        "notes": "+21 Shadow damage, alternative to Tearful Bracers",
+        "created_at": "2024-10-01T03:26:50.000000Z",
+        "updated_at": "2024-10-01T03:26:50.000000Z"
+    },
+    "2": {
+        "id": 2,
+        "priority": 1,
+        "quantity": 1,
+        "toon_id": "1",
+        "item_id": 15,
+        "notes": null,
+        "created_at": "2024-10-01T03:26:50.000000Z",
+        "updated_at": "2024-10-01T03:26:50.000000Z"
+    },
+    "3": {
+        "id": 3,
+        "priority": 1,
+        "quantity": 1,
+        "toon_id": "1",
+        "item_id": 22,
+        "notes": "Shadow wrath or owl, extremely rare",
+        "created_at": "2024-10-01T03:26:50.000000Z",
+        "updated_at": "2024-10-01T03:26:50.000000Z"
+    },
+    "4": {
+        "id": 4,
+        "priority": 1,
+        "quantity": 1,
+        "toon_id": "1",
+        "item_id": 23,
+        "notes": "rare mob sometimes near side entrance",
+        "created_at": "2024-10-01T03:26:50.000000Z",
+        "updated_at": "2024-10-01T03:26:50.000000Z"
+    },
+    "5": {
+        "id": 5,
+        "priority": 2,
+        "quantity": 1,
+        "toon_id": "1",
+        "item_id": 33,
+        "notes": "alternative crafted pants",
+        "created_at": "2024-10-01T03:26:50.000000Z",
+        "updated_at": "2024-10-01T03:26:50.000000Z"
+    },
+    "6": {
+        "id": 6,
+        "priority": 2,
+        "quantity": 1,
+        "toon_id": "1",
+        "item_id": 34,
+        "notes": null,
+        "created_at": "2024-10-01T03:26:50.000000Z",
+        "updated_at": "2024-10-01T03:26:50.000000Z"
+    },
+    "7": {
+        "id": 7,
+        "priority": 1,
+        "quantity": 1,
+        "toon_id": "1",
+        "item_id": 59,
+        "notes": "Needed for 0.5 chain to get Brazier of Invocation",
+        "created_at": "2024-10-01T03:26:50.000000Z",
+        "updated_at": "2024-10-01T03:26:50.000000Z"
+    },
+    "8": {
+        "id": 8,
+        "priority": 1,
+        "quantity": 1,
+        "toon_id": "1",
+        "item_id": 78,
+        "notes": "alternative to Shadow Wrath gloves, requires recipe from Knot Thimblejacks Cache",
+        "created_at": "2024-10-01T03:26:50.000000Z",
+        "updated_at": "2024-10-01T03:26:50.000000Z"
+    },
+    "9": {
+        "id": 9,
+        "priority": 1,
+        "quantity": 1,
+        "toon_id": "1",
+        "item_id": 79,
+        "notes": "Tailoring pattern for Shadow Wrath gloves, bop - can be gotten on a tribute run",
+        "created_at": "2024-10-01T03:26:50.000000Z",
+        "updated_at": "2024-10-01T03:26:50.000000Z"
+    },
+    "10": {
+        "id": 10,
+        "priority": 1,
+        "quantity": 1,
+        "toon_id": "1",
+        "item_id": 82,
+        "notes": "alternative to Tearful Bracers with +shadow - non-tribute run to get",
+        "created_at": "2024-10-01T03:26:50.000000Z",
+        "updated_at": "2024-10-01T03:26:50.000000Z"
+    },
+    "11": {
+        "id": 11,
+        "priority": 2,
+        "quantity": 1,
+        "toon_id": "1",
+        "item_id": 89,
+        "notes": "requires Warsong Gulch marks",
+        "created_at": "2024-10-01T03:26:50.000000Z",
+        "updated_at": "2024-10-01T03:26:50.000000Z"
+    },
+    "12": {
+        "id": 12,
+        "priority": 1,
+        "quantity": 1,
+        "toon_id": "1",
+        "item_id": 90,
+        "notes": "alternative to Shadow Wrath cape options",
+        "created_at": "2024-10-01T03:26:50.000000Z",
+        "updated_at": "2024-10-01T03:26:50.000000Z"
+    },
+    "13": {
+        "id": 13,
+        "priority": 1,
+        "quantity": 1,
+        "toon_id": "1",
+        "item_id": 95,
+        "notes": null,
+        "created_at": "2024-10-01T03:26:50.000000Z",
+        "updated_at": "2024-10-01T03:26:50.000000Z"
+    },
+    "14": {
+        "id": 14,
+        "priority": 1,
+        "quantity": 1,
+        "toon_id": "1",
+        "item_id": 97,
+        "notes": null,
+        "created_at": "2024-10-01T03:26:50.000000Z",
+        "updated_at": "2024-10-01T03:26:50.000000Z"
+    },
+    "15": {
+        "id": 15,
+        "priority": 1,
+        "quantity": 1,
+        "toon_id": "1",
+        "item_id": 99,
+        "notes": "Sothos and Jarien requires summon with Brazier of Invocation",
+        "created_at": "2024-10-01T03:26:50.000000Z",
+        "updated_at": "2024-10-01T03:26:50.000000Z"
+    },
+    "16": {
+        "id": 16,
+        "priority": 1,
+        "quantity": 1,
+        "toon_id": "1",
+        "item_id": 102,
+        "notes": null,
+        "created_at": "2024-10-01T03:26:50.000000Z",
+        "updated_at": "2024-10-01T03:26:50.000000Z"
+    },
+    "17": {
+        "id": 17,
+        "priority": 1,
+        "quantity": 1,
+        "toon_id": "1",
+        "item_id": 105,
+        "notes": null,
+        "created_at": "2024-10-01T03:26:50.000000Z",
+        "updated_at": "2024-10-01T03:26:50.000000Z"
+    },
+    "18": {
+        "id": 18,
+        "priority": 1,
+        "quantity": 1,
+        "toon_id": "1",
+        "item_id": 100,
+        "notes": "requires Valthalak summon",
+        "created_at": "2024-10-01T03:26:50.000000Z",
+        "updated_at": "2024-10-01T03:26:50.000000Z"
+    },
+    "19": {
+        "id": 19,
+        "priority": 1,
+        "quantity": 1,
+        "toon_id": "2",
+        "item_id": 6,
+        "notes": null,
+        "created_at": "2024-10-01T03:26:50.000000Z",
+        "updated_at": "2024-10-01T03:26:50.000000Z"
+    },
+    "20": {
+        "id": 20,
+        "priority": 1,
+        "quantity": 1,
+        "toon_id": "2",
+        "item_id": 14,
+        "notes": null,
+        "created_at": "2024-10-01T03:26:50.000000Z",
+        "updated_at": "2024-10-01T03:26:50.000000Z"
+    },
+    "21": {
+        "id": 21,
+        "priority": 3,
+        "quantity": 1,
+        "toon_id": "2",
+        "item_id": 19,
+        "notes": "+hit alternative weapon, world drop, auction house",
+        "created_at": "2024-10-01T03:26:50.000000Z",
+        "updated_at": "2024-10-01T03:26:50.000000Z"
+    },
+    "22": {
+        "id": 22,
+        "priority": 3,
+        "quantity": 1,
+        "toon_id": "2",
+        "item_id": 20,
+        "notes": "alternative to Tarnished Elven Ring",
+        "created_at": "2024-10-01T03:26:50.000000Z",
+        "updated_at": "2024-10-01T03:26:50.000000Z"
+    },
+    "24": {
+        "id": 24,
+        "priority": 3,
+        "quantity": 1,
+        "toon_id": "2",
+        "item_id": 32,
+        "notes": "+hit alternative to Beastmaster boots",
+        "created_at": "2024-10-01T03:26:50.000000Z",
+        "updated_at": "2024-10-01T03:26:50.000000Z"
+    },
+    "25": {
+        "id": 25,
+        "priority": 1,
+        "quantity": 1,
+        "toon_id": "2",
+        "item_id": 37,
+        "notes": null,
+        "created_at": "2024-10-01T03:26:50.000000Z",
+        "updated_at": "2024-10-01T03:26:50.000000Z"
+    },
+    "26": {
+        "id": 26,
+        "priority": 1,
+        "quantity": 1,
+        "toon_id": "2",
+        "item_id": 38,
+        "notes": null,
+        "created_at": "2024-10-01T03:26:50.000000Z",
+        "updated_at": "2024-10-01T03:26:50.000000Z"
+    },
+    "27": {
+        "id": 27,
+        "priority": 1,
+        "quantity": 1,
+        "toon_id": "2",
+        "item_id": 39,
+        "notes": null,
+        "created_at": "2024-10-01T03:26:50.000000Z",
+        "updated_at": "2024-10-01T03:26:50.000000Z"
+    },
+    "28": {
+        "id": 28,
+        "priority": 2,
+        "quantity": 1,
+        "toon_id": "2",
+        "item_id": 40,
+        "notes": "alternative to Valthalak necklace",
+        "created_at": "2024-10-01T03:26:50.000000Z",
+        "updated_at": "2024-10-01T03:26:50.000000Z"
+    },
+    "29": {
+        "id": 29,
+        "priority": 1,
+        "quantity": 1,
+        "toon_id": "2",
+        "item_id": 80,
+        "notes": null,
+        "created_at": "2024-10-01T03:26:50.000000Z",
+        "updated_at": "2024-10-01T03:26:50.000000Z"
+    },
+    "30": {
+        "id": 30,
+        "priority": 1,
+        "quantity": 1,
+        "toon_id": "2",
+        "item_id": 76,
+        "notes": null,
+        "created_at": "2024-10-01T03:26:50.000000Z",
+        "updated_at": "2024-10-01T03:26:50.000000Z"
+    },
+    "31": {
+        "id": 31,
+        "priority": 1,
+        "quantity": 2,
+        "toon_id": "2",
+        "item_id": 83,
+        "notes": "+hit, alternative to AV ring or Mauradon ring",
+        "created_at": "2024-10-01T03:26:50.000000Z",
+        "updated_at": "2024-10-01T03:26:50.000000Z"
+    },
+    "32": {
+        "id": 32,
+        "priority": 1,
+        "quantity": 1,
+        "toon_id": "2",
+        "item_id": 96,
+        "notes": null,
+        "created_at": "2024-10-01T03:26:50.000000Z",
+        "updated_at": "2024-10-01T03:26:50.000000Z"
+    },
+    "33": {
+        "id": 33,
+        "priority": 1,
+        "quantity": 1,
+        "toon_id": "2",
+        "item_id": 98,
+        "notes": null,
+        "created_at": "2024-10-01T03:26:50.000000Z",
+        "updated_at": "2024-10-01T03:26:50.000000Z"
+    },
+    "34": {
+        "id": 34,
+        "priority": 1,
+        "quantity": 1,
+        "toon_id": "2",
+        "item_id": 101,
+        "notes": null,
+        "created_at": "2024-10-01T03:26:50.000000Z",
+        "updated_at": "2024-10-01T03:26:50.000000Z"
+    },
+    "36": {
+        "id": 36,
+        "priority": 2,
+        "quantity": 1,
+        "toon_id": "3",
+        "item_id": 3,
+        "notes": "pre-raid alternative BiS sword, world drop, auction house",
+        "created_at": "2024-10-01T03:26:50.000000Z",
+        "updated_at": "2024-10-01T03:26:50.000000Z"
+    },
+    "37": {
+        "id": 37,
+        "priority": 1,
+        "quantity": 1,
+        "toon_id": "3",
+        "item_id": 8,
+        "notes": "pre-raid BiS trinket",
+        "created_at": "2024-10-01T03:26:50.000000Z",
+        "updated_at": "2024-10-01T03:26:50.000000Z"
+    },
+    "38": {
+        "id": 38,
+        "priority": 3,
+        "quantity": 1,
+        "toon_id": "3",
+        "item_id": 13,
+        "notes": "pre-raid BiS bow, alternative to Satyrs Bow",
+        "created_at": "2024-10-01T03:26:50.000000Z",
+        "updated_at": "2024-10-01T03:26:50.000000Z"
+    },
+    "39": {
+        "id": 39,
+        "priority": 1,
+        "quantity": 1,
+        "toon_id": "3",
+        "item_id": 14,
+        "notes": null,
+        "created_at": "2024-10-01T03:26:50.000000Z",
+        "updated_at": "2024-10-01T03:26:50.000000Z"
+    },
+    "40": {
+        "id": 40,
+        "priority": 1,
+        "quantity": 1,
+        "toon_id": "3",
+        "item_id": 16,
+        "notes": "pre-raid BiS swords offhand",
+        "created_at": "2024-10-01T03:26:50.000000Z",
+        "updated_at": "2024-10-01T03:26:50.000000Z"
+    },
+    "41": {
+        "id": 41,
+        "priority": 1,
+        "quantity": 1,
+        "toon_id": "3",
+        "item_id": 17,
+        "notes": "pre-raid BiS swords mainhand",
+        "created_at": "2024-10-01T03:26:50.000000Z",
+        "updated_at": "2024-10-01T03:26:50.000000Z"
+    },
+    "42": {
+        "id": 42,
+        "priority": 3,
+        "quantity": 1,
+        "toon_id": "3",
+        "item_id": 20,
+        "notes": "alternative to Tarnished Elven Ring",
+        "created_at": "2024-10-01T03:26:50.000000Z",
+        "updated_at": "2024-10-01T03:26:50.000000Z"
+    },
+    "43": {
+        "id": 43,
+        "priority": 1,
+        "quantity": 1,
+        "toon_id": "3",
+        "item_id": 26,
+        "notes": "Needed for Final Preparations in Dungeon Set 2 chain",
+        "created_at": "2024-10-01T03:26:50.000000Z",
+        "updated_at": "2024-10-01T03:26:50.000000Z"
+    },
+    "44": {
+        "id": 44,
+        "priority": 2,
+        "quantity": 1,
+        "toon_id": "3",
+        "item_id": 40,
+        "notes": "alternative to Celerity Pendant",
+        "created_at": "2024-10-01T03:26:50.000000Z",
+        "updated_at": "2024-10-01T03:26:50.000000Z"
+    },
+    "45": {
+        "id": 45,
+        "priority": 1,
+        "quantity": 1,
+        "toon_id": "3",
+        "item_id": 61,
+        "notes": "Needed for 0.5 chain to get Brazier of Invocation",
+        "created_at": "2024-10-01T03:26:50.000000Z",
+        "updated_at": "2024-10-01T03:26:50.000000Z"
+    },
+    "46": {
+        "id": 46,
+        "priority": 1,
+        "quantity": 1,
+        "toon_id": "3",
+        "item_id": 65,
+        "notes": "Needed for 0.5 chain to get Brazier of Invocation",
+        "created_at": "2024-10-01T03:26:50.000000Z",
+        "updated_at": "2024-10-01T03:26:50.000000Z"
+    },
+    "47": {
+        "id": 47,
+        "priority": 1,
+        "quantity": 1,
+        "toon_id": "3",
+        "item_id": 84,
+        "notes": "Tailoring pattern for healer BiS cloak - can be gotten by any toon on a tribute run",
+        "created_at": "2024-10-01T03:26:50.000000Z",
+        "updated_at": "2024-10-01T03:26:50.000000Z"
+    },
+    "48": {
+        "id": 48,
+        "priority": 1,
+        "quantity": 1,
+        "toon_id": "3",
+        "item_id": 91,
+        "notes": null,
+        "created_at": "2024-10-01T03:26:50.000000Z",
+        "updated_at": "2024-10-01T03:26:50.000000Z"
+    },
+    "49": {
+        "id": 49,
+        "priority": 1,
+        "quantity": 1,
+        "toon_id": "3",
+        "item_id": 92,
+        "notes": "Requires getting Shadowcraft Tunic and cap",
+        "created_at": "2024-10-01T03:26:50.000000Z",
+        "updated_at": "2024-10-01T03:26:50.000000Z"
+    },
+    "51": {
+        "id": 51,
+        "priority": 1,
+        "quantity": 1,
+        "toon_id": "3",
+        "item_id": 101,
+        "notes": null,
+        "created_at": "2024-10-01T03:26:50.000000Z",
+        "updated_at": "2024-10-01T03:26:50.000000Z"
+    },
+    "52": {
+        "id": 52,
+        "priority": 1,
+        "quantity": 1,
+        "toon_id": "4",
+        "item_id": 15,
+        "notes": null,
+        "created_at": "2024-10-01T03:26:51.000000Z",
+        "updated_at": "2024-10-01T03:26:51.000000Z"
+    },
+    "54": {
+        "id": 54,
+        "priority": 1,
+        "quantity": 1,
+        "toon_id": "4",
+        "item_id": 60,
+        "notes": "Needed for 0.5 chain to get Brazier of Invocation",
+        "created_at": "2024-10-01T03:26:51.000000Z",
+        "updated_at": "2024-10-01T03:26:51.000000Z"
+    },
+    "57": {
+        "id": 57,
+        "priority": 1,
+        "quantity": 1,
+        "toon_id": "4",
+        "item_id": 85,
+        "notes": null,
+        "created_at": "2024-10-01T03:26:51.000000Z",
+        "updated_at": "2024-10-01T03:26:51.000000Z"
+    },
+    "58": {
+        "id": 58,
+        "priority": 1,
+        "quantity": 1,
+        "toon_id": "4",
+        "item_id": 87,
+        "notes": null,
+        "created_at": "2024-10-01T03:26:51.000000Z",
+        "updated_at": "2024-10-01T03:26:51.000000Z"
+    },
+    "59": {
+        "id": 59,
+        "priority": 4,
+        "quantity": 1,
+        "toon_id": "4",
+        "item_id": 97,
+        "notes": null,
+        "created_at": "2024-10-01T03:26:51.000000Z",
+        "updated_at": "2024-10-01T03:26:51.000000Z"
+    },
+    "60": {
+        "id": 60,
+        "priority": 1,
+        "quantity": 1,
+        "toon_id": "4",
+        "item_id": 103,
+        "notes": "Alternative to mh-oh",
+        "created_at": "2024-10-01T03:26:51.000000Z",
+        "updated_at": "2024-10-01T03:26:51.000000Z"
+    },
+    "61": {
+        "id": 61,
+        "priority": 4,
+        "quantity": 1,
+        "toon_id": "5",
+        "item_id": 15,
+        "notes": null,
+        "created_at": "2024-10-01T03:26:51.000000Z",
+        "updated_at": "2024-10-01T03:26:51.000000Z"
+    },
+    "62": {
+        "id": 62,
+        "priority": 1,
+        "quantity": 1,
+        "toon_id": "5",
+        "item_id": 54,
+        "notes": "Needed for 0.5 chain to get Brazier of Invocation",
+        "created_at": "2024-10-01T03:26:51.000000Z",
+        "updated_at": "2024-10-01T03:26:51.000000Z"
+    },
+    "63": {
+        "id": 63,
+        "priority": 1,
+        "quantity": 1,
+        "toon_id": "5",
+        "item_id": 55,
+        "notes": "Needed for 0.5 chain to get Brazier of Invocation",
+        "created_at": "2024-10-01T03:26:51.000000Z",
+        "updated_at": "2024-10-01T03:26:51.000000Z"
+    },
+    "65": {
+        "id": 65,
+        "priority": 4,
+        "quantity": 1,
+        "toon_id": "5",
+        "item_id": 97,
+        "notes": null,
+        "created_at": "2024-10-01T03:26:51.000000Z",
+        "updated_at": "2024-10-01T03:26:51.000000Z"
+    },
+    "66": {
+        "id": 66,
+        "priority": 9,
+        "quantity": 1,
+        "toon_id": "5",
+        "item_id": 103,
+        "notes": "Alternative to mh-oh",
+        "created_at": "2024-10-01T03:26:51.000000Z",
+        "updated_at": "2024-10-01T03:26:51.000000Z"
+    },
+    "67": {
+        "id": 67,
+        "priority": 2,
+        "quantity": 1,
+        "toon_id": "6",
+        "item_id": 1,
+        "notes": "second item alternate frost damage",
+        "created_at": "2024-10-01T03:26:51.000000Z",
+        "updated_at": "2024-10-01T03:26:51.000000Z"
+    },
+    "68": {
+        "id": 68,
+        "priority": 1,
+        "quantity": 1,
+        "toon_id": "6",
+        "item_id": 4,
+        "notes": "+30 Frost damage, alternative to Omnicast Boots",
+        "created_at": "2024-10-01T03:26:51.000000Z",
+        "updated_at": "2024-10-01T03:26:51.000000Z"
+    },
+    "69": {
+        "id": 69,
+        "priority": 1,
+        "quantity": 1,
+        "toon_id": "6",
+        "item_id": 5,
+        "notes": "+21 Frost damage, alternative to Archivist Cape of Frozen Wrath",
+        "created_at": "2024-10-01T03:26:51.000000Z",
+        "updated_at": "2024-10-01T03:26:51.000000Z"
+    },
+    "70": {
+        "id": 70,
+        "priority": 1,
+        "quantity": 1,
+        "toon_id": "6",
+        "item_id": 7,
+        "notes": "+21 Frost damage, alternative to Tearful Bracers",
+        "created_at": "2024-10-01T03:26:51.000000Z",
+        "updated_at": "2024-10-01T03:26:51.000000Z"
+    },
+    "72": {
+        "id": 72,
+        "priority": 3,
+        "quantity": 1,
+        "toon_id": "6",
+        "item_id": 10,
+        "notes": "alternative to caster trinket",
+        "created_at": "2024-10-01T03:26:51.000000Z",
+        "updated_at": "2024-10-01T03:26:51.000000Z"
+    },
+    "73": {
+        "id": 73,
+        "priority": 2,
+        "quantity": 1,
+        "toon_id": "6",
+        "item_id": 18,
+        "notes": "pre-raid BiS ring, auction house",
+        "created_at": "2024-10-01T03:26:51.000000Z",
+        "updated_at": "2024-10-01T03:26:51.000000Z"
+    },
+    "74": {
+        "id": 74,
+        "priority": 1,
+        "quantity": 1,
+        "toon_id": "6",
+        "item_id": 22,
+        "notes": "Frost wrath or owl, extremely rare",
+        "created_at": "2024-10-01T03:26:51.000000Z",
+        "updated_at": "2024-10-01T03:26:51.000000Z"
+    },
+    "75": {
+        "id": 75,
+        "priority": 1,
+        "quantity": 1,
+        "toon_id": "6",
+        "item_id": 25,
+        "notes": "Frozen wrath or owl, extremely rare",
+        "created_at": "2024-10-01T03:26:51.000000Z",
+        "updated_at": "2024-10-01T03:26:51.000000Z"
+    },
+    "76": {
+        "id": 76,
+        "priority": 2,
+        "quantity": 1,
+        "toon_id": "6",
+        "item_id": 28,
+        "notes": "alternative +frost pants",
+        "created_at": "2024-10-01T03:26:51.000000Z",
+        "updated_at": "2024-10-01T03:26:51.000000Z"
+    },
+    "77": {
+        "id": 77,
+        "priority": 5,
+        "quantity": 1,
+        "toon_id": "6",
+        "item_id": 29,
+        "notes": "int alternative to frost wand from AV",
+        "created_at": "2024-10-01T03:26:51.000000Z",
+        "updated_at": "2024-10-01T03:26:51.000000Z"
+    },
+    "79": {
+        "id": 79,
+        "priority": 2,
+        "quantity": 1,
+        "toon_id": "6",
+        "item_id": 89,
+        "notes": "requires Warsong Gulch marks",
+        "created_at": "2024-10-01T03:26:51.000000Z",
+        "updated_at": "2024-10-01T03:26:51.000000Z"
+    },
+    "80": {
+        "id": 80,
+        "priority": 1,
+        "quantity": 1,
+        "toon_id": "6",
+        "item_id": 51,
+        "notes": "Needed for 0.5 chain to get Brazier of Invocation",
+        "created_at": "2024-10-01T03:26:51.000000Z",
+        "updated_at": "2024-10-01T03:26:51.000000Z"
+    },
+    "82": {
+        "id": 82,
+        "priority": 3,
+        "quantity": 1,
+        "toon_id": "6",
+        "item_id": 75,
+        "notes": "alternative to Masters Cloak of Frozen Wrath, Mindtap Talisman and Big Bag of Enchantment recipe on same boss",
+        "created_at": "2024-10-01T03:26:51.000000Z",
+        "updated_at": "2024-10-01T03:26:51.000000Z"
+    },
+    "83": {
+        "id": 83,
+        "priority": 5,
+        "quantity": 1,
+        "toon_id": "6",
+        "item_id": 81,
+        "notes": "drinking set wand with mana gain - non-tribute run to get",
+        "created_at": "2024-10-01T03:26:51.000000Z",
+        "updated_at": "2024-10-01T03:26:51.000000Z"
+    },
+    "84": {
+        "id": 84,
+        "priority": 2,
+        "quantity": 1,
+        "toon_id": "6",
+        "item_id": 82,
+        "notes": "alternative to Tearful Bracers with +frost - non-tribute run to get",
+        "created_at": "2024-10-01T03:26:51.000000Z",
+        "updated_at": "2024-10-01T03:26:51.000000Z"
+    },
+    "85": {
+        "id": 85,
+        "priority": 5,
+        "quantity": 1,
+        "toon_id": "6",
+        "item_id": 86,
+        "notes": "alternative to mh-oh",
+        "created_at": "2024-10-01T03:26:51.000000Z",
+        "updated_at": "2024-10-01T03:26:51.000000Z"
+    },
+    "87": {
+        "id": 87,
+        "priority": 1,
+        "quantity": 1,
+        "toon_id": "6",
+        "item_id": 95,
+        "notes": null,
+        "created_at": "2024-10-01T03:26:51.000000Z",
+        "updated_at": "2024-10-01T03:26:51.000000Z"
+    },
+    "88": {
+        "id": 88,
+        "priority": 1,
+        "quantity": 1,
+        "toon_id": "6",
+        "item_id": 97,
+        "notes": null,
+        "created_at": "2024-10-01T03:26:51.000000Z",
+        "updated_at": "2024-10-01T03:26:51.000000Z"
+    },
+    "89": {
+        "id": 89,
+        "priority": 1,
+        "quantity": 1,
+        "toon_id": "6",
+        "item_id": 100,
+        "notes": "requires Valthalak summon",
+        "created_at": "2024-10-01T03:26:51.000000Z",
+        "updated_at": "2024-10-01T03:26:51.000000Z"
+    },
+    "90": {
+        "id": 90,
+        "priority": 2,
+        "quantity": 1,
+        "toon_id": "7",
+        "item_id": 6,
+        "notes": "Alternative to Heroic chest",
+        "created_at": "2024-10-01T03:26:51.000000Z",
+        "updated_at": "2024-10-01T03:26:51.000000Z"
+    },
+    "91": {
+        "id": 91,
+        "priority": 1,
+        "quantity": 1,
+        "toon_id": "7",
+        "item_id": 8,
+        "notes": "pre-raid BiS trinket",
+        "created_at": "2024-10-01T03:26:51.000000Z",
+        "updated_at": "2024-10-01T03:26:51.000000Z"
+    },
+    "92": {
+        "id": 92,
+        "priority": 1,
+        "quantity": 1,
+        "toon_id": "7",
+        "item_id": 12,
+        "notes": "pre-raid BiS dagger - rare",
+        "created_at": "2024-10-01T03:26:51.000000Z",
+        "updated_at": "2024-10-01T03:26:51.000000Z"
+    },
+    "94": {
+        "id": 94,
+        "priority": 3,
+        "quantity": 1,
+        "toon_id": "7",
+        "item_id": 36,
+        "notes": "Alternative to Heroic boots",
+        "created_at": "2024-10-01T03:26:51.000000Z",
+        "updated_at": "2024-10-01T03:26:51.000000Z"
+    },
+    "95": {
+        "id": 95,
+        "priority": 1,
+        "quantity": 1,
+        "toon_id": "7",
+        "item_id": 69,
+        "notes": "Many heroic pieces are pre-raid BiS for Warrior Tanks",
+        "created_at": "2024-10-01T03:26:51.000000Z",
+        "updated_at": "2024-10-01T03:26:51.000000Z"
+    },
+    "96": {
+        "id": 96,
+        "priority": 1,
+        "quantity": 1,
+        "toon_id": "7",
+        "item_id": 72,
+        "notes": "Many heroic pieces are pre-raid BiS for Warrior Tanks",
+        "created_at": "2024-10-01T03:26:51.000000Z",
+        "updated_at": "2024-10-01T03:26:51.000000Z"
+    },
+    "97": {
+        "id": 97,
+        "priority": 1,
+        "quantity": 1,
+        "toon_id": "7",
+        "item_id": 83,
+        "notes": "+hit, alternative to AV ring or Mauradon ring",
+        "created_at": "2024-10-01T03:26:51.000000Z",
+        "updated_at": "2024-10-20T07:56:11.000000Z"
+    },
+    "98": {
+        "id": 98,
+        "priority": 1,
+        "quantity": 1,
+        "toon_id": "12",
+        "item_id": 42,
+        "notes": null,
+        "created_at": "2024-10-01T03:26:51.000000Z",
+        "updated_at": "2024-10-01T03:26:51.000000Z"
+    },
+    "99": {
+        "id": 99,
+        "priority": 1,
+        "quantity": 1,
+        "toon_id": "12",
+        "item_id": 73,
+        "notes": null,
+        "created_at": "2024-10-01T03:26:51.000000Z",
+        "updated_at": "2024-10-01T03:26:51.000000Z"
+    },
+    "101": {
+        "id": 101,
+        "priority": 1,
+        "quantity": 1,
+        "toon_id": "7",
+        "item_id": 70,
+        "notes": null,
+        "created_at": "2024-10-14T23:29:51.000000Z",
+        "updated_at": "2024-10-14T23:29:51.000000Z"
+    },
+    "102": {
+        "id": 102,
+        "priority": 5,
+        "quantity": 1,
+        "toon_id": "2",
+        "item_id": 106,
+        "notes": null,
+        "created_at": "2024-10-20T20:47:11.000000Z",
+        "updated_at": "2024-10-20T20:47:11.000000Z"
+    },
+    "103": {
+        "id": 103,
+        "priority": 5,
+        "quantity": 1,
+        "toon_id": "2",
+        "item_id": 107,
+        "notes": null,
+        "created_at": "2024-10-20T20:49:37.000000Z",
+        "updated_at": "2024-10-20T20:49:37.000000Z"
+    },
+    "104": {
+        "id": 104,
+        "priority": 5,
+        "quantity": 1,
+        "toon_id": "2",
+        "item_id": 108,
+        "notes": null,
+        "created_at": "2024-10-20T20:51:10.000000Z",
+        "updated_at": "2024-10-20T20:51:10.000000Z"
+    },
+    "105": {
+        "id": 105,
+        "priority": 5,
+        "quantity": 1,
+        "toon_id": "2",
+        "item_id": 110,
+        "notes": null,
+        "created_at": "2024-10-20T20:59:54.000000Z",
+        "updated_at": "2024-10-20T20:59:54.000000Z"
+    },
+    "106": {
+        "id": 106,
+        "priority": 6,
+        "quantity": 1,
+        "toon_id": "3",
+        "item_id": 106,
+        "notes": null,
+        "created_at": "2024-10-20T21:05:25.000000Z",
+        "updated_at": "2024-10-20T21:05:25.000000Z"
+    },
+    "107": {
+        "id": 107,
+        "priority": 5,
+        "quantity": 1,
+        "toon_id": "1",
+        "item_id": 107,
+        "notes": null,
+        "created_at": "2024-10-20T21:07:13.000000Z",
+        "updated_at": "2024-10-20T21:07:13.000000Z"
+    },
+    "108": {
+        "id": 108,
+        "priority": 1,
+        "quantity": 1,
+        "toon_id": "3",
+        "item_id": 111,
+        "notes": null,
+        "created_at": "2024-10-20T21:10:33.000000Z",
+        "updated_at": "2024-10-20T21:10:33.000000Z"
+    },
+    "109": {
+        "id": 109,
+        "priority": 6,
+        "quantity": 1,
+        "toon_id": "3",
+        "item_id": 108,
+        "notes": null,
+        "created_at": "2024-10-20T21:12:49.000000Z",
+        "updated_at": "2024-10-20T21:12:49.000000Z"
+    },
+    "110": {
+        "id": 110,
+        "priority": 5,
+        "quantity": 1,
+        "toon_id": "5",
+        "item_id": 112,
+        "notes": null,
+        "created_at": "2024-10-20T21:16:09.000000Z",
+        "updated_at": "2024-10-20T21:16:09.000000Z"
+    },
+    "111": {
+        "id": 111,
+        "priority": 5,
+        "quantity": 1,
+        "toon_id": "3",
+        "item_id": 112,
+        "notes": null,
+        "created_at": "2024-10-20T21:16:37.000000Z",
+        "updated_at": "2024-10-20T21:16:37.000000Z"
+    },
+    "112": {
+        "id": 112,
+        "priority": 5,
+        "quantity": 1,
+        "toon_id": "4",
+        "item_id": 112,
+        "notes": null,
+        "created_at": "2024-10-20T21:16:57.000000Z",
+        "updated_at": "2024-10-20T21:16:57.000000Z"
+    },
+    "113": {
+        "id": 113,
+        "priority": 5,
+        "quantity": 1,
+        "toon_id": "1",
+        "item_id": 112,
+        "notes": null,
+        "created_at": "2024-10-20T21:17:10.000000Z",
+        "updated_at": "2024-10-20T21:17:10.000000Z"
+    },
+    "114": {
+        "id": 114,
+        "priority": 5,
+        "quantity": 1,
+        "toon_id": "6",
+        "item_id": 112,
+        "notes": null,
+        "created_at": "2024-10-20T21:17:27.000000Z",
+        "updated_at": "2024-10-20T21:17:27.000000Z"
+    },
+    "115": {
+        "id": 115,
+        "priority": 1,
+        "quantity": 1,
+        "toon_id": "3",
+        "item_id": 113,
+        "notes": null,
+        "created_at": "2024-10-20T21:21:08.000000Z",
+        "updated_at": "2024-10-20T21:21:08.000000Z"
+    },
+    "116": {
+        "id": 116,
+        "priority": 1,
+        "quantity": 1,
+        "toon_id": "1",
+        "item_id": 113,
+        "notes": null,
+        "created_at": "2024-10-20T21:21:34.000000Z",
+        "updated_at": "2024-10-20T21:21:34.000000Z"
+    },
+    "117": {
+        "id": 117,
+        "priority": 1,
+        "quantity": 1,
+        "toon_id": "3",
+        "item_id": 115,
+        "notes": null,
+        "created_at": "2024-10-20T21:28:27.000000Z",
+        "updated_at": "2024-10-20T21:28:27.000000Z"
+    },
+    "119": {
+        "id": 119,
+        "priority": 1,
+        "quantity": 1,
+        "toon_id": "1",
+        "item_id": 116,
+        "notes": null,
+        "created_at": "2024-10-20T21:29:28.000000Z",
+        "updated_at": "2024-10-20T21:29:28.000000Z"
+    },
+    "120": {
+        "id": 120,
+        "priority": 1,
+        "quantity": 1,
+        "toon_id": "1",
+        "item_id": 115,
+        "notes": null,
+        "created_at": "2024-10-20T21:29:40.000000Z",
+        "updated_at": "2024-10-20T21:29:40.000000Z"
+    },
+    "121": {
+        "id": 121,
+        "priority": 1,
+        "quantity": 1,
+        "toon_id": "1",
+        "item_id": 114,
+        "notes": null,
+        "created_at": "2024-10-20T21:29:53.000000Z",
+        "updated_at": "2024-10-20T21:29:53.000000Z"
+    },
+    "122": {
+        "id": 122,
+        "priority": 1,
+        "quantity": 1,
+        "toon_id": "2",
+        "item_id": 109,
+        "notes": null,
+        "created_at": "2024-10-20T21:30:59.000000Z",
+        "updated_at": "2024-10-20T21:30:59.000000Z"
+    },
+    "123": {
+        "id": 123,
+        "priority": 1,
+        "quantity": 1,
+        "toon_id": "3",
+        "item_id": 109,
+        "notes": null,
+        "created_at": "2024-10-20T21:31:10.000000Z",
+        "updated_at": "2024-10-20T21:31:10.000000Z"
+    },
+    "124": {
+        "id": 124,
+        "priority": 1,
+        "quantity": 1,
+        "toon_id": "1",
+        "item_id": 109,
+        "notes": null,
+        "created_at": "2024-10-20T21:31:31.000000Z",
+        "updated_at": "2024-10-20T21:31:31.000000Z"
+    },
+    "125": {
+        "id": 125,
+        "priority": 1,
+        "quantity": 1,
+        "toon_id": "3",
+        "item_id": 110,
+        "notes": null,
+        "created_at": "2024-10-20T21:37:48.000000Z",
+        "updated_at": "2024-10-20T21:37:48.000000Z"
+    },
+    "126": {
+        "id": 126,
+        "priority": 1,
+        "quantity": 1,
+        "toon_id": "4",
+        "item_id": 117,
+        "notes": null,
+        "created_at": "2024-10-20T21:49:50.000000Z",
+        "updated_at": "2024-10-20T21:49:50.000000Z"
+    },
+    "127": {
+        "id": 127,
+        "priority": 1,
+        "quantity": 1,
+        "toon_id": "1",
+        "item_id": 117,
+        "notes": null,
+        "created_at": "2024-10-20T21:50:14.000000Z",
+        "updated_at": "2024-10-20T21:50:14.000000Z"
+    },
+    "128": {
+        "id": 128,
+        "priority": 1,
+        "quantity": 1,
+        "toon_id": "3",
+        "item_id": 118,
+        "notes": null,
+        "created_at": "2024-10-20T21:53:02.000000Z",
+        "updated_at": "2024-10-20T21:53:02.000000Z"
+    },
+    "129": {
+        "id": 129,
+        "priority": 1,
+        "quantity": 1,
+        "toon_id": "7",
+        "item_id": 118,
+        "notes": null,
+        "created_at": "2024-10-20T21:53:26.000000Z",
+        "updated_at": "2024-10-20T21:53:26.000000Z"
+    },
+    "130": {
+        "id": 130,
+        "priority": 1,
+        "quantity": 1,
+        "toon_id": "5",
+        "item_id": 121,
+        "notes": null,
+        "created_at": "2024-10-24T01:08:52.000000Z",
+        "updated_at": "2024-10-24T01:09:32.000000Z"
+    },
+    "131": {
+        "id": 131,
+        "priority": 1,
+        "quantity": 1,
+        "toon_id": "5",
+        "item_id": 122,
+        "notes": null,
+        "created_at": "2024-10-24T01:45:22.000000Z",
+        "updated_at": "2024-10-24T01:45:22.000000Z"
+    },
+    "132": {
+        "id": 132,
+        "priority": 1,
+        "quantity": 1,
+        "toon_id": "5",
+        "item_id": 120,
+        "notes": null,
+        "created_at": "2024-10-24T01:45:54.000000Z",
+        "updated_at": "2024-10-24T01:45:54.000000Z"
+    },
+    "133": {
+        "id": 133,
+        "priority": 1,
+        "quantity": 1,
+        "toon_id": "1",
+        "item_id": 124,
+        "notes": null,
+        "created_at": "2024-10-24T02:05:09.000000Z",
+        "updated_at": "2024-10-24T02:05:09.000000Z"
+    },
+    "134": {
+        "id": 134,
+        "priority": 1,
+        "quantity": 1,
+        "toon_id": "6",
+        "item_id": 124,
+        "notes": null,
+        "created_at": "2024-10-24T02:05:26.000000Z",
+        "updated_at": "2024-10-24T02:05:26.000000Z"
+    },
+    "135": {
+        "id": 135,
+        "priority": 1,
+        "quantity": 1,
+        "toon_id": "1",
+        "item_id": 125,
+        "notes": null,
+        "created_at": "2024-10-24T02:08:38.000000Z",
+        "updated_at": "2024-10-24T02:08:38.000000Z"
+    },
+    "136": {
+        "id": 136,
+        "priority": 2,
+        "quantity": 1,
+        "toon_id": "1",
+        "item_id": 126,
+        "notes": null,
+        "created_at": "2024-10-24T02:11:03.000000Z",
+        "updated_at": "2024-10-24T02:11:03.000000Z"
+    },
+    "137": {
+        "id": 137,
+        "priority": 1,
+        "quantity": 1,
+        "toon_id": "6",
+        "item_id": 128,
+        "notes": null,
+        "created_at": "2024-10-25T22:21:05.000000Z",
+        "updated_at": "2024-10-25T22:21:05.000000Z"
+    },
+    "138": {
+        "id": 138,
+        "priority": 1,
+        "quantity": 15,
+        "toon_id": "6",
+        "item_id": 129,
+        "notes": null,
+        "created_at": "2024-10-25T22:23:33.000000Z",
+        "updated_at": "2024-10-25T22:23:33.000000Z"
+    },
+    "139": {
+        "id": 139,
+        "priority": 1,
+        "quantity": 1,
+        "toon_id": "6",
+        "item_id": 127,
+        "notes": null,
+        "created_at": "2024-10-25T22:24:09.000000Z",
+        "updated_at": "2024-10-25T22:24:09.000000Z"
+    },
+    "140": {
+        "id": 140,
+        "priority": 2,
+        "quantity": 2,
+        "toon_id": "6",
+        "item_id": 130,
+        "notes": null,
+        "created_at": "2024-10-30T16:21:24.000000Z",
+        "updated_at": "2024-10-30T16:21:24.000000Z"
+    },
+    "141": {
+        "id": 141,
+        "priority": 2,
+        "quantity": 2,
+        "toon_id": "5",
+        "item_id": 130,
+        "notes": null,
+        "created_at": "2024-10-30T16:22:07.000000Z",
+        "updated_at": "2024-10-30T16:22:07.000000Z"
+    },
+    "142": {
+        "id": 142,
+        "priority": 2,
+        "quantity": 2,
+        "toon_id": "4",
+        "item_id": 130,
+        "notes": null,
+        "created_at": "2024-10-30T16:22:58.000000Z",
+        "updated_at": "2024-10-30T16:22:58.000000Z"
+    },
+    "143": {
+        "id": 143,
+        "priority": 2,
+        "quantity": 1,
+        "toon_id": "6",
+        "item_id": 74,
+        "notes": null,
+        "created_at": "2024-10-30T19:28:59.000000Z",
+        "updated_at": "2024-10-30T19:28:59.000000Z"
+    },
+    "144": {
+        "id": 144,
+        "priority": 2,
+        "quantity": 2,
+        "toon_id": "6",
+        "item_id": 132,
+        "notes": null,
+        "created_at": "2024-10-30T19:36:06.000000Z",
+        "updated_at": "2024-10-30T19:36:06.000000Z"
+    }
+}
