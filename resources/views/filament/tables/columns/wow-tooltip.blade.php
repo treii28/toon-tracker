@@ -1,6 +1,7 @@
 @php
     // see if a domain is specified in the evironment
     $domain = ((!empty(getenv('WOWHEAD_DOMAIN'))) ? "&domain=".getenv('WOWHEAD_DOMAIN') : '');
+    $dsub = ((getenv('WOWHEAD_DOMAIN') === 'classic') ? "classic/" : '');
     $iconsize = ((!empty(getenv('WOWHEAD_ICONSIZE'))) ? getenv('WOWHEAD_ICONSIZE') : 'small');
 
     $record = $getRecord();
@@ -12,4 +13,5 @@
         $item = $record->item;
     }
 @endphp
-<a data-wowhead="item={{ $item->wowhead_id }}" target="_blank" data-wh-icon-size="{{ $iconsize }}" href="https://www.wowhead.com/item={{ $item->wowhead_id }}{{ $domain }}">{{ $item->name }}</a>
+<a data-wowhead="item={{ $item->wowhead_id }}" target="_blank" data-wh-icon-size="{{ $iconsize }}"
+ href="https://www.wowhead.com/{{ $dsub }}item={{ $item->wowhead_id }}{{ $domain }}">{{ $item->name }}</a>

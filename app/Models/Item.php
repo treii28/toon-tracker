@@ -11,6 +11,18 @@ class Item extends Model
     // https://www.wowhead.com/tooltips
     // https://www.wowhead.com/item=#####&xml
 
+    private static $_recache = true;
+    private static array $_slotOptions = [];
+
+    const NATURE = [
+        'PvE',
+        'PvP',
+        'Gold-Farming',
+        'pre-raid BiS',
+        'raiding Upgrade',
+        'Best-in-Slot'
+    ];
+
     const DROPTYPES = [
         'any',
         'loot',
@@ -74,8 +86,10 @@ class Item extends Model
         "first-aid",
         "fishing",
         "unique",
-        "not-unique"
+        "not-unique",
+        "world-event"
     ];
+
     const SLOTS = [
         'head',
         'neck',
@@ -99,110 +113,11 @@ class Item extends Model
         'quest-item',
         'recipe',
         'consumable',
+        'reagent',
         'container',
         'key',
         'misc',
     ];
-
-    const INSTANCES = [
-        'Azeroth' => [
-            'PvE' => "Outside"
-        ],
-        'Rep-Honor' => [
-            'Argent Dawn' => 'Eastern Plaguelands',
-            'Thorium Brotherhood' => 'Searing Gorge',
-            'Timbermaw Hold' => 'Felwood',
-            'Cenarion Circle' => 'Silithus',
-            'Hydraxian Waterlords' => 'Azshara',
-            'Zandalar Tribe' => 'Stranglethorn Vale',
-            'Warsong Gulch' => 'Ashenvale',
-            'Arathi Basin' => 'Arathi Highlands',
-            'Alterac Valley' => 'Hillsbrad Foothills',
-            'Stormwind City' => 'Elwynn Forest',
-            'Orgrimmar' => 'Durotar',
-        ],
-        'Eastern Kingdoms' => [
-            'The Deadmines' => 'Westfall',
-            'Shadowfang Keep' => 'Silverpine Forest',
-            'The Stockade' => 'Stormwind City',
-            'Gnomeregan' => 'Dun Morogh',
-            'Scarlet Monastery: Graveyard' => 'Tirisfal Glades',
-            'Scarlet Monastery: Library' => 'Tirisfal Glades',
-            'Scarlet Monastery: Armory' => 'Tirisfal Glades',
-            'Scarlet Monastery: Cathedral' => 'Tirisfal Glades',
-            'Uldaman' => 'Badlands',
-            "Sunken Temple of Atal=Hakkar" => 'Swamp of Sorrows',
-            'Blackrock Depths' => 'Burning Steppes',
-            'Scholomance' => 'Western Plaguelands',
-            'Stratholme: Live Side' => 'Eastern Plaguelands',
-            'Stratholme: Undead Side' => 'Eastern Plaguelands',
-            'Blackrock Spire: Lower' => 'Burning Steppes',
-            'Blackrock Spire: Upper' => 'Burning Steppes',
-            'Blackwing Lair' => 'Burning Steppes',
-            'Molten Core' => 'Burning Steppes',
-            'Zul-Gurub' => 'Stranglethorn Vale',
-            'Naxxramas' => 'Eastern Plaguelands',
-            'Lord Kazzak' => 'Blasted Lands',
-            'Emeriss' => 'Duskwood',
-            'Lethon' => 'The Hinterlands',
-        ],
-        'Kalimdor' => [
-            'Ragefire Chasm' => 'Orgrimmar',
-            'Wailing Caverns' => 'The Barrens',
-            'Blackfathom Deeps' => 'Ashenvale',
-            'Razorfen Kraul' => 'The Barrens',
-            'Razorfen Downs' => 'The Barrens',
-            'Zul-Farrak' => 'Tanaris',
-            'Maraudon' => 'Desolace',
-            'Dire Maul: Arena' => 'Feralas',
-            'Dire Maul: East' => 'Feralas',
-            'Dire Maul: West' => 'Feralas',
-            'Dire Maul: North' => 'Feralas',
-            'Onyxias Lair' => 'Dustwallow Marsh',
-            'Ruins of Ahn-Qiraj' => 'Silithus',
-            'Temple of Ahn-iraj' => 'Silithus',
-            'Azuregos' => 'Azshara',
-            'Ysondre' => 'Feralas',
-            'Taerar' => 'Ashenvale',
-        ],
-    ];
-
-    public static function dupeKeys(array $indexed): array
-    {
-        $output = [];
-        foreach($indexed as $value)
-            $output[$value] = $value;
-        return $output;
-    }
-
-    public static function getContinents(): array {
-        $instances = array_keys(self::INSTANCES);
-        sort($instances);
-        return $instances;
-    }
-    public static function getInstanceList(string $filter=null, string $zone=null): array
-    {
-        $instances = [];
-        if(array_key_exists($filter, self::INSTANCES)) {
-            if(!empty($zone)) {
-                foreach(self::INSTANCES[$filter] as $instance => $zone_name)
-                    if($zone_name == $zone)
-                        $instances[] = $instance;
-            } else
-                $instances[$filter] = array_keys(self::INSTANCES[$filter]);
-        } else {
-            foreach(self::INSTANCES as $continent => $cinstances) {
-                if(!empty($zone)) {
-                    foreach($cinstances as $instance => $zone_name)
-                        if($zone_name == $zone)
-                            $instances[] = $instance;
-                } else
-                    $instances = array_merge($instances, array_keys($cinstances));
-            }
-        }
-        sort($instances);
-        return $instances;
-    }
 
     const ZONES = [
         'Azeroth' => [
@@ -212,6 +127,20 @@ class Item extends Model
             'Warsong Gulch',
             'Arathi Basin',
             'Alterac Valley'
+        ],
+        'Rep-Honor' => [
+            'Darkmoon Faire',
+            'Argent Dawn',
+            'Thorium Brotherhood',
+            'Timbermaw Hold',
+            'Cenarion Circle',
+            'Hydraxian Waterlords',
+            'Zandalar Tribe',
+            'Warsong Gulch',
+            'Arathi Basin',
+            'Alterac Valley',
+            'Stormwind City',
+            'Orgrimmar',
         ],
         'Eastern Kingdoms' => [
             'Stormwind City',
@@ -268,6 +197,189 @@ class Item extends Model
         ],
     ];
 
+    const INSTANCES = [
+        'Azeroth' => [
+            'PvE' => "Outside"
+        ],
+        'Rep-Honor' => [
+            'Darkmoon Faire' => 'Elwynn Forest',
+            'Argent Dawn' => 'Eastern Plaguelands',
+            'Thorium Brotherhood' => 'Searing Gorge',
+            'Timbermaw Hold' => 'Felwood',
+            'Cenarion Circle' => 'Silithus',
+            'Hydraxian Waterlords' => 'Azshara',
+            'Zandalar Tribe' => 'Stranglethorn Vale',
+            'Warsong Gulch' => 'Ashenvale',
+            'Arathi Basin' => 'Arathi Highlands',
+            'Alterac Valley' => 'Hillsbrad Foothills',
+            'Stormwind City' => 'Elwynn Forest',
+            'Orgrimmar' => 'Durotar',
+        ],
+        'Eastern Kingdoms' => [
+            'The Deadmines' => 'Westfall',
+            'Shadowfang Keep' => 'Silverpine Forest',
+            'The Stockade' => 'Stormwind City',
+            'Gnomeregan' => 'Dun Morogh',
+            'Scarlet Monastery: Graveyard' => 'Tirisfal Glades',
+            'Scarlet Monastery: Library' => 'Tirisfal Glades',
+            'Scarlet Monastery: Armory' => 'Tirisfal Glades',
+            'Scarlet Monastery: Cathedral' => 'Tirisfal Glades',
+            'Uldaman' => 'Badlands',
+            "Sunken Temple of Atal=Hakkar" => 'Swamp of Sorrows',
+            'Blackrock Depths' => 'Burning Steppes',
+            'Scholomance' => 'Western Plaguelands',
+            'Stratholme: Live Side' => 'Eastern Plaguelands',
+            'Stratholme: Undead Side' => 'Eastern Plaguelands',
+            'Blackrock Spire: Lower' => 'Burning Steppes',
+            'Blackrock Spire: Upper' => 'Burning Steppes',
+            'Blackwing Lair' => 'Burning Steppes',
+            'Molten Core' => 'Burning Steppes',
+            'Zul-Gurub' => 'Stranglethorn Vale',
+            'Naxxramas' => 'Eastern Plaguelands',
+            'Lord Kazzak' => 'Blasted Lands',
+            'Emeriss' => 'Duskwood',
+            'Lethon' => 'The Hinterlands',
+        ],
+        'Kalimdor' => [
+            'Ragefire Chasm' => 'Orgrimmar',
+            'Wailing Caverns' => 'The Barrens',
+            'Blackfathom Deeps' => 'Ashenvale',
+            'Razorfen Kraul' => 'The Barrens',
+            'Razorfen Downs' => 'The Barrens',
+            'Zul-Farrak' => 'Tanaris',
+            'Maraudon' => 'Desolace',
+            'Dire Maul: Arena' => 'Feralas',
+            'Dire Maul: East' => 'Feralas',
+            'Dire Maul: West' => 'Feralas',
+            'Dire Maul: North' => 'Feralas',
+            'Onyxias Lair' => 'Dustwallow Marsh',
+            'Ruins of Ahn-Qiraj' => 'Silithus',
+            'Temple of Ahn-Qiraj' => 'Silithus',
+            'Azuregos' => 'Azshara',
+            'Ysondre' => 'Feralas',
+            'Taerar' => 'Ashenvale',
+        ],
+    ];
+
+    const INSTANCE_ZONES = [
+        'Azeroth' => [
+            'PvE' => [ "Outside" ]
+        ],
+        'Rep-Honor' => [
+            "Arathi Highlands" => [ 'Arathi Basin' ],
+            "Ashenvale" => [ 'Warsong Gulch' ],
+            "Azshara" => [ 'Hydraxian Waterlords' ],
+            "Dun Morogh" => [ 'Gnomeregan', 'Ironforge' ],
+            "Durotar" => [ 'Orgrimmar', 'Sen-jin Village' ],
+            "Eastern Plaguelands" => [ 'Argent Dawn' ],
+            "Elwynn Forest" => [ 'Stormwind City', 'Darkmoon Faire' ],
+            "Felwood" => [ 'Timbermaw Hold' ],
+            "Hillsbrad Foothills" => [ 'Alterac Valley' ],
+            "Searing Gorge" => [ 'Thorium Brotherhood' ],
+            "Silithus" => [ 'Cenarion Circle' ],
+            "Stranglethorn Vale" => [ 'Zandalar Tribe' ],
+            "Teldrassil" => [ 'Darnassus' ],
+            "Thunder Bluff" => [ 'Mulgore' ],
+            "Tirisfal Glades" => [ 'Undercity' ],
+        ],
+        'Eastern Kingdoms' => [
+            'Badlands' => [ 'Uldaman' ],
+            'Blasted Lands' => [ 'Lord Kazzak' ],
+            'Burning Steppes' => [ 'Blackrock Depths', 'Blackrock Spire: Lower', 'Blackrock Spire: Upper', 'Blackwing Lair', 'Molten Core' ],
+            'Dun Morogh' => [ 'Gnomeregan' ],
+            'Duskwood' => [ 'Emeriss' ],
+            'Eastern Plaguelands' => [ 'Stratholme: Live Side', 'Stratholme: Undead Side', 'Naxxramas' ],
+            'Silverpine Forest' => [ 'Shadowfang Keep' ],
+            'Stormwind City' => [ 'The Stockade' ],
+            'Stranglethorn Vale' => [ 'Zul-Gurub' ],
+            'Swamp of Sorrows' => [ "Sunken Temple of Atal=Hakkar" ],
+            'The Hinterlands' => [ 'Lethon' ],
+            'Tirisfal Glades' => [ 'Scarlet Monastery: Graveyard', 'Scarlet Monastery: Library', 'Scarlet Monastery: Armory', 'Scarlet Monastery: Cathedral' ],
+            'Western Plaguelands' => [ 'Scholomance' ],
+            'Westfall' => [ 'The Deadmines' ],
+        ],
+        'Kalimdor' => [
+            'Ashenvale' => [ 'Blackfathom Deeps', 'Taerar' ],
+            'Azshara' => [ 'Azuregos' ],
+            'Desolace' => [ 'Maraudon' ],
+            'Dustwallow Marsh' => [ 'Onyxias Lair' ],
+            'Feralas' => [ 'Dire Maul: Arena', 'Dire Maul: East', 'Dire Maul: West', 'Dire Maul: North', 'Ysondre' ],
+            'Orgrimmar' => [ 'Ragefire Chasm' ],
+            'Tanaris' => [ 'Zul-Farrak' ],
+            'Silithus' => [ 'Ruins of Ahn-Qiraj', 'Temple of Ahn-iraj' ],
+            'The Barrens' => [ 'Wailing Caverns', 'Razorfen Kraul', 'Razorfen Downs' ],
+        ],
+    ];
+
+    public static function filterZoneByContinent(string|null $continent): array
+    {
+        if(empty($continent)) return dupeKeys(self::getZoneList());
+
+        $zones = [];
+        if(array_key_exists($continent, self::INSTANCE_ZONES)) {
+            foreach(self::INSTANCE_ZONES[$continent] as $zone => $instances)
+                if(!in_array($zone, $zones)) $zones[$zone] = $zone;
+        } else {
+            foreach(self::INSTANCE_ZONES as $continent => $czones)
+                foreach($czones as $zone => $instances)
+                    if(!in_array($zone, $zones)) $zones[$zone] = $zone;
+        }
+        return $zones;
+    }
+
+    public static function filterInstanceByZone(string|null $zone): array
+    {
+        if(empty($zone)) return dupeKeys(self::getInstanceList());
+
+        $instances = [ 'PvE' ];
+        foreach(self::INSTANCE_ZONES as $continent => $czones)
+            if(array_key_exists($zone, $czones))
+                foreach($czones[$zone] as $instance)
+                    if(!in_array($instance, $instances))
+                        $instances[$instance] = $instance;
+        if(count($instances) == 0)
+            $instances = dupeKeys(self::getInstanceList());
+
+        return $instances;
+    }
+
+    public static function dupeKeys(array $indexed): array
+    {
+        $output = [];
+        foreach($indexed as $value)
+            $output[$value] = $value;
+        return $output;
+    }
+
+    public static function getContinents(): array {
+        $instances = array_keys(self::INSTANCES);
+        sort($instances);
+        return $instances;
+    }
+    public static function getInstanceList(string $filter=null, string $zone=null): array
+    {
+        $instances = [];
+        if(array_key_exists($filter, self::INSTANCES)) {
+            if(!empty($zone)) {
+                foreach(self::INSTANCES[$filter] as $instance => $zone_name)
+                    if($zone_name == $zone)
+                        $instances[] = $instance;
+            } else
+                $instances[$filter] = array_keys(self::INSTANCES[$filter]);
+        } else {
+            foreach(self::INSTANCES as $continent => $cinstances) {
+                if(!empty($zone)) {
+                    foreach($cinstances as $instance => $zone_name)
+                        if($zone_name == $zone)
+                            $instances[] = $instance;
+                } else
+                    $instances = array_merge($instances, array_keys($cinstances));
+            }
+        }
+        sort($instances);
+        return $instances;
+    }
+
     public static function getZoneList(string $filter=null): array
     {
         $zones = [];
@@ -317,13 +429,14 @@ class Item extends Model
     {
         $table->id();
 
-        $table->integer('wowhead_id')->nullable(true);
+        $table->integer('wowhead_id')->unique();
         $table->string("name");
         $table->enum('continent', array_keys(self::ZONES))->nullable(true);
         $table->enum('zone', self::getZoneList())->nullable(true);
         $table->enum('instance', self::getInstanceList())->nullable(true);
         $table->boolean('boe')->default(false);
         $table->boolean('random_enchant')->default(false);
+        $table->enum('nature', self::NATURE)->nullable(false)->default('pre-raid BiS');
         $table->enum('droptype', self::DROPTYPES)->default('boss')->nullable(true);
         $table->enum('feature', self::FEATURES)->nullable(true);
         $table->float('drop_rate')->nullable(true);
@@ -356,9 +469,35 @@ class Item extends Model
         return $item_list;
     }
 
-    public static function getSlotItems(): array
+    public static function getSlotOptionsCached($force=false): array {
+        if($force || static::$_recache) {
+            static::$_slotOptions = self::getSlotOptions();
+            static::$_recache = false;
+        }
+        return static::$_slotOptions;
+    }
+
+    public function save(array $options = []): bool
     {
-        $items = self::all();
+        static::$_recache = true;
+        return parent::save($options); // TODO: Change the autogenerated stub
+    }
+
+    public static function getSlotOptions(): array {
+        $slotitems = [];
+        foreach(static::SLOTS as $slot) {
+            if(Item::where('slot', $slot)->count() > 0)
+                $slotitems[$slot] = $slot;
+        }
+        return $slotitems;
+    }
+
+    public static function getSlotItems($slot=null): array
+    {
+        $qry = self::select();
+        if(!empty($slot))
+            $qry->where('slot', $slot);
+        $items = $qry->get()->sortBy('name');
         $item_list = [];
         foreach($items as $item)
             $item_list[$item->id] = $item->slot . ":" . $item->name;

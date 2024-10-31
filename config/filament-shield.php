@@ -1,6 +1,7 @@
 <?php
 
 return [
+    //'nav' => [ 'group' => 'System' ],
     'shield_resource' => [
         'should_register_navigation' => true,
         'slug' => 'shield/roles',

@@ -129,7 +129,9 @@ class Classification extends Model
         $specs = [];
         foreach(static::all() as $cf) {
             $cfid = intval($cf->id);
-            $specs[$cfid] = sprintf("%s %s %s", $cf->race, $cf->class, $cf->spec);
+            $race = $cf->race;
+            if(!array_key_exists($race, $specs)) $specs[$race] = [];
+            $specs[$race][$cfid] = sprintf("%s: %s", $cf->class, $cf->spec);
         }
         return $specs;
     }

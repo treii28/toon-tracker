@@ -78,7 +78,7 @@ class AdminPanelProvider extends PanelProvider
     public function panel(Panel $panel): Panel
     {
 
-        return $panel
+        $panel_config = $panel
             ->default()
             ->id('admin')
             ->path('admin')
@@ -137,8 +137,9 @@ class AdminPanelProvider extends PanelProvider
                 //Js::make('wow-tooltip', "https://wow.zamimg.com/js/tooltips.js") // in custom header now
             ])
             ->plugins([
-                \BondarDe\FilamentRouteList\FilamentRouteListPlugin::make()
-            ])
-            ;
+                \BondarDe\FilamentRouteList\FilamentRouteListPlugin::make(),
+                \BezhanSalleh\FilamentShield\FilamentShieldPlugin::make(),
+            ]);
+        return $panel_config;
     }
 }
