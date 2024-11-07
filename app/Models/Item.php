@@ -18,6 +18,7 @@ class Item extends Model
         'PvE',
         'PvP',
         'Gold-Farming',
+        'Questing',
         'pre-raid BiS',
         'raiding Upgrade',
         'Best-in-Slot'
@@ -199,7 +200,7 @@ class Item extends Model
 
     const INSTANCES = [
         'Azeroth' => [
-            'PvE' => "Outside"
+            'PvE' => "PvE"
         ],
         'Rep-Honor' => [
             'Darkmoon Faire' => 'Elwynn Forest',
@@ -306,49 +307,61 @@ class Item extends Model
             'Feralas' => [ 'Dire Maul: Arena', 'Dire Maul: East', 'Dire Maul: West', 'Dire Maul: North', 'Ysondre' ],
             'Orgrimmar' => [ 'Ragefire Chasm' ],
             'Tanaris' => [ 'Zul-Farrak' ],
-            'Silithus' => [ 'Ruins of Ahn-Qiraj', 'Temple of Ahn-iraj' ],
+            'Silithus' => [ 'Ruins of Ahn-Qiraj', 'Temple of Ahn-Qiraj' ],
             'The Barrens' => [ 'Wailing Caverns', 'Razorfen Kraul', 'Razorfen Downs' ],
         ],
     ];
 
+    public static function getZoneContinent(string $zone): ?string
+    {
+        $info = null;
+        foreach(self::ZONES as $continent => $zones)
+            if(in_array($zone, $zones))
+                $info =  $continent;
+        return $info;
+    }
+
+    public static function getInstanceZone(string $instance): ?string
+    {
+        $info = null;
+        foreach(self::INSTANCES as $continent => $instances)
+            if(array_key_exists($instance, $instances))
+                $info = $instances[$instance];
+        return $info;
+    }
+
     public static function filterZoneByContinent(string|null $continent): array
     {
-        if(empty($continent)) return dupeKeys(self::getZoneList());
+        if(empty($continent)) return self::getZoneList();
 
         $zones = [];
         if(array_key_exists($continent, self::INSTANCE_ZONES)) {
             foreach(self::INSTANCE_ZONES[$continent] as $zone => $instances)
-                if(!in_array($zone, $zones)) $zones[$zone] = $zone;
+                if(!in_array($zone, $zones)) $zones[] = $zone;
         } else {
             foreach(self::INSTANCE_ZONES as $continent => $czones)
                 foreach($czones as $zone => $instances)
-                    if(!in_array($zone, $zones)) $zones[$zone] = $zone;
+                    if(!in_array($zone, $zones)) $zones[] = $zone;
         }
         return $zones;
     }
 
     public static function filterInstanceByZone(string|null $zone): array
     {
-        if(empty($zone)) return dupeKeys(self::getInstanceList());
+
+        if(empty($zone))
+            return self::getInstanceList();
 
         $instances = [ 'PvE' ];
         foreach(self::INSTANCE_ZONES as $continent => $czones)
             if(array_key_exists($zone, $czones))
                 foreach($czones[$zone] as $instance)
                     if(!in_array($instance, $instances))
-                        $instances[$instance] = $instance;
+                        $instances[] = $instance;
         if(count($instances) == 0)
-            $instances = dupeKeys(self::getInstanceList());
+            $instances = self::getInstanceList();
 
         return $instances;
-    }
-
-    public static function dupeKeys(array $indexed): array
-    {
-        $output = [];
-        foreach($indexed as $value)
-            $output[$value] = $value;
-        return $output;
     }
 
     public static function getContinents(): array {
@@ -356,6 +369,7 @@ class Item extends Model
         sort($instances);
         return $instances;
     }
+
     public static function getInstanceList(string $filter=null, string $zone=null): array
     {
         $instances = [];
@@ -398,6 +412,7 @@ class Item extends Model
      * default name to use for the config values database table
      */
     const SHORTNAME = "item";
+    const TABLENAME = self::SHORTNAME . 's';
 
     /**
      * for laravel to specify configurable values
@@ -421,11 +436,11 @@ class Item extends Model
     /**
      * @var string $table
      */
-    protected $table = self::SHORTNAME . 's';
+    protected $table = self::TABLENAME;
 
-    public static function getTableName() { return self::SHORTNAME . 's'; }
+    public static function getTableName(): string { return self::TABLENAME; }
 
-    public static function getTableBlueprint(\Illuminate\Database\Schema\Blueprint $table)
+    public static function tableBlueprint(\Illuminate\Database\Schema\Blueprint $table)
     {
         $table->id();
 

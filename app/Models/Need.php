@@ -14,6 +14,7 @@ class Need extends Model
      * default name to use for the config values database table
      */
     const SHORTNAME = "need";
+    const TABLENAME = self::SHORTNAME . 's';
 
     /**
      * for laravel to specify configurable values
@@ -28,11 +29,11 @@ class Need extends Model
     /**
      * @var string $table
      */
-    protected $table = self::SHORTNAME . 's';
+    protected $table = self::TABLENAME;
 
-    public static function getTableName() { return self::SHORTNAME . 's'; }
+    public static function getTableName(): string { return self::TABLENAME; }
 
-    public static function getTableBlueprint(\Illuminate\Database\Schema\Blueprint $table)
+    public static function tableBlueprint(\Illuminate\Database\Schema\Blueprint $table)
     {
         $table->id();
 
@@ -42,9 +43,9 @@ class Need extends Model
         $table->integer("item_id")->nullable(false);
         $table->text('notes')->nullable(true);
 
-        $table->foreign('toon_id')->references('id')->on(Toon::getTableName())
+        $table->foreign('toon_id')->references('id')->on(Toon::TABLENAME)
             ->onDelete('cascade');
-        $table->foreign('item_id')->references('id')->on(Item::getTableName())
+        $table->foreign('item_id')->references('id')->on(Item::TABLENAME)
             ->onDelete('cascade');
 
         $table->timestamps();

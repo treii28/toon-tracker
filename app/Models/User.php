@@ -12,16 +12,25 @@ class User extends Authenticatable
 {
     use HasFactory, HasRoles, Notifiable;
 
+    const SHORTNAME = "user";
+    const TABLENAME = self::SHORTNAME . "s";
+
+    protected $table = self::TABLENAME;
+
+    public static function getTableName(): string { return self::TABLENAME; }
+
+    const FILLABLE_COLUMNS = [
+        'name',
+        'email',
+        'password',
+    ];
+
     /**
      * The attributes that are mass assignable.
      *
      * @var array<int, string>
      */
-    protected $fillable = [
-        'name',
-        'email',
-        'password',
-    ];
+    protected $fillable = self::FILLABLE_COLUMNS;
 
     /**
      * The attributes that should be hidden for serialization.
@@ -44,5 +53,10 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+    public function toons()
+    {
+        return $this->hasMany(Toon::class);
     }
 }

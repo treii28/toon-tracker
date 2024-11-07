@@ -42,6 +42,17 @@ return [
             'synchronous' => null,
         ],
 
+        'wowdb' => [
+            'driver' => 'sqlite',
+            'url' => env('WOWDB_URL'),
+            'database' => env('WOWDB_DATABASE', database_path('wowdb.sqlite')),
+            'prefix' => '',
+            'foreign_key_constraints' => env('WOWDB_FOREIGN_KEYS', true),
+            'busy_timeout' => null,
+            'journal_mode' => null,
+            'synchronous' => null,
+        ],
+
         'mysql' => [
             'driver' => 'mysql',
             'url' => env('DB_URL'),

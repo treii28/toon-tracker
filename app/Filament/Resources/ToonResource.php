@@ -6,6 +6,7 @@ use App\Filament\Exports\ToonExporter;
 use App\Filament\Resources\ToonResource\Pages;
 use App\Models\Classification;
 use App\Models\Toon;
+use App\Models\User;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -13,6 +14,7 @@ use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Auth;
 
 class ToonResource extends Resource
 {
@@ -77,6 +79,8 @@ class ToonResource extends Resource
     {
         return $form
             ->schema([
+                Forms\Components\Hidden::make('user_id')
+                    ->default(Auth::id()),
                 Forms\Components\TextInput::make('name')
                     ->label('Name')
                     ->required(),
@@ -116,6 +120,12 @@ class ToonResource extends Resource
     public static function table(Table $table): Table
     {
         return $table
+            ->query(function (Builder $query, User $user) {
+                if(!$user->can('view_any_toon', Toon::class))
+                    $query->where('user_id', $user->id);
+
+                return $query;
+            })
             ->columns([
                 Tables\Columns\TextColumn::make('name')
                     ->label('Name')
@@ -181,7 +191,10 @@ class ToonResource extends Resource
                     ->query(fn (Builder $query) => $query->where('level', 60)),
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
+                Tables\Actions\EditAction::make()
+                    ->visible(fn (User $user, Toon $record) => $user->can('update', $user, $record)),
+                Tables\Actions\DeleteAction::make()
+                    ->visible(fn (User $user, Toon $record) => $user->can('delete', $user, $record)),
             ])
             ->headerActions([
                 /*
@@ -260,7 +273,8 @@ class ToonResource extends Resource
                                 'error' => 'No JSON data provided',
                             ], 400);
                         }
-                    }),                Tables\Actions\Action::make('exportAllAsJson')
+                    }),
+                Tables\Actions\Action::make('exportAllAsJson')
                     ->label('Export as JSON')
                     ->icon('heroicon-o-arrow-down-tray')
                     ->action(function () {
@@ -278,11 +292,8 @@ class ToonResource extends Resource
                     }),
             ])
             ->bulkActions([
-                Tables\Actions\BulkActionGroup::make([
-                    Tables\Actions\DeleteBulkAction::make(),
-                ]),
-                Tables\Actions\ExportBulkAction::make()
-                    ->exporter(ToonExporter::class)
+                Tables\Actions\DeleteBulkAction::make()
+                    ->visible(fn () => Auth::user()->can('delete', Toon::class)),
             ]);
     }
 

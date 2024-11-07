@@ -1,0 +1,1018 @@
+[
+    {
+        "name": "Azeroth",
+        "id": 99900,
+        "category": "World",
+        "level": [
+            1,
+            60
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "Eastern Kingdoms",
+        "id": 99901,
+        "category": "Continent",
+        "parent_id": 99900,
+        "level": [
+            1,
+            60
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "Kalimdore",
+        "id": 99902,
+        "category": "Continent",
+        "level": [
+            1,
+            60
+        ],
+        "territory": "Contested"
+    },
+
+    {
+        "name": "Elwynn Forest",
+        "id": 12,
+        "category": "Zone",
+        "parent_id": 99901,
+        "level": [
+            1,
+            10
+        ],
+        "territory": "Alliance"
+    },
+    {
+        "name": "Tirisfal Glades",
+        "id": 85,
+        "category": "Zone",
+        "parent_id": 99901,
+        "level": [
+            1,
+            12
+        ],
+        "territory": "Horde"
+    },
+    {
+        "name": "Silverpine Forest",
+        "id": 130,
+        "category": "Zone",
+        "parent_id": 99901,
+        "level": [
+            10,
+            20
+        ],
+        "territory": "Horde"
+    },
+    {
+        "name": "Loch Modan",
+        "id": 38,
+        "category": "Zone",
+        "parent_id": 99901,
+        "level": [
+            10,
+            18
+        ],
+        "territory": "Alliance"
+    },
+    {
+        "name": "Westfall",
+        "id": 40,
+        "category": "Zone",
+        "parent_id": 99901,
+        "level": [
+            9,
+            18
+        ],
+        "territory": "Alliance"
+    },
+    {
+        "name": "Duskwood",
+        "id": 10,
+        "category": "Zone",
+        "parent_id": 99901,
+        "level": [
+            10,
+            30
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "Alterac Mountains",
+        "id": 36,
+        "category": "Zone",
+        "parent_id": 99901,
+        "level": [
+            27,
+            39
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "Dun Morogh",
+        "id": 1,
+        "category": "Zone",
+        "parent_id": 99901,
+        "level": [
+            1,
+            12
+        ],
+        "territory": "Alliance"
+    },
+    {
+        "name": "Redridge Mountains",
+        "id": 44,
+        "category": "Zone",
+        "parent_id": 99901,
+        "level": [
+            15,
+            25
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "Wetlands",
+        "id": 11,
+        "category": "Zone",
+        "parent_id": 99901,
+        "level": [
+            20,
+            30
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "Arathi Highlands",
+        "id": 45,
+        "category": "Zone",
+        "parent_id": 99901,
+        "level": [
+            30,
+            40
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "Stranglethorn Vale",
+        "id": 33,
+        "category": "Zone",
+        "parent_id": 99901,
+        "level": [
+            30,
+            50
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "Badlands",
+        "id": 3,
+        "category": "Zone",
+        "parent_id": 99901,
+        "level": [
+            36,
+            45
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "Hillsbrad Foothills",
+        "id": 267,
+        "category": "Zone",
+        "parent_id": 99901,
+        "level": [
+            20,
+            31
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "Swamp of Sorrows",
+        "id": 8,
+        "category": "Zone",
+        "parent_id": 99901,
+        "level": [
+            36,
+            43
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "The Hinterlands",
+        "id": 47,
+        "category": "Zone",
+        "parent_id": 99901,
+        "level": [
+            41,
+            49
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "Searing Gorge",
+        "id": 51,
+        "category": "Zone",
+        "parent_id": 99901,
+        "level": [
+            43,
+            56
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "Deadwind Pass",
+        "id": 41,
+        "category": "Zone",
+        "parent_id": 99901,
+        "level": [
+            50,
+            60
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "Burning Steppes",
+        "id": 46,
+        "category": "Zone",
+        "parent_id": 99901,
+        "level": [
+            50,
+            59
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "Blasted Lands",
+        "id": 4,
+        "category": "Zone",
+        "parent_id": 99901,
+        "level": [
+            46,
+            63
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "Western Plaguelands",
+        "id": 28,
+        "category": "Zone",
+        "parent_id": 99901,
+        "level": [
+            46,
+            57
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "Eastern Plaguelands",
+        "id": 139,
+        "category": "Zone",
+        "parent_id": 99901,
+        "level": [
+            54,
+            59
+        ],
+        "territory": "Contested"
+    },
+
+    {
+        "name": "Teldrassil",
+        "id": 141,
+        "category": "Zone",
+        "parent_id": 99902,
+        "level": [
+            1,
+            11
+        ],
+        "territory": "Alliance"
+    },
+    {
+        "name": "Darkshore",
+        "id": 148,
+        "category": "Zone",
+        "parent_id": 99902,
+        "level": [
+            11,
+            19
+        ],
+        "territory": "Alliance"
+    },
+    {
+        "name": "Mulgore",
+        "id": 215,
+        "category": "Zone",
+        "parent_id": 99902,
+        "level": [
+            1,
+            10
+        ],
+        "territory": "Horde"
+    },
+    {
+        "name": "The Barrens",
+        "id": 17,
+        "category": "Zone",
+        "parent_id": 99902,
+        "level": [
+            10,
+            33
+        ],
+        "territory": "Horde"
+    },
+    {
+        "name": "Ashenvale",
+        "id": 331,
+        "category": "Zone",
+        "parent_id": 99902,
+        "level": [
+            19,
+            30
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "Durotar",
+        "id": 14,
+        "category": "Zone",
+        "parent_id": 99902,
+        "level": [
+            1,
+            10
+        ],
+        "territory": "Horde"
+    },
+    {
+        "name": "Desolace",
+        "id": 405,
+        "category": "Zone",
+        "parent_id": 99902,
+        "level": [
+            30,
+            39
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "Azshara",
+        "id": 16,
+        "category": "Zone",
+        "parent_id": 99902,
+        "level": [
+            42,
+            55
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "Stonetalon Mountains",
+        "id": 406,
+        "category": "Zone",
+        "parent_id": 99902,
+        "level": [
+            15,
+            25
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "Thousand Needles",
+        "id": 400,
+        "category": "Zone",
+        "parent_id": 99902,
+        "level": [
+            24,
+            35
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "Dustwallow Marsh",
+        "id": 15,
+        "category": "Zone",
+        "parent_id": 99902,
+        "level": [
+            35,
+            61
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "Feralas",
+        "id": 357,
+        "category": "Zone",
+        "parent_id": 99902,
+        "level": [
+            41,
+            60
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "Felwood",
+        "id": 361,
+        "category": "Zone",
+        "parent_id": 99902,
+        "level": [
+            47,
+            54
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "Tanaris",
+        "id": 440,
+        "category": "Zone",
+        "parent_id": 99902,
+        "level": [
+            40,
+            50
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "Un'Goro Crater",
+        "id": 490,
+        "category": "Zone",
+        "parent_id": 99902,
+        "level": [
+            48,
+            55
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "Silithus",
+        "id": 1377,
+        "category": "Zone",
+        "parent_id": 99902,
+        "level": [
+            55,
+            59
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "Moonglade",
+        "id": 493,
+        "category": "Zone",
+        "parent_id": 99902,
+        "level": [
+            15,
+            15
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "Winterspring",
+        "id": 618,
+        "category": "Zone",
+        "parent_id": 99902,
+        "level": [
+            55,
+            60
+        ],
+        "territory": "Contested"
+    },
+
+    {
+        "name": "Stormwind City",
+        "id": 1519,
+        "category": "Capital City",
+        "parent_id": 12,
+        "level": [
+            1,
+            80
+        ],
+        "territory": "Alliance"
+    },
+    {
+        "name": "Orgrimmar",
+        "id": 1637,
+        "category": "Capital City",
+        "parent_id": 14,
+        "level": [
+            1,
+            80
+        ],
+        "territory": "Horde"
+    },
+    {
+        "name": "Ironforge",
+        "id": 1537,
+        "category": "Capital City",
+        "parent_id": 1,
+        "level": [
+            1,
+            80
+        ],
+        "territory": "Alliance"
+    },
+    {
+        "name": "Darnassus",
+        "id": 1657,
+        "category": "Capital City",
+        "parent_id": 141,
+        "level": [
+            1,
+            80
+        ],
+        "territory": "Alliance"
+    },
+    {
+        "name": "Undercity",
+        "id": 1497,
+        "category": "Capital City",
+        "parent_id": 85,
+        "level": [
+            1,
+            80
+        ],
+        "territory": "Horde"
+    },
+    {
+        "name": "Thunder Bluff",
+        "id": 1638,
+        "category": "Capital City",
+        "parent_id": 215,
+        "level": [
+            1,
+            80
+        ],
+        "territory": "Horde"
+    },
+
+    {
+        "name": "Deeprun Tram",
+        "id": 2257,
+        "category": "SubZone",
+        "parent_id": 1519,
+        "level": [
+            null,
+            null
+        ],
+        "territory": "Alliance"
+    },
+    {
+        "name": "Blackrock Mountain",
+        "id": 25,
+        "category": "SubZone",
+        "parent_id": 46,
+        "level": [
+            null,
+            null
+        ],
+        "territory": "Contested"
+    },
+
+    {
+        "name": "Ragefire Chasm",
+        "id": 2437,
+        "category": "Dungeon",
+        "parent_id": 1637,
+        "level": [
+            15,
+            25
+        ],
+        "territory": "Horde"
+    },
+    {
+        "name": "Wailing Caverns",
+        "id": 718,
+        "category": "Dungeon",
+        "parent_id": 17,
+        "level": [
+            17,
+            27
+        ],
+        "territory": "Horde"
+    },
+    {
+        "name": "Shadowfang Keep",
+        "id": 209,
+        "category": "Dungeon",
+        "parent_id": 130,
+        "level": [
+            22,
+            30
+        ],
+        "territory": "Horde"
+    },
+    {
+        "name": "The Deadmines",
+        "id": 1581,
+        "category": "Dungeon",
+        "parent_id": 40,
+        "level": [
+            15,
+            25
+        ],
+        "territory": "Alliance"
+    },
+    {
+        "name": "Blackfathom Deeps",
+        "id": 719,
+        "category": "Dungeon",
+        "parent_id": 331,
+        "level": [
+            22,
+            32
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "Gnomeregan",
+        "id": 721,
+        "category": "Dungeon",
+        "parent_id": 1,
+        "level": [
+            26,
+            36
+        ],
+        "territory": "Alliance"
+    },
+    {
+        "name": "The Stockade",
+        "id": 717,
+        "category": "Dungeon",
+        "parent_id": 1519,
+        "level": [
+            22,
+            32
+        ],
+        "territory": "Alliance"
+    },
+    {
+        "name": "Scarlet Monastery",
+        "id": 796,
+        "category": "Dungeon",
+        "parent_id": 85,
+        "level": [
+            26,
+            45
+        ],
+        "territory": "Horde"
+    },
+    {
+        "name": "Scarlet Monastery: The Graveyard",
+        "id": 99950,
+        "category": "Dungeon",
+        "parent_id": 796,
+        "level": [
+            26,
+            36
+        ],
+        "territory": "Horde"
+    },
+    {
+        "name": "Scarlet Monastery: Library",
+        "id": 99951,
+        "category": "Dungeon",
+        "parent_id": 796,
+        "level": [
+            29,
+            39
+        ],
+        "territory": "Horde"
+    },
+    {
+        "name": "Scarlet Monastery: Armory",
+        "id": 99950,
+        "category": "Dungeon",
+        "parent_id": 796,
+        "level": [
+            32,
+            42
+        ],
+        "territory": "Horde"
+    },
+    {
+        "name": "Scarlet Monastery: Cathedral",
+        "id": 99950,
+        "category": "Dungeon",
+        "parent_id": 796,
+        "level": [
+            35,
+            45
+        ],
+        "territory": "Horde"
+    },
+    {
+        "name": "Razorfen Kraul",
+        "id": 491,
+        "category": "Dungeon",
+        "parent_id": 17,
+        "level": [
+            32,
+            42
+        ],
+        "territory": "Horde"
+    },
+    {
+        "name": "Razorfen Downs",
+        "id": 722,
+        "category": "Dungeon",
+        "parent_id": 17,
+        "level": [
+            37,
+            47
+        ],
+        "territory": "Horde"
+    },
+    {
+        "name": "Maraudon",
+        "id": 2100,
+        "category": "Dungeon",
+        "parent_id": 405,
+        "level": [
+            42,
+            52
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "Zul'Farrak",
+        "id": 1176,
+        "category": "Dungeon",
+        "parent_id": 440,
+        "level": [
+            46,
+            56
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "Uldaman",
+        "id": 1337,
+        "category": "Dungeon",
+        "parent_id": 3,
+        "level": [
+            42,
+            52
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "The Temple of Atal'Hakkar",
+        "id": 1477,
+        "category": "Dungeon",
+        "parent_id": 8,
+        "level": [
+            50,
+            60
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "Blackrock Depths",
+        "id": 1584,
+        "category": "Dungeon",
+        "parent_id": 46,
+        "level": [
+            52,
+            60
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "Blackrock Spire",
+        "id": 1583,
+        "category": "Dungeon",
+        "parent_id": 46,
+        "level": [
+            55,
+            60
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "Blackrock Spire: Lower",
+        "id": 99970,
+        "category": "Dungeon",
+        "parent_id": 1583,
+        "level": [
+            55,
+            60
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "Blackrock Spire: Upper",
+        "id": 99971,
+        "category": "Dungeon",
+        "parent_id": 1583,
+        "level": [
+            58,
+            60
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "Dire Maul",
+        "id": 2557,
+        "category": "Dungeon",
+        "parent_id": 357,
+        "level": [
+            44,
+            54
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "Dire Maul: East",
+        "id": 99980,
+        "category": "Dungeon",
+        "parent_id": 2557,
+        "level": [
+            44,
+            54
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "Dire Maul: West",
+        "id": 99981,
+        "category": "Dungeon",
+        "parent_id": 2557,
+        "level": [
+            44,
+            54
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "Dire Maul: North",
+        "id": 99982,
+        "category": "Dungeon",
+        "parent_id": 2557,
+        "level": [
+            44,
+            54
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "Dire Maul: North Tribute Run",
+        "id": 99985,
+        "category": "Dungeon",
+        "parent_id": 2557,
+        "level": [
+            44,
+            54
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "Scholomance",
+        "id": 2057,
+        "category": "Dungeon",
+        "parent_id": 28,
+        "level": [
+            55,
+            60
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "Stratholme",
+        "id": 2017,
+        "category": "Dungeon",
+        "parent_id": 139,
+        "level": [
+            48,
+            58
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "Stratholme: Live Side",
+        "id": 99990,
+        "category": "Dungeon",
+        "parent_id": 2017,
+        "level": [
+            48,
+            58
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "Stratholme: Undead Side",
+        "id": 99991,
+        "category": "Dungeon",
+        "parent_id": 2017,
+        "level": [
+            48,
+            58
+        ],
+        "territory": "Contested"
+    },
+
+    {
+        "name": "Zul'Gurub",
+        "id": 1977,
+        "category": "Raid",
+        "parent_id": 33,
+        "level": [
+            60,
+            60
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "Molten Core",
+        "id": 2717,
+        "category": "Raid",
+        "parent_id": 46,
+        "level": [
+            60,
+            60
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "Blackwing Lair",
+        "id": 2677,
+        "category": "Raid",
+        "parent_id": 46,
+        "level": [
+            60,
+            60
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "Onyxia's Lair",
+        "id": 2159,
+        "category": "Raid",
+        "parent_id": 15,
+        "level": [
+            80,
+            80
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "Ruins of Ahn'Qiraj",
+        "id": 3429,
+        "category": "Raid",
+        "parent_id": 1377,
+        "level": [
+            60,
+            60
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "Temple of Ahn'Qiraj",
+        "id": 3428,
+        "category": "Raid",
+        "parent_id": 1377,
+        "level": [
+            60,
+            60
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "Naxxramas",
+        "id": 3456,
+        "category": "Raid",
+        "parent_id": 139,
+        "level": [
+            60,
+            60
+        ],
+        "territory": "Contested"
+    },
+
+    {
+        "name": "Warsong Gulch",
+        "id": 3277,
+        "category": "Battleground",
+        "parent_id": 331,
+        "level": [
+            10,
+            80
+        ],
+        "territory": "PvP"
+    },
+    {
+        "name": "Arathi Basin",
+        "id": 3358,
+        "category": "Battleground",
+        "level": [
+            20,
+            80
+        ],
+        "territory": "PvP"
+    },
+    {
+        "name": "Alterac Valley",
+        "id": 2597,
+        "category": "Battleground",
+        "parent_id": 267,
+        "level": [
+            20,
+            60
+        ],
+        "territory": "PvP"
+    },
+]

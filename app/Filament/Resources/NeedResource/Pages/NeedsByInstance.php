@@ -9,6 +9,8 @@ use App\Models\Item;
 use Filament\Resources\Pages\Page;
 use Filament\Tables;
 use Filament\Tables\Table;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Database\Eloquent\Builder;
 
 class NeedsByInstance extends Page implements Tables\Contracts\HasTable
 {
@@ -51,6 +53,16 @@ class NeedsByInstance extends Page implements Tables\Contracts\HasTable
 
     public function table(Tables\Table $table): Tables\Table
     {
+        $userId = Auth::id();
+        $instances = Need::whereHas('toon', function ($query) use ($userId) {
+            $query->where('user_id', $userId);
+        })->with('item')
+            ->get()
+            ->pluck('item.instance')
+            ->unique()
+            ->sort()
+            ->toArray();
+
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('toon.name')
@@ -79,6 +91,19 @@ class NeedsByInstance extends Page implements Tables\Contracts\HasTable
                     ->label('Notes')
                     ->searchable()
                     ->sortable(),
+            ])
+            ->filters([
+                Tables\Filters\SelectFilter::make('instance')
+                    ->label('Instance')
+                    ->options(array_combine($instances, $instances))
+                    ->query(function (Builder $query, $value=null) {
+                        if ($value) {
+                            return $query->whereHas('item', function (Builder $query) use ($value) {
+                                $query->where('instance', $value);
+                            });
+                        }
+                        return $query;
+                    }),
             ])
             ->actions([
                 Tables\Actions\EditAction::make('edit need')

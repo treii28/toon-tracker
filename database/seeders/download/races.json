@@ -1,0 +1,91 @@
+[
+    {
+        "race": "Human",
+        "faction": "Alliance",
+        "klasses": [
+            "Warrior",
+            "Paladin",
+            "Mage",
+            "Rogue",
+            "Priest",
+            "Warlock"
+        ]
+    },
+    {
+        "race": "Dwarf",
+        "faction": "Alliance",
+        "klasses": [
+            "Warrior",
+            "Paladin",
+            "Hunter",
+            "Rogue",
+            "Priest"
+        ]
+    },
+    {
+        "race": "Night Elf",
+        "faction": "Alliance",
+        "klasses": [
+            "Warrior",
+            "Hunter",
+            "Rogue",
+            "Priest",
+            "Druid"
+        ]
+    },
+    {
+        "race": "Gnome",
+        "faction": "Alliance",
+        "klasses": [
+            "Warrior",
+            "Mage",
+            "Rogue",
+            "Priest",
+            "Warlock"
+        ]
+    },
+    {
+        "race": "Orc",
+        "faction": "Horde",
+        "klasses": [
+            "Warrior",
+            "Shaman",
+            "Hunter",
+            "Rogue",
+            "Warlock"
+        ]
+    },
+    {
+        "race": "Undead",
+        "faction": "Horde",
+        "klasses": [
+            "Warrior",
+            "Rogue",
+            "Priest",
+            "Mage",
+            "Warlock"
+        ]
+    },
+    {
+        "race": "Tauren",
+        "faction": "Horde",
+        "klasses": [
+            "Warrior",
+            "Shaman",
+            "Hunter",
+            "Druid"
+        ]
+    },
+    {
+        "race": "Troll",
+        "faction": "Horde",
+        "klasses": [
+            "Warrior",
+            "Shaman",
+            "Hunter",
+            "Rogue",
+            "Priest",
+            "Mage"
+        ]
+    }
+]

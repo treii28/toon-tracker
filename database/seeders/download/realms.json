@@ -1,0 +1,49 @@
+{
+    "PvE East": [
+        "Ashkandi",
+        "Mankrik",
+        "Pagle",
+        "Westfall",
+        "Windseeker"
+    ],
+    "PvE West": [
+        "Atiesh",
+        "Azuresong",
+        "Myzrael",
+        "Old Blanchy"
+    ],
+    "PvP East1": [
+        "Benediction",
+        "Faerlina",
+        "Heartseeker",
+        "Incendius",
+        "Netherwind"
+    ],
+    "PvP East2": [
+        "Earthfury",
+        "Herod",
+        "Kirtonos",
+        "Kromcrush",
+        "Skeram",
+        "Stalagg",
+        "Sulfuras",
+        "Thalnos"
+    ],
+    "PvP West": [
+        "Anathema",
+        "Arcanite Reaper",
+        "Bigglesworth",
+        "Blaumeux",
+        "Fairbanks",
+        "Kurinnaxx",
+        "Rattlegore",
+        "Smolderweb",
+        "Thunderfury",
+        "Whitemane"
+    ],
+    "PvP OCE": [
+        "Arugal",
+        "Felstriker",
+        "Yojamba"
+    ]
+}

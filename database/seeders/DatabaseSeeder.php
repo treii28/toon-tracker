@@ -26,6 +26,7 @@ class DatabaseSeeder extends Seeder
             'email' => 'treii28@gmail.com',
             'password' => '$2y$12$Klve23PXNBtICsPB327fxO02sTHF6B4AIKuYlMmkmtkGSAhNZK3WG'
         ]);
+
         Classification::dbSeed();
 
         $this->importSeeds();
@@ -55,7 +56,9 @@ class DatabaseSeeder extends Seeder
     {
         $toonjson = file_get_contents(database_path('seeders/exports/toons.json'));
         $toondata = json_decode($toonjson, true);
+        $woodId = User::where('email', 'treii28@gmail.com')->first()->id;
         foreach($toondata as $toon) {
+            $toon['user_id'] = $woodId;
             Toon::create($toon);
         }
     }

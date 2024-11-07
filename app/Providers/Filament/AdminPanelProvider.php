@@ -4,6 +4,7 @@ namespace App\Providers\Filament;
 
 use App\Filament\Resources\NeedResource\Pages\NeedsByInstance;
 use App\Filament\Resources\NeedResource\Pages\NeedsByToon;
+use App\Models\User;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\DisableBladeIconComponents;
 use Filament\Http\Middleware\DispatchServingFilamentEvent;
@@ -22,62 +23,13 @@ use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
 use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Session\Middleware\AuthenticateSession;
 use Illuminate\Session\Middleware\StartSession;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
 
 class AdminPanelProvider extends PanelProvider
 {
-    public function getNeedList(): array
-    {
-        if (app()->runningInConsole()) return [];
-        $needLinks = [];
-
-        // add create link for items by toon
-        $needLinks[] = NavigationItem::make('Needs By Toon')
-            ->url('/admin/needs-by-toon')
-            ->group('Item Needs')
-            ->sort(9);
-
-        $sort = 10;
-        foreach(\App\Models\Toon::ToonsWithNeeds() as $name => $toon) {
-            $sort++;
-            $needLinks[] = NavigationItem::make($toon->name.' Needs')
-                ->url('/admin/needs/by-toon/'.$toon->name)
-                ->group('Needs By Toon')
-                ->sort($sort);
-        }
-
-        // add create link for items by instance
-        $needLinks[] = NavigationItem::make('Needs By Instance')
-            ->url('/admin/needs-by-instance')
-            ->group('Item Needs')
-            ->sort(29);
-
-        $sort = 30;
-        foreach(\App\Models\Item::getNeedInstanceList() as $instance => $item) {
-            $needLinks[] = NavigationItem::make($instance.' Needs')
-                ->url('/admin/needs/by-instance/'.$instance)
-                ->group('Needs By Instance')
-                ->sort($sort);
-        }
-
-        // add create link for needs
-        $needLinks[] = NavigationItem::make('Create Need')
-            ->url('/admin/needs/create')
-            ->group('Item Needs')
-            ->sort(0);
-
-        // add create link for items
-        $needLinks[] = NavigationItem::make('Add New Item')
-            ->url('/admin/items/create')
-            ->group('Items')
-            ->sort(0);
-
-        return $needLinks;
-    }
-
     public function panel(Panel $panel): Panel
     {
-
         $panel_config = $panel
             ->default()
             ->id('admin')
@@ -87,7 +39,24 @@ class AdminPanelProvider extends PanelProvider
                 'primary' => Color::Amber,
             ])
             ->viteTheme('resources/css/filament/admin/theme.css')
-            ->navigationItems($this->getNeedList())
+            ->navigationItems([
+                NavigationItem::make('Add New Item')
+                    ->url('/admin/items/create')
+                    ->group('Items')
+                    ->sort(0),
+                NavigationItem::make('Create Need')
+                    ->url('/admin/needs/create')
+                    ->group('Item Needs')
+                    ->sort(0),
+                NavigationItem::make('Needs By Toon')
+                    ->url('/admin/needs-by-toon')
+                    ->group('Item Needs')
+                    ->sort(9),
+                NavigationItem::make('Needs By Instance')
+                    ->url('/admin/needs-by-instance')
+                    ->group('Item Needs')
+                    ->sort(29)
+            ])
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
             ->pages([

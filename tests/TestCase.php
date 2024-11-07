@@ -3,7 +3,7 @@
 namespace Tests;
 
 if(!trait_exists("Tests\\CreatesApplication"))
-    require_once(__DIR__."/CreatesApplication.php");
+    require_once(__DIR__ . DIRECTORY_SEPARATOR . "CreatesApplication.php");
 
 use Illuminate\Foundation\Testing\TestCase as BaseTestCase;
 use Tests\CreatesApplication;

@@ -7,6 +7,8 @@
     "require": {
         "php": "^8.2",
         "ext-simplexml": "*",
+        "ext-xdebug": "*",
+        "ext-zip": "*",
         "barryvdh/laravel-debugbar": "^3.14",
         "bezhansalleh/filament-shield": "^3.2",
         "bondarde/filament-route-list": "^1.0",
@@ -16,8 +18,7 @@
         "laravel/tinker": "^2.9",
         "laravel/ui": "^4.5",
         "livewire/livewire": "^3.5",
-        "ext-zip": "*",
-        "ext-xdebug": "*"
+        "owenvoke/blade-fontawesome": "^2.7"
     },
     "require-dev": {
         "barryvdh/laravel-ide-helper": "^3.1",

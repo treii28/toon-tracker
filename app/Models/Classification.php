@@ -124,18 +124,6 @@ class Classification extends Model
         return $racelist;
     }
 
-    public static function getAllSpecs(): array
-    {
-        $specs = [];
-        foreach(static::all() as $cf) {
-            $cfid = intval($cf->id);
-            $race = $cf->race;
-            if(!array_key_exists($race, $specs)) $specs[$race] = [];
-            $specs[$race][$cfid] = sprintf("%s: %s", $cf->class, $cf->spec);
-        }
-        return $specs;
-    }
-
     const SPECDATA = [
         'Mage' => [
             'Arcane',
@@ -184,6 +172,18 @@ class Classification extends Model
         ]
     ];
 
+    public static function getAllSpecs(): array
+    {
+        $specs = [];
+        foreach(static::all() as $cf) {
+            $cfid = intval($cf->id);
+            $race = $cf->race;
+            if(!array_key_exists($race, $specs)) $specs[$race] = [];
+            $specs[$race][$cfid] = sprintf("%s: %s", $cf->class, $cf->spec);
+        }
+        return $specs;
+    }
+
     public static function getUniqueSpecList(string $faction=null): array
     {
         $specs = [];
@@ -191,7 +191,7 @@ class Classification extends Model
             $specs = self::SPECDATA[$faction];
         } else {
             foreach(self::SPECDATA as $class => $spec)
-                $specs = array_merge($specs, $spec);
+                $specs = array_combine($specs, $spec);
         }
         return $specs;
     }
@@ -200,6 +200,7 @@ class Classification extends Model
      * default name to use for the config values database table
      */
     const SHORTNAME = "classification";
+    const TABLENAME = self::SHORTNAME . 's';
 
     /**
      * for laravel to specify configurable values
@@ -214,11 +215,11 @@ class Classification extends Model
     /**
      * @var string $table
      */
-    protected $table = self::SHORTNAME . 's';
+    protected $table = self::TABLENAME;
 
-    public static function getTableName() { return self::SHORTNAME . 's'; }
+    public static function getTableName(): string { return self::TABLENAME; }
 
-    public static function getTableBlueprint(\Illuminate\Database\Schema\Blueprint $table)
+    public static function tableBlueprint(\Illuminate\Database\Schema\Blueprint $table)
     {
         $table->id();
         $table->enum('faction', ['Alliance', 'Horde']);

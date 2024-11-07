@@ -16,7 +16,9 @@ if(!trait_exists("Tests\\CreatesApplication")) {
          */
         public function createApplication()
         {
-            if($bootapp = realpath(__DIR__ . "/../bootstrap/app.php")) {
+            $path = implode(DIRECTORY_SEPARATOR, [ __DIR__, "..", "bootstrap", "app.php"]);
+            echo $path . PHP_EOL;
+            if($bootapp = realpath($path)) {
                 // do nothing
             } else if(array_key_exists('DEV_BOOTSTRAP', $_SERVER)) {
                 $bootapp = $_SERVER['DEV_BOOTSTRAP'];

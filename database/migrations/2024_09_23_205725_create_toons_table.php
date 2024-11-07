@@ -11,10 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create(\App\Models\Toon::getTableName(),        function(Blueprint $table) { \App\Models\Toon::getTableBlueprint($table); } );
-        Schema::create(\App\Models\Need::getTableName(),        function(Blueprint $table) { \App\Models\Need::getTableBlueprint($table); } );
-        Schema::create(\App\Models\Classification::getTableName(), function(Blueprint $table) { \App\Models\Classification::getTableBlueprint($table); } );
-        Schema::create(\App\Models\Item::getTableName(), function(Blueprint $table) { \App\Models\Item::getTableBlueprint($table); } );
+        Schema::create(\App\Models\Toon::TABLENAME,           function(Blueprint $table) { \App\Models\Toon::tableBlueprint($table); } );
+        Schema::create(\App\Models\Need::TABLENAME,           function(Blueprint $table) { \App\Models\Need::tableBlueprint($table); } );
+        Schema::create(\App\Models\Classification::TABLENAME, function(Blueprint $table) { \App\Models\Classification::tableBlueprint($table); } );
+        Schema::create(\App\Models\Item::TABLENAME,           function(Blueprint $table) { \App\Models\Item::tableBlueprint($table); } );
 
     }
 
@@ -23,9 +23,9 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists(\App\Models\Toon::getTableName());
-        Schema::dropIfExists(\App\Models\Need::getTableName());
-        Schema::dropIfExists(\App\Models\Classification::getTableName());
-        Schema::dropIfExists(\App\Models\Item::getTableName());
+        Schema::dropIfExists(\App\Models\Toon::TABLENAME);
+        Schema::dropIfExists(\App\Models\Need::TABLENAME);
+        Schema::dropIfExists(\App\Models\Classification::TABLENAME);
+        Schema::dropIfExists(\App\Models\Item::TABLENAME);
     }
 };

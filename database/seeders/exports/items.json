@@ -1,8 +1,8 @@
 [
     {
+        "name": "Freezing Band",
         "id": 1,
         "wowhead_id": 942,
-        "name": "Freezing Band",
         "continent": "Azeroth",
         "zone": "All",
         "instance": "PvE",
@@ -19,9 +19,9 @@
         "updated_at": "2024-10-01T03:26:50.000000Z"
     },
     {
+        "name": "Precisely Calibrated Boomstick",
         "id": 2,
         "wowhead_id": 2100,
-        "name": "Precisely Calibrated Boomstick",
         "continent": "Azeroth",
         "zone": "All",
         "instance": "PvE",
@@ -38,6 +38,7 @@
         "updated_at": "2024-10-01T03:26:50.000000Z"
     },
     {
+        "name": "Sword of Zeal",
         "id": 3,
         "wowhead_id": 6622,
         "name": "Sword of Zeal",
@@ -56,10 +57,11 @@
         "created_at": "2024-10-01T03:26:50.000000Z",
         "updated_at": "2024-10-01T03:26:50.000000Z"
     },
+
     {
+        "name": "Masterwork Boots of ...",
         "id": 4,
         "wowhead_id": 10247,
-        "name": "Masterwork Boots of ...",
         "continent": "Azeroth",
         "zone": "All",
         "instance": "PvE",
@@ -76,9 +78,9 @@
         "updated_at": "2024-10-01T03:26:50.000000Z"
     },
     {
+        "name": "Masters Cloak of ...",
         "id": 5,
         "wowhead_id": 10249,
-        "name": "Masters Cloak of ...",
         "continent": "Azeroth",
         "zone": "All",
         "instance": "PvE",
@@ -95,9 +97,9 @@
         "updated_at": "2024-10-01T03:26:50.000000Z"
     },
     {
+        "name": "Savage Gladiator Chain",
         "id": 6,
         "wowhead_id": 11726,
-        "name": "Savage Gladiator Chain",
         "continent": "Eastern Kingdoms",
         "zone": "Burning Steppes",
         "instance": "Blackrock Depths",

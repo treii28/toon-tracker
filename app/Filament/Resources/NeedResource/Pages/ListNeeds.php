@@ -5,6 +5,8 @@ namespace App\Filament\Resources\NeedResource\Pages;
 use App\Filament\Resources\NeedResource;
 use Filament\Actions;
 use Filament\Resources\Pages\ListRecords;
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Support\Facades\Auth;
 
 class ListNeeds extends ListRecords
 {
@@ -15,6 +17,13 @@ class ListNeeds extends ListRecords
         return [
             Actions\CreateAction::make(),
         ];
+    }
+
+    public static function query(): Builder
+    {
+        return NeedResource::getEloquentQuery()->whereHas('toon', function (Builder $query) {
+            $query->where('user_id', Auth::id());
+        });
     }
 
     public function getHeader(): ?\Illuminate\Contracts\View\View

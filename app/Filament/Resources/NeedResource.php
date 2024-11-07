@@ -16,11 +16,19 @@ use Filament\Tables;
 use Filament\Tables\Table;
 use Filament\Infolists;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
 
 class NeedResource extends Resource
 {
     protected static ?string $model = Need::class;
+
+    public static function query(): Builder
+    {
+        return parent::query()->whereHas('toon', function (Builder $query) {
+            $query->where('user_id', Auth::id());
+        });
+    }
 
     protected static ?string $navigationGroup = 'Item Needs';
     protected static ?string $navigationLabel = 'Manage Needs';
@@ -128,6 +136,11 @@ class NeedResource extends Resource
     public static function table(Table $table): Table
     {
         return $table
+            ->query(function (Builder $query) {
+                return Need::whereHas('toon', function (Builder $query) {
+                    $query->where('user_id', Auth::id());
+                });
+            })
             ->columns(static::getColumns())
             ->filters([
                 Tables\Filters\Filter::make('crafted')

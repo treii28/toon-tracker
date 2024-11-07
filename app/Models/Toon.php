@@ -4,6 +4,7 @@ namespace App\Models;
 
 //use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Auth;
 
 class Toon extends Model
 {
@@ -14,11 +15,13 @@ class Toon extends Model
      * default name to use for the config values database table
      */
     const SHORTNAME = "toon";
+    const TABLENAME = self::SHORTNAME . 's';
 
     /**
      * for laravel to specify configurable values
      */
     const FILLABLE_COLUMNS = [
+        'user_id',
         'name',
         'level',
         'gender',
@@ -30,14 +33,15 @@ class Toon extends Model
     /**
      * @var string $table
      */
-    protected $table = self::SHORTNAME . 's';
+    protected $table = self::TABLENAME;
 
-    public static function getTableName() { return self::SHORTNAME . 's'; }
+    public static function getTableName(): string { return self::TABLENAME; }
 
-    public static function getTableBlueprint(\Illuminate\Database\Schema\Blueprint $table)
+    public static function tableBlueprint(\Illuminate\Database\Schema\Blueprint $table): void
     {
         $table->id();
 
+        $table->unsignedBigInteger('user_id');
         $table->string("name");
         $table->string("realm")->default('Mankrik');
         $table->string("guild")->nullable(true);
@@ -46,7 +50,9 @@ class Toon extends Model
         $table->integer("class_id")->nullable(false);
         $table->enum("gender", ['Male', 'Female'])->default('Female');
 
-        $table->foreign('class_id')->references('id')->on(Classification::getTableName())
+        $table->foreign('user_id')->references('id')->on(User::TABLENAME)
+            ->onDelete('cascade');
+        $table->foreign('class_id')->references('id')->on(Classification::TABLENAME)
             ->onDelete('cascade');
         $table->timestamps();
     }
@@ -92,7 +98,11 @@ class Toon extends Model
 
     public static function getAllToons(): array
     {
-        $toons = Toon::all()->sortBy('name');
+        $toonsel = Toon::select(['id', 'name']);
+        if(!Auth::user()->can('view_all_toons'))
+            $toonsel->where('user_id', Auth::id());
+        $toons = $toonsel->get()->sortBy('name');
+
         $toonList = [];
         foreach($toons as $toon) {
             $toonList[$toon->id] = $toon->name;
@@ -102,7 +112,10 @@ class Toon extends Model
 
     public static function ToonsWithNeeds(): array
     {
-        $toons = Toon::all()->sortBy('name');
+        $toonsel = Toon::select(['id', 'name']);
+        //if(!Auth::user()->can('view_any_toon'))
+        //    $toonsel->where('user_id', Auth::id());
+        $toons = $toonsel->get()->sortBy('name');
         $toonList = [];
         foreach($toons as $toon) {
             if($toon->needs->count() > 0)
@@ -132,5 +145,10 @@ class Toon extends Model
     public function needs(): \Illuminate\Database\Eloquent\Relations\HasMany
     {
         return $this->hasMany(Need::class);
+    }
+
+    public function user(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
+        return $this->belongsTo(User::class);
     }
 }

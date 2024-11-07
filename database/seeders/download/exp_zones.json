@@ -1,0 +1,1141 @@
+[
+    {
+        "name": "Sunken Temple",
+        "id": 1417,
+        "category": "Dungeon",
+        "parent_id": 8,
+        "level": [
+            50,
+            60
+        ],
+        "territory": "Contested"
+    },
+
+    {
+        "name": "Shattrath City",
+        "id": 3703,
+        "level": [
+            1,
+            80
+        ],
+        "territory": "Sanctuary"
+    },
+    {
+        "name": "Dalaran",
+        "id": 4395,
+        "level": [
+            1,
+            80
+        ],
+        "territory": "Sanctuary"
+    },
+    {
+        "name": "Emerald Forest",
+        "id": 1397,
+        "category": "Raid",
+        "level": [
+            null,
+            null
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "The Great Sea",
+        "id": 207,
+        "level": [
+            null,
+            null
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "Transport: Horde Gunship",
+        "id": 4764,
+        "level": [
+            null,
+            null
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "Transport: Horde Gunship (IGB)",
+        "id": 4833,
+        "level": [
+            null,
+            null
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "Twisting Nether",
+        "id": 3540,
+        "level": [
+            null,
+            null
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "Force Interior",
+        "id": 4602,
+        "level": [
+            null,
+            null
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "Azjol-Nerub",
+        "id": 3477,
+        "level": [
+            null,
+            null
+        ],
+        "territory": "Contested"
+    },
+
+    {
+        "name": "The Black Morass",
+        "id": 2366,
+        "category": "Dungeon",
+        "level": [
+            68,
+            75
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "The Botanica",
+        "id": 3847,
+        "category": "Dungeon",
+        "level": [
+            67,
+            75
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "Hellfire Citadel",
+        "id": 3535,
+        "category": "Dungeon",
+        "level": [
+            null,
+            null
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "Strand of the Ancients",
+        "id": 4384,
+        "category": "Battleground",
+        "level": [
+            71,
+            80
+        ],
+        "territory": "PvP"
+    },
+    {
+        "name": "Old Hillsbrad Foothills",
+        "id": 2367,
+        "category": "Dungeon",
+        "level": [
+            66,
+            68
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "The Mechanar",
+        "id": 3849,
+        "category": "Dungeon",
+        "level": [
+            67,
+            75
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "Borean Tundra",
+        "id": 14284,
+        "category": "Battleground",
+        "level": [
+            71,
+            80
+        ],
+        "territory": "PvP"
+    },
+    {
+        "name": "Caverns of Time",
+        "id": 1941,
+        "category": "Open World",
+        "level": [
+            null,
+            null
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "Eye of the Storm",
+        "id": 3820,
+        "category": "Battleground",
+        "level": [
+            61,
+            80
+        ],
+        "territory": "PvP"
+    },
+    {
+        "name": "The Arcatraz",
+        "id": 3848,
+        "category": "Dungeon",
+        "level": [
+            68,
+            75
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "Isle of Conquest",
+        "id": 4710,
+        "category": "Battleground",
+        "level": [
+            71,
+            80
+        ],
+        "territory": "PvP"
+    },
+    {
+        "name": "Magtheridon's Lair",
+        "id": 3836,
+        "category": "Raid",
+        "level": [
+            70,
+            73
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "Hrothgar's Landing",
+        "id": 4742,
+        "level": [
+            null,
+            null
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "Halls of Reflection",
+        "id": 4820,
+        "category": "Dungeon",
+        "level": [
+            79,
+            80
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "The Forge of Souls",
+        "id": 4809,
+        "category": "Dungeon",
+        "level": [
+            79,
+            80
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "The Steamvault",
+        "id": 3715,
+        "category": "Dungeon",
+        "level": [
+            67,
+            75
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "Tempest Keep",
+        "id": 3845,
+        "category": "Raid",
+        "level": [
+            70,
+            73
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "Auchenai Crypts",
+        "id": 3790,
+        "category": "Dungeon",
+        "level": [
+            65,
+            67
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "Silvermoon City",
+        "id": 3487,
+        "category": "Capital City",
+        "level": [
+            1,
+            80
+        ],
+        "territory": "Horde"
+    },
+    {
+        "name": "Crystalsong Forest",
+        "id": 2817,
+        "level": [
+            80,
+            80
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "Gruul's Lair",
+        "id": 3923,
+        "category": "Raid",
+        "level": [
+            70,
+            73
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "The Exodar",
+        "id": 3557,
+        "category": "Capital City",
+        "level": [
+            1,
+            80
+        ],
+        "territory": "Alliance"
+    },
+    {
+        "name": "Shadow Labyrinth",
+        "id": 3789,
+        "category": "Dungeon",
+        "level": [
+            67,
+            75
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "Nagrand Arena (Nagrand Arena)",
+        "id": 3698,
+        "category": "Arena",
+        "level": [
+            10,
+            80
+        ],
+        "territory": "PvP"
+    },
+    {
+        "name": "The Ring of Valor (Orgrimmar Arena)",
+        "id": 4406,
+        "category": "Arena",
+        "level": [
+            10,
+            80
+        ],
+        "territory": "PvP"
+    },
+    {
+        "name": "Dalaran Arena (Arena)",
+        "id": 4378,
+        "category": "Arena",
+        "level": [
+            10,
+            80
+        ],
+        "territory": "PvP"
+    },
+    {
+        "name": "The Frost Queen's Lair",
+        "id": 4893,
+        "category": "Raid",
+        "level": [
+            null,
+            null
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "The North Sea",
+        "id": 3455,
+        "level": [
+            null,
+            null
+        ],
+        "territory": "Horde"
+    },
+    {
+        "name": "The Sanctum of Blood",
+        "id": 4897,
+        "category": "Raid",
+        "level": [
+            null,
+            null
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "Hyjal Past",
+        "id": 3605,
+        "category": "Dungeon",
+        "level": [
+            null,
+            null
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "Ruins of Lordaeron (Undercity Arena)",
+        "id": 3968,
+        "category": "Arena",
+        "level": [
+            10,
+            80
+        ],
+        "territory": "PvP"
+    },
+    {
+        "name": "The Frozen Sea",
+        "id": 3979,
+        "level": [
+            null,
+            null
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "The Frozen Throne",
+        "id": 4896,
+        "category": "Raid",
+        "level": [
+            null,
+            null
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "Icecrown",
+        "id": 14285,
+        "category": "Battleground",
+        "level": [
+            null,
+            null
+        ],
+        "territory": "PvP"
+    },
+    {
+        "name": "Vordrassil's Tears",
+        "id": 4201,
+        "level": [
+            null,
+            null
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "The North Sea",
+        "id": 4630,
+        "level": [
+            null,
+            null
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "Sholazar Basin",
+        "id": 14286,
+        "category": "Battleground",
+        "level": [
+            null,
+            null
+        ],
+        "territory": "PvP"
+    },
+    {
+        "name": "Transport: Alliance Gunship (IGB)",
+        "id": 4832,
+        "level": [
+            null,
+            null
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "The Crimson Hall",
+        "id": 4895,
+        "category": "Raid",
+        "level": [
+            null,
+            null
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "Transport: Alliance Gunship",
+        "id": 4763,
+        "level": [
+            null,
+            null
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "The Veiled Sea",
+        "id": 457,
+        "category": "Open World",
+        "level": [
+            null,
+            null
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "Battle for Wintergrasp",
+        "id": 14288,
+        "category": "Battleground",
+        "level": [
+            null,
+            null
+        ],
+        "territory": "PvP"
+    },
+    {
+        "name": "Blade's Edge Arena (Blade's Edge Arena)",
+        "id": 3702,
+        "category": "Arena",
+        "level": [
+            10,
+            80
+        ],
+        "territory": "PvP"
+    },
+    {
+        "name": "Dragonblight",
+        "id": 14287,
+        "category": "Battleground",
+        "level": [
+            null,
+            null
+        ],
+        "territory": "PvP"
+    },
+    {
+        "name": "The North Sea",
+        "id": 4258,
+        "level": [
+            null,
+            null
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "Putricide's Laboratory of Alchemical Horrors and Fun",
+        "id": 4894,
+        "category": "Raid",
+        "level": [
+            null,
+            null
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "Auchindoun",
+        "id": 3917,
+        "level": [
+            null,
+            null
+        ],
+        "territory": "Contested"
+    },    {
+    "name": "Netherstorm",
+    "id": 3523,
+    "level": [
+        66,
+        70
+    ],
+    "territory": "Contested"
+},
+    {
+        "name": "Mana-Tombs",
+        "id": 3792,
+        "category": "Dungeon",
+        "level": [
+            64,
+            66
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "Blade's Edge Mountains",
+        "id": 3522,
+        "level": [
+            65,
+            70
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "Bloodmyst Isle",
+        "id": 3525,
+        "level": [
+            9,
+            19
+        ],
+        "territory": "Alliance"
+    },
+    {
+        "name": "Crusaders' Coliseum: Trial of the Champion",
+        "id": 4723,
+        "category": "Dungeon",
+        "level": [
+            79,
+            80
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "Isle of Quel'Danas",
+        "id": 4080,
+        "level": [
+            70,
+            70
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "Azuremyst Isle",
+        "id": 3524,
+        "level": [
+            1,
+            10
+        ],
+        "territory": "Alliance"
+    },
+    {
+        "name": "Serpentshrine Cavern",
+        "id": 3607,
+        "category": "Raid",
+        "level": [
+            70,
+            73
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "Pit of Saron",
+        "id": 4813,
+        "category": "Dungeon",
+        "level": [
+            79,
+            80
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "Sethekk Halls",
+        "id": 3791,
+        "category": "Dungeon",
+        "level": [
+            67,
+            68
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "Drak'Tharon Keep",
+        "id": 4196,
+        "category": "Dungeon",
+        "level": [
+            74,
+            76
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "Sholazar Basin",
+        "id": 3711,
+        "level": [
+            75,
+            80
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "Halls of Stone",
+        "id": 4264,
+        "category": "Dungeon",
+        "level": [
+            77,
+            79
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "Zul'Drak",
+        "id": 66,
+        "level": [
+            73,
+            77
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "The Shattered Halls",
+        "id": 3714,
+        "category": "Dungeon",
+        "level": [
+            67,
+            75
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "Nagrand",
+        "id": 3518,
+        "level": [
+            64,
+            70
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "Zangarmarsh",
+        "id": 3521,
+        "level": [
+            60,
+            63
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "Eversong Woods",
+        "id": 3430,
+        "level": [
+            1,
+            10
+        ],
+        "territory": "Horde"
+    },
+    {
+        "name": "Ghostlands",
+        "id": 3433,
+        "level": [
+            10,
+            20
+        ],
+        "territory": "Horde"
+    },
+    {
+        "name": "Shadowmoon Valley",
+        "id": 3520,
+        "level": [
+            67,
+            70
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "The Slave Pens",
+        "id": 3717,
+        "category": "Dungeon",
+        "level": [
+            62,
+            64
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "Icecrown",
+        "id": 210,
+        "level": [
+            77,
+            80
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "Hyjal Summit",
+        "id": 3606,
+        "category": "Raid",
+        "level": [
+            70,
+            73
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "Grizzly Hills",
+        "id": 394,
+        "level": [
+            73,
+            75
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "Terokkar Forest",
+        "id": 3519,
+        "level": [
+            62,
+            70
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "The Underbog",
+        "id": 3716,
+        "category": "Dungeon",
+        "level": [
+            63,
+            65
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "Icecrown Citadel",
+        "id": 4812,
+        "category": "Raid",
+        "level": [
+            80,
+            80
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "The Obsidian Sanctum",
+        "id": 4493,
+        "category": "Raid",
+        "level": [
+            80,
+            80
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "Ulduar",
+        "id": 4273,
+        "category": "Raid",
+        "level": [
+            80,
+            80
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "The Eye of Eternity",
+        "id": 4500,
+        "category": "Raid",
+        "level": [
+            80,
+            80
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "Utgarde Keep",
+        "id": 206,
+        "category": "Dungeon",
+        "level": [
+            69,
+            72
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "Crusaders' Coliseum: Trial of the Crusader",
+        "id": 4722,
+        "category": "Raid",
+        "level": [
+            80,
+            80
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "Vault of Archavon",
+        "id": 4603,
+        "category": "Raid",
+        "level": [
+            80,
+            80
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "Sunwell Plateau",
+        "id": 4075,
+        "category": "Raid",
+        "level": [
+            70,
+            73
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "The Ruby Sanctum",
+        "id": 4987,
+        "category": "Raid",
+        "level": [
+            80,
+            80
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "Borean Tundra",
+        "id": 3537,
+        "level": [
+            70,
+            72
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "Karazhan",
+        "id": 3457,
+        "category": "Raid",
+        "level": [
+            70,
+            73
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "Hellfire Peninsula",
+        "id": 3483,
+        "level": [
+            58,
+            70
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "Howling Fjord",
+        "id": 495,
+        "level": [
+            68,
+            72
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "Plaguelands: The Scarlet Enclave",
+        "id": 4298,
+        "level": [
+            55,
+            58
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "Wintergrasp",
+        "id": 4197,
+        "level": [
+            80,
+            80
+        ]
+    },
+    {
+        "name": "The Nexus",
+        "id": 4265,
+        "category": "Dungeon",
+        "level": [
+            71,
+            73
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "Zul'Aman",
+        "id": 3805,
+        "category": "Raid",
+        "level": [
+            70,
+            73
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "The Culling of Stratholme",
+        "id": 4100,
+        "category": "Dungeon",
+        "level": [
+            79,
+            80
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "Azjol-Nerub",
+        "id": 4277,
+        "category": "Dungeon",
+        "level": [
+            72,
+            74
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "Dragonblight",
+        "id": 65,
+        "level": [
+            71,
+            80
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "The Storm Peaks",
+        "id": 67,
+        "level": [
+            77,
+            80
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "Hellfire Ramparts",
+        "id": 3562,
+        "category": "Dungeon",
+        "level": [
+            59,
+            62
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "Black Temple",
+        "id": 3959,
+        "category": "Raid",
+        "level": [
+            70,
+            73
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "Gundrak",
+        "id": 4416,
+        "category": "Dungeon",
+        "level": [
+            76,
+            78
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "Utgarde Pinnacle",
+        "id": 1196,
+        "category": "Dungeon",
+        "level": [
+            79,
+            80
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "The Oculus",
+        "id": 4228,
+        "category": "Dungeon",
+        "level": [
+            79,
+            80
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "Halls of Lightning",
+        "id": 4272,
+        "category": "Dungeon",
+        "level": [
+            79,
+            80
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "Ahn'kahet: The Old Kingdom",
+        "id": 4494,
+        "category": "Dungeon",
+        "level": [
+            73,
+            75
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "Magisters' Terrace",
+        "id": 4131,
+        "category": "Dungeon",
+        "level": [
+            68,
+            75
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "The Violet Hold",
+        "id": 4415,
+        "category": "Dungeon",
+        "level": [
+            75,
+            77
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "The Blood Furnace",
+        "id": 3713,
+        "category": "Dungeon",
+        "level": [
+            61,
+            63
+        ],
+        "territory": "Contested"
+    },
+
+    {
+        "name": "Development Land",
+        "id": 4019,
+        "level": [
+            null,
+            null
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "Test Dungeon",
+        "id": 3817,
+        "level": [
+            null,
+            null
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "Reuse Me 7",
+        "id": 4076,
+        "category": "Dungeon",
+        "level": [
+            null,
+            null
+        ],
+        "territory": "Contested"
+    },
+    {
+        "name": "Brian and Pat Test",
+        "id": 3948,
+        "level": [
+            null,
+            null
+        ],
+        "territory": "Contested"
+    }
+]
