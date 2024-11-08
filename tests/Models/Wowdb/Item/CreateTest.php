@@ -1,6 +1,6 @@
 <?php
 
-namespace Models\Wowdb\Item;
+namespace Tests\Models\Wowdb\Item;
 
 use App\Models\Wowdb\Item\Create;
 use Tests\TestCase;
@@ -19,7 +19,7 @@ class CreateTest extends TestCase
                     "amount" => 1
                 ]
             ],
-            //"recipes" => [ 2697 ];
+            "recipes" => [ 2697 ]
         ]);
         $this->assertInstanceOf(Create::class, $create);
         $amount = $create->getAttribute('amount');

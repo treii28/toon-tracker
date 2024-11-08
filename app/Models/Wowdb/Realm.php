@@ -24,27 +24,27 @@ class Realm extends Model
         */
     ];
     const REALM_GROUPS = [
-        "PVE East" => [
+        "PvE East" => [
             "Ashkandi",
             "Mankrik",
             "Pagle",
             "Westfall",
             "Windseeker"
         ],
-        "PVE West" => [
+        "PvE West" => [
             "Atiesh",
             "Azuresong",
             "Myzrael",
             "Old Blanchy"
         ],
-        "PVP East1" => [
+        "PvP East1" => [
             "Benediction",
             "Faerlina",
             "Heartseeker",
             "Incendius",
             "Netherwind"
         ],
-        "PVP East2" => [
+        "PvP East2" => [
             "Earthfury",
             "Herod",
             "Kirtonos",
@@ -54,7 +54,7 @@ class Realm extends Model
             "Sulfuras",
             "Thalnos"
         ],
-        "PVP West" => [
+        "PvP West" => [
             "Anathema",
             "Arcanite Reaper",
             "Bigglesworth",
@@ -66,7 +66,7 @@ class Realm extends Model
             "Thunderfury",
             "Whitemane"
         ],
-        "OCE PVP" => [
+        "PvP OCE" => [
             "Arugal",
             "Felstriker",
             "Yojamba"

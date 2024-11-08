@@ -6,7 +6,7 @@ namespace App\Models\Wowdb;
 use App\Models\Wowdb;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Race extends Model
 {
@@ -54,10 +54,9 @@ class Race extends Model
      */
     const FILLABLE_COLUMNS = [
         'id',
-        'name',
-        'klass',
+        'name', 'race',
         'faction',
-        'spec_id',
+        'spec_id', 'klass',
         'created_at',
         'updated_at'
     ];
@@ -73,14 +72,10 @@ class Race extends Model
     {
         $table->id();
         $table->enum('name', self::RACES);
-        $table->string('klass', 32);
         $table->enum('faction', self::FACTIONS);
-        $table->unsignedBigInteger('spec_id');
         //$table->unsignedBigInteger('startzone_id')->nullable(true);
         //$table->unsignedBigInteger('capital_id')->nullable(true);
         $table->timestamps();
-
-        $table->foreign('spec_id')->references('id')->on('klass_specs');
     }
 
     /**
@@ -90,9 +85,11 @@ class Race extends Model
      */
     protected $fillable = self::FILLABLE_COLUMNS;
 
-    public function spec(): BelongsTo { return $this->belongsTo(Wowdb\Klass\Spec::class); }
+    public function setRaceAttribute(string $value): void { $this->attributes['name'] = $value; }
+    public function getRaceAttribute(): string { return $this->attributes['name']; }
 
-    public function klass() {
-        return $this->spec->klass;
+    public function klasses(): BelongsToMany
+    {
+        return $this->belongsToMany(Klass::class, 'race_klass', 'race_id', 'klass_id');
     }
 }

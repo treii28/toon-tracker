@@ -25,6 +25,7 @@ class Create extends Model
         "Mining",
         "Tailoring"
     ];
+
     protected $connection = 'wowdb';
 
     /**
@@ -38,10 +39,11 @@ class Create extends Model
      */
     const FILLABLE_COLUMNS = [
         'id',
-        'amount_min', 'amount_max', 'amount',
+        'amount_min', 'amount_max', 'amount', // last is alias mutator
         'requiredSkill',
         'category',
         'reagents',
+        'recipes',
         'created_at',
         'updated_at'
     ];

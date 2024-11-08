@@ -37,6 +37,15 @@ return new class extends Migration
         Schema::connection(self::DB_CONNECTION)
             ->create(Wowdb\Item\Quest::TABLENAME, function (Blueprint $table) { Wowdb\Item\Quest::tableBlueprint($table); } );
 
+        Schema::connection(self::DB_CONNECTION)->create('race_klass', function (Blueprint $table) {
+            $table->unsignedBigInteger('race_id');
+            $table->unsignedBigInteger('klass_id');
+            $table->unique(['race_id','klass_id']);
+
+            $table->foreign('race_id')->references('id')->on('races')->onDelete('cascade');
+            $table->foreign('klass_id')->references('id')->on('klasses')->onDelete('cascade');
+        });
+
         Schema::connection(self::DB_CONNECTION)->create('item_race', function (Blueprint $table) {
             $table->unsignedBigInteger('item_id');
             $table->unsignedBigInteger('race_id');

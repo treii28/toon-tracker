@@ -264,15 +264,45 @@ class Item extends Model
         });
     }
 
+    /**
+     * Determine if a list of tooltips contains a given label (all should)
+     *
+     * @param string $label
+     * @return bool
+     */
     public function tooltipIncludesLabel(string $label): bool {
         foreach($this->tooltip as $tt)
             if(array_key_exists('label', $tt) && $tt['label'] === $label) return true;
         return false;
     }
-    public function isUnique(): bool { $this->tooltipIncludesLabel('Unique'); }
-    public function isBindOnEquip(): bool { $this->tooltipIncludesLabel('Binds when equipped'); }
-    public function isBindOnPickup(): bool { $this->tooltipIncludesLabel('Binds when picked up'); }
 
+    /**
+     * Determine if an item includes a 'Unique' label designating a unique item
+     *
+     * @return bool
+     */
+    public function isUnique(): bool { return $this->tooltipIncludesLabel('Unique'); }
+
+    /**
+     * Determine if an item includes a 'Binds when equipped' label designating a bind-on-equip item
+     *
+     * @return bool
+     */
+    public function isBindOnEquip(): bool { return $this->tooltipIncludesLabel('Binds when equipped'); }
+
+    /**
+     * Determine if an item includes a 'Binds when picked up' label designating a bind-on-pickup item
+     *
+     * @return bool
+     */
+    public function isBindOnPickup(): bool { return $this->tooltipIncludesLabel('Binds when picked up'); }
+
+    /**
+     * Check for labels that start with a given string, returning the remainder of the label if found or null if not
+     *
+     * @param string $label
+     * @return string|null
+     */
     public function tooltipStartsWith(string $label): string|null {
         foreach($this->tooltip as $tt)
             if(array_key_exists('label', $tt) && preg_match("/^".$label."[\: ]*(.*)/", $tt['label'], $m))

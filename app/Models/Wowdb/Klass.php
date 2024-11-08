@@ -4,6 +4,7 @@ namespace App\Models\Wowdb;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Schema\Blueprint;
 use phpDocumentor\Reflection\Types\Collection;
@@ -120,7 +121,8 @@ class Klass extends Model
 
     public function specs(): HasMany { return $this->hasMany(Klass\Spec::class); }
 
-    public function races(): Collection {
-        return $this->specs->load('race')->pluck('race')->unique('id');
+    public function races(): BelongsToMany
+    {
+        return $this->belongsToMany(Race::class, 'race_klass', 'klass_id', 'race_id');
     }
 }

@@ -191,7 +191,7 @@ class Classification extends Model
             $specs = self::SPECDATA[$faction];
         } else {
             foreach(self::SPECDATA as $class => $spec)
-                $specs = array_combine($specs, $spec);
+                $specs = $spec;
         }
         return $specs;
     }

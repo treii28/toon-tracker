@@ -42,9 +42,11 @@ class Spec extends Model
     {
         $table->id();
         $table->string('name', 32);
-        $table->string('color', 8);
         $table->string('icon', 32);
+        $table->unsignedBigInteger('klass_id');
         $table->timestamps();
+
+        $table->foreign('klass_id')->references('id')->on('klasses');
     }
 
     /**
