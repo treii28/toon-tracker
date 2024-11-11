@@ -614,6 +614,26 @@ class Item extends Model
      *    createdBy array includes single amount array, reagents array, recipe array
      */
 
+    public function getWowheadUrl(): string { return self::wowheadUrl($this->itemId); }
+    public static function wowheadUrl(int $id): string {
+        $domain = sprintf("&domain=%s", getenv('WOWHEAD_DOMAIN', 'classic'));
+        //$domain = ((!empty(getenv('WOWHEAD_DOMAIN'))) ? "&domain=".getenv('WOWHEAD_DOMAIN') : '');
+        $dsub = sprintf("%s/", getenv('WOWHEAD_DOMAIN', 'classic'));
+        //$dsub = ((getenv('WOWHEAD_DOMAIN') === 'classic') ? "classic/" : '');
+
+        return sprintf("https://www.wohead.com/%sitem%s%s", $dsub, $id, $domain);
+    }
+
+    public function getWowheadLinkHtml(): string { return self::wowheadLinkHtml($this->id, $this->name); }
+    public static function wowheadLinkHtml(int $id, string $name): string {
+        $iconsize = getenv('WOWHEAD_ICONSIZE', 'small');
+        $url = self::getWowheadUrl($id);
+        return sprintf(
+            '<a data-wowhead="item=%d" target="_blank" data-wh-icon-size="%s" href="%s">%s</a>',
+            $id, $iconsize, $url, $name
+        );
+    }
+
     /**
      * Define the one-to-many relationship with Drop.
      */
