@@ -34,29 +34,27 @@ class WowdbSeeder extends Seeder
     private function seedItems(): void
     {
         $itemdata = json_decode(file_get_contents(download_path('data.json')), true);
-        $itemTotal = count($itemdata);
+        $itemcount = count($itemdata);
         $counter = 0;
-        $created = 0;
-        $updated = 0;
         foreach($itemdata as $item) {
-            echo progress_bar($counter++, $itemTotal, "Seeding Items");
+            echo progress_bar($counter++, $itemcount, "Seeding Items");
             if ($itemObj = Item::where('id', $item['itemId'])->first()) {
                 unset($item['itemId']);
-                $updated++;
                 $itemObj->update($item);
             } else {
-                $created++;
                 Item::firstOrCreate($item);
             }
         }
         echo PHP_EOL;
-        echo "created: $created, updated: $updated" . PHP_EOL;
     }
 
     private function seedZones(): void
     {
         $zonedata = json_decode(file_get_contents(download_path('zones.json')), true);
+        $zonecount = count($zonedata);
+        $counter = 0;
         foreach($zonedata as $zone) {
+            echo progress_bar($counter++, $zonecount, "Seeding Zones");
             $data = [
                 'id' => $zone['id'],
                 'name' => $zone['name'],
@@ -70,11 +68,15 @@ class WowdbSeeder extends Seeder
 
             Zone::firstOrCreate($data);
         }
+        echo PHP_EOL;
     }
     private function seedRealms(): void
     {
         $realmdata = json_decode(file_get_contents(download_path('realms.json')), true);
+        $realmcount = count($realmdata);
+        $counter = 0;
         foreach($realmdata as $battlegroup => $realms) {
+            echo progress_bar($counter++, $realmcount, "Seeding Realms");
             foreach($realms as $realm) {
                 $data = [
                     'name' => $realm,
@@ -84,12 +86,16 @@ class WowdbSeeder extends Seeder
                 Realm::firstOrCreate($data);
             }
         }
+        echo PHP_EOL;
     }
 
     private function seedKlassesAndSpecs(): void
     {
         $klassdata = json_decode(file_get_contents(download_path('klasses.json')), true);
+        $klasscount = count($klassdata);
+        $counter = 0;
         foreach ($klassdata as $klass) {
+            echo progress_bar($counter++, $klasscount, "Seeding Klasses");
             $specs = [];
             if(array_key_exists('specs', $klass)) {
                 $specs = $klass['specs'];
@@ -103,12 +109,16 @@ class WowdbSeeder extends Seeder
                 $klassRecord->specs()->firstOrCreate($spec);
             }
         }
+        echo PHP_EOL;
     }
 
     private function seedRaces(): void
     {
         $racedata = json_decode(file_get_contents(download_path('races.json')), true);
+        $racecount = count($racedata);
+        $counter = 0;
         foreach($racedata as $race) {
+            echo progress_bar($counter++, $racecount, "Seeding races");
             $klasses = [];
             if(array_key_exists('klasses', $race)) {
                 $klasses = $race['klasses'];
@@ -121,5 +131,6 @@ class WowdbSeeder extends Seeder
                     $raceRecord->klasses()->attach($klassRecord);
             }
         }
+        echo PHP_EOL;
     }
 }

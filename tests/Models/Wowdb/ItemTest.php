@@ -52,9 +52,13 @@ class ItemTest extends TestCase
         $this->assertInstanceOf(Item::class, $hidew);
         $this->assertEquals('Hide of the Wild', $hidew->name);
         $cba = $hidew->createdBy;
-        $cb = $hidew->creates;
-        $this->assertInstanceOf(Collection::class, $cb);
-        $ci = DB::connection('wowdb')->table('create_item')->where('item_id', 18510)->get();
+        $cb = $hidew->creates->first();
+        $this->assertInstanceOf(Item\Create::class, $cb);
+        $cbr = $cb->recipe_items;
+        $this->assertInstanceOf(Collection::class, $cbr);
+
+        $ic = DB::connection('wowdb')->table('item_creates')->where('item_id', 18510)->get();
+        $ci = DB::connection('wowdb')->table('create_items')->where('item_id', 18518)->get();
 
         $this->assertCount(1, $cb);
 
