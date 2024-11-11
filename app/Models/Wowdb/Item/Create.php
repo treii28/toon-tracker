@@ -48,12 +48,21 @@ class Create extends Model
         'updated_at'
     ];
 
-    protected function casts()
+    protected $casts = [
+        'reagents' => AsArrayObject::class,
+        'recipes'  => AsArrayObject::class
+    ];
+
+    protected static function boot()
     {
-        return [
-            'reagents' => AsArrayObject::class,
-            'recipes'  => AsArrayObject::class
-        ];
+        parent::boot();
+
+        static::saving(function(Create $create): void {
+            if(!empty($create->recipes) && is_array($create->recipes))
+                foreach($create->recipes as $itemId)
+                    if (!$create->recipe_items()->where('item_id', $itemId)->exists())
+                        $create->recipe_items()->attach($itemId);
+        });
     }
 
     /**
@@ -99,6 +108,6 @@ class Create extends Model
 
     public function recipe_items()
     {
-        return $this->belongsToMany(Item::class, 'create_item', 'create_id', 'item_id');
+        return $this->belongsToMany(Item::class, 'create_items', 'create_id', 'item_id');
     }
 }

@@ -3,6 +3,8 @@
 namespace Tests\Models\Wowdb;
 
 use App\Models\Wowdb\Item;
+use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Support\Facades\DB;
 use Tests\TestCase;
 use function Laravel\Prompts\progress;
 
@@ -42,5 +44,29 @@ class ItemTest extends TestCase
             }
         }
         $this->assertIsArray($itemkeys);
+    }
+
+    public function testRecords()
+    {
+        $hidew = Item::where('id', 18510)->first();
+        $this->assertInstanceOf(Item::class, $hidew);
+        $this->assertEquals('Hide of the Wild', $hidew->name);
+        $cba = $hidew->createdBy;
+        $cb = $hidew->creates;
+        $this->assertInstanceOf(Collection::class, $cb);
+        $ci = DB::connection('wowdb')->table('create_item')->where('item_id', 18510)->get();
+
+        $this->assertCount(1, $cb);
+
+        $phide = Item::where('id', 18518)->first();
+        $this->assertInstanceOf(Item::class, $phide);
+        $this->assertEquals('Pattern: Hide of the Wild', $phide->name);
+        $this->assertEquals('Recipe', $phide->class);
+        $this->assertEquals('Leatherworking', $phide->subclass);
+        $this->assertEquals('Epic', $phide->quality);
+        $bring = Item::where('id', 17713)->first();
+        $this->assertInstanceOf(Item::class, $bring);
+        $this->assertTrue($bring->isUnique());
+        $foo = "bar";
     }
 }

@@ -73,7 +73,18 @@ return new class extends Migration
             $table->foreign('quest_id')->references('id')->on('quests')->onDelete('cascade');
         });
 
-        Schema::connection(self::DB_CONNECTION)->create('create_item', function (Blueprint $table) {
+        // item created_by links
+        Schema::connection(self::DB_CONNECTION)->create('item_creates', function (Blueprint $table) {
+            $table->unsignedBigInteger('item_id');
+            $table->unsignedBigInteger('create_id');
+            $table->unique(['create_id', 'item_id']);
+
+            $table->foreign('create_id')->references('id')->on('creates')->onDelete('cascade');
+            $table->foreign('item_id')->references('id')->on('items')->onDelete('cascade');
+        });
+
+        // created_by recipe links
+        Schema::connection(self::DB_CONNECTION)->create('create_items', function (Blueprint $table) {
             $table->unsignedBigInteger('create_id');
             $table->unsignedBigInteger('item_id');
             $table->unique(['create_id', 'item_id']);
@@ -103,6 +114,7 @@ return new class extends Migration
 
         Schema::connection(self::DB_CONNECTION)->dropIfExists('item_race');
         Schema::connection(self::DB_CONNECTION)->dropIfExists('item_klass');
-        Schema::connection(self::DB_CONNECTION)->dropIfExists('create_item');
+        Schema::connection(self::DB_CONNECTION)->dropIfExists('item_creates');
+        Schema::connection(self::DB_CONNECTION)->dropIfExists('create_items');
     }
 };

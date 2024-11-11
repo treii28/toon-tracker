@@ -250,6 +250,8 @@ class Item extends Model
         'requiredLevel',
         'slot',
         'tooltip',
+        'source',
+        'createdBy',
         'itemLink',
         'cost',
         'vendorPrice',
@@ -314,7 +316,7 @@ class Item extends Model
     {
         parent::boot();
 
-        static::saving(function ($item) {
+        static::saving(function (Item $item): void {
             if(!empty($item->tooltip))
                 $item->parseTooltip();
             if(!empty($item->createdBy))
@@ -530,15 +532,8 @@ class Item extends Model
                 $create = new Wowdb\Item\Create($data);
                 $create->save();
             }
-
-            if(array_key_exists('recipes', $data)) {
-                foreach($data['recipes'] as $recipeItemId) {
-                    $table = DB::connection($this->connection)->table('create_item');
-                    if(!$table->where('create_id', $create->id)->where('item_id', $recipeItemId)->exists()) {
-                        $create->recipe_items()->attach($recipeItemId);
-                    }
-                }
-            }
+            if(!$this->creates()->where('create_id', $create->id)->exists())
+                $this->creates()->attach($create->id);
         }
     }
     protected function parseSource(): void {
@@ -659,6 +654,6 @@ class Item extends Model
 
     public function creates(): BelongsToMany
     {
-        return $this->belongsToMany(Item\Create::class, 'create_item', 'item_id', 'create_id');
+        return $this->belongsToMany(Item\Create::class, 'item_creates', 'item_id', 'create_id');
     }
 }
