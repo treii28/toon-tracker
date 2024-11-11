@@ -2,15 +2,11 @@
 
 namespace Database\Seeders;
 
-if(!function_exists('download_path')) {
-    function download_path(string $filename): string
-    {
-        return database_path('seeders/download/' . $filename);
-    }
-}
 
+use App\Models\Wowdb\Item;
 use App\Models\Wowdb\Race;
 use App\Models\Wowdb\Realm;
+use App\Models\Wowdb\Zone;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
@@ -24,17 +20,37 @@ class WowdbSeeder extends Seeder
      */
     public function run(): void
     {
-        /*
-        $itemdata = json_decode(file_get_contents(download_path('data.json')), true);
-        */
-
         DB::connection('wowdb')->statement('PRAGMA foreign_keys = OFF');
 
         $this->seedRealms();
+        $this->seedZones();
         $this->seedKlassesAndSpecs();
         $this->seedRaces();
+        $this->seedItems();
 
         DB::connection('wowdb')->statement('PRAGMA foreign_keys = ON');
+    }
+
+    private function seedItems(): void
+    {
+        $itemdata = json_decode(file_get_contents(download_path('data.json')), true);
+        $itemTotal = count($itemdata);
+        $counter = 0;
+        $created = 0;
+        $updated = 0;
+        foreach($itemdata as $item) {
+            echo progress_bar($counter++, $itemTotal, "Seeding Items");
+            if ($itemObj = Item::where('id', $item['itemId'])->first()) {
+                unset($item['itemId']);
+                $updated++;
+                $itemObj->update($item);
+            } else {
+                $created++;
+                Item::firstOrCreate($item);
+            }
+        }
+        echo PHP_EOL;
+        echo "created: $created, updated: $updated" . PHP_EOL;
     }
 
     private function seedZones(): void
@@ -42,10 +58,16 @@ class WowdbSeeder extends Seeder
         $zonedata = json_decode(file_get_contents(download_path('zones.json')), true);
         foreach($zonedata as $zone) {
             $data = [
+                'id' => $zone['id'],
                 'name' => $zone['name'],
-                'expansion' => $zone['expansion'],
+                'category' => $zone['category'],
+                'level_min' => $zone['level'][0],
+                'level_max' => $zone['level'][1],
                 'territory' => $zone['territory'],
             ];
+            if(array_key_exists('parent_id', $zone))
+                $data['parent_id'] = $zone['parent_id'];
+
             Zone::firstOrCreate($data);
         }
     }

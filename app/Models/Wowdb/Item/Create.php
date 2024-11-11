@@ -52,6 +52,7 @@ class Create extends Model
     {
         return [
             'reagents' => AsArrayObject::class,
+            'recipes'  => AsArrayObject::class
         ];
     }
 
@@ -71,6 +72,7 @@ class Create extends Model
         $table->unsignedInteger('requiredSkill')->nullable(true);
         $table->enum('category', self::CATEGORIES);
         $table->text('reagents')->nullable(true);
+        $table->text('recipes')->nullable(true);
 
         $table->timestamps();
     }
@@ -95,7 +97,7 @@ class Create extends Model
         ];
     }
 
-    public function recipes()
+    public function recipe_items()
     {
         return $this->belongsToMany(Item::class, 'create_item', 'create_id', 'item_id');
     }

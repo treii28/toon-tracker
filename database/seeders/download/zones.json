@@ -675,7 +675,7 @@
     },
     {
         "name": "Scarlet Monastery: Armory",
-        "id": 99950,
+        "id": 99952,
         "category": "Dungeon",
         "parent_id": 796,
         "level": [
@@ -686,7 +686,7 @@
     },
     {
         "name": "Scarlet Monastery: Cathedral",
-        "id": 99950,
+        "id": 99953,
         "category": "Dungeon",
         "parent_id": 796,
         "level": [

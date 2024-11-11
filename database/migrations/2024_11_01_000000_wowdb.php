@@ -64,6 +64,15 @@ return new class extends Migration
             $table->foreign('klass_id')->references('id')->on('klasses')->onDelete('cascade');
         });
 
+        Schema::connection(self::DB_CONNECTION)->create('item_quest', function (Blueprint $table) {
+            $table->unsignedBigInteger('item_id');
+            $table->unsignedBigInteger('quest_id');
+            $table->unique(['item_id', 'quest_id']);
+
+            $table->foreign('item_id')->references('id')->on('items')->onDelete('cascade');
+            $table->foreign('quest_id')->references('id')->on('quests')->onDelete('cascade');
+        });
+
         Schema::connection(self::DB_CONNECTION)->create('create_item', function (Blueprint $table) {
             $table->unsignedBigInteger('create_id');
             $table->unsignedBigInteger('item_id');

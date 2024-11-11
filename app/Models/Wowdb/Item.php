@@ -2,6 +2,62 @@
 
 namespace App\Models\Wowdb;
 
+/*
+useful tooltip keys:
+
+\d+ - \d+ Damage
+Speed \d+.\d+
+(\d+.\d+ damage per second)
+Adds \d+.\d+ damage per second
+Durability \d+ / \d+
+Drop Chance: \d+.\d+%
+\d+ [Armor|Block]
++\d+ [stat]
+-\d+ [stat]
+
+Unique
+Binds when equipped
+Binds when picked up.*
+\nMount
+Summons and dismisses a .* mount.
+
+Use|Equip: .* \(Proc chance: \d+%\)
+Use: .* \(\d+ [Sec|Min] Cooldown\),
+Equip: .*
+Equip: When struck in combat has a \d+% chance of .* \(Proc chance: \d+%\),
+Equip: Increases (your )?[stat] by \d+.
+Equip: Increases resistance to .* by \d+.( \u00a0.*)?
+Chance on hit: .*
+Recipe: .*
+Max Stack: \d+
+<Random enchantment>
+
+(\n*)Requires [restriction(s)]
+Use: .*(Requires .*)?
+Use: Teaches you how to permanently enchant a [item] to .*(\u00a0Requires a level \d+ or higher item)?
+Permanently enchant [item] to .*(\u00a0Requires a level \d+ or higher item)?
+
+Locked\nRequires Lockpicking (\d+)
+Requires any [faction] race
+Requires [ability] (\d+)
+  [Enchanting|Engineering|Blacksmithing|Tailoring|Leatherworking|Jewelcrafting|Inscription|Poisons|First Aid|Cooking|Fishing]
+  [Specialization]
+  [riding skill]
+Requires [mastery]
+  Armorsmith|Weaponsmith|Master Hammersmith|Master Swordsmith|Master Axesmith|Master Swordsmith
+  Tribal Leatherworking|Elemental Leatherworking|Dragonscale Leatherworking
+  Shadoweave Tailoring|Mooncloth Tailoring|Spellfire Tailoring
+Requires ([mounttype])? Riding
+Requires [faction] - [Exalted|Revered|Honored|Friendly|Neutral|Unfriendly|Hostile|Hated]
+Requires [event]
+(\n+)?Requires Level \d+(\n+)?
+(\n+)?Requires [items/reagents (\(\d+\))? comma separated]
+Requires at least \d+ .*(\nRequires at least \d+ .*) // repeating - explode on \n
+Requires more .* than .*
+Right click to summon and dismiss your .*\u00a0Requires a .* to .*
+Summons and dismisses a [mount] (\u00a0Can only be used .*)?(Requires .*)
+ */
+
 use App\Models\Wowdb;
 use Illuminate\Database\Eloquent\Casts\AsArrayObject;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -10,10 +66,14 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
+use Illuminate\Support\Facades\DB;
+use function PHPUnit\Framework\lessThanOrEqual;
+use function Symfony\Component\String\s;
 
 class Item extends Model
 {
     //use HasFactory;
+    protected $connection = 'wowdb';
 
     const CLASSES = [
         "Armor",
@@ -140,7 +200,33 @@ class Item extends Model
         'Heirloom'
     ];
 
-    protected $connection = 'wowdb';
+    const SLOTS = [
+        "Ammo",
+        "Back",
+        "Bag",
+        "Chest",
+        "Feet",
+        "Finger",
+        "Hands",
+        "Head",
+        "Held In Off-hand",
+        "Legs",
+        "Main Hand",
+        "Neck",
+        "Non-equippable",
+        "Off Hand",
+        "One-Hand",
+        "Ranged",
+        "Relic",
+        "Shirt",
+        "Shoulder",
+        "Tabard",
+        "Thrown",
+        "Trinket",
+        "Two-Hand",
+        "Waist",
+        "Wrist"
+    ];
 
     /**
      * default name to use for the config values database table
@@ -152,7 +238,7 @@ class Item extends Model
      * for laravel to specify configurable values
      */
     const FILLABLE_COLUMNS = [
-        'id',
+        'id', 'itemId',
         'name',
         'uniqueName',
         'icon',
@@ -191,33 +277,7 @@ class Item extends Model
         $table->enum('quality', self::QUALITIES)->nullable(true);
         $table->unsignedInteger('itemLevel')->nullable(true);
         $table->unsignedInteger('requiredLevel')->nullable(true);
-        $table->enum('slot', [
-            "Ammo",
-            "Back",
-            "Bag",
-            "Chest",
-            "Feet",
-            "Finger",
-            "Hands",
-            "Head",
-            "Held In Off-hand",
-            "Legs",
-            "Main Hand",
-            "Neck",
-            "Non-equippable",
-            "Off Hand",
-            "One-Hand",
-            "Ranged",
-            "Relic",
-            "Shirt",
-            "Shoulder",
-            "Tabard",
-            "Thrown",
-            "Trinket",
-            "Two-Hand",
-            "Waist",
-            "Wrist"
-        ]);
+        $table->enum('slot', self::SLOTS)->nullable(true);
         $table->text('tooltip')->nullable(true);
         $table->text('source')->nullable(true);
         $table->text('createdBy')->nullable(true);
@@ -264,6 +324,9 @@ class Item extends Model
         });
     }
 
+    public function setItemIdAttribute(int $value): void { $this->attributes['id'] = $value; }
+    public function getItemIdAttribute(): int { return $this->attributes['id']; }
+
     /**
      * Determine if a list of tooltips contains a given label (all should)
      *
@@ -277,25 +340,34 @@ class Item extends Model
     }
 
     /**
+     * Determine if an item includes a '<Random enchantment>' label designating a randomly enchanted item
+     *
+     * @return bool
+     */
+    public function isRandomlyEnchanted(): bool { return $this->tooltipIncludesLabel('<Random enchantment>'); }
+    /**
      * Determine if an item includes a 'Unique' label designating a unique item
      *
      * @return bool
      */
-    public function isUnique(): bool { return $this->tooltipIncludesLabel('Unique'); }
+    public function isUnique(): bool { return !empty($this->tooltipStartsWith('Unique')); }
+    public function isUniqueEquipped(): bool { return !empty($this->tooltipStartsWith('Unique-Equipped')); }
 
     /**
      * Determine if an item includes a 'Binds when equipped' label designating a bind-on-equip item
      *
      * @return bool
      */
-    public function isBindOnEquip(): bool { return $this->tooltipIncludesLabel('Binds when equipped'); }
+    public function isBindOnEquip(): bool { return !empty($this->tooltipStartsWith('Binds when equipped')); }
 
     /**
      * Determine if an item includes a 'Binds when picked up' label designating a bind-on-pickup item
      *
      * @return bool
      */
-    public function isBindOnPickup(): bool { return $this->tooltipIncludesLabel('Binds when picked up'); }
+    public function isBindOnPickup(): bool { return !empty($this->tooltipStartsWith('Binds when picked up')); }
+
+
 
     /**
      * Check for labels that start with a given string, returning the remainder of the label if found or null if not
@@ -306,26 +378,113 @@ class Item extends Model
     public function tooltipStartsWith(string $label): string|null {
         foreach($this->tooltip as $tt)
             if(array_key_exists('label', $tt) && preg_match("/^".$label."[\: ]*(.*)/", $tt['label'], $m))
-                return $m;
+                return $m[1];
         return null;
     }
 
-    public function sourceCategory(): string|null {
+    public function tooltipIncludes(string $regex): array|null {
+        $matches = [];
+        foreach($this->tooltip as $tt)
+            if(array_key_exists('label', $tt) && preg_match("/".$regex."/", $tt['label'], $m))
+                $matches[] = $m;
+        return $matches;
+    }
+
+    // may also want to do durability, armor/block, add to damage per second, +/- stats
+    public function getTooltipSpeed(): float|null {
+        foreach($this->tooltip as $tt)
+            if(array_key_exists('label', $tt) && preg_match("/^Speed (\d+.\d+)$/", $tt['label'], $m))
+                return floatval($m[1]);
+        return null;
+    }
+    public function getTooltipDropchance(): float|null {
+        foreach($this->tooltip as $tt)
+            if(array_key_exists('label', $tt) && preg_match("/\(Drop Chance\: (\d+.\d+)\%/", $tt['label'], $m))
+                return floatval($m[1]);
+        return null;
+    }
+    public function getTooltipCooldown(): string|null {
+        foreach($this->tooltip as $tt)
+            if(array_key_exists('label', $tt) && preg_match("/\((\d+ [Sec|Min|Hour|Day]) Cooldown\)/", $tt['label'], $m))
+                return $m[1];
+        return null;
+    }
+    public function getTooltipMaxStack(): int|null {
+        foreach($this->tooltip as $tt)
+            if(array_key_exists('label', $tt) && preg_match("/^Max Stack: (\d+)$/", $tt['label'], $m))
+                return intval($m[1]);
+        return null;
+    }
+    public function getTooltipSlots(): int|null {
+        foreach($this->tooltip as $tt)
+            if(array_key_exists('label', $tt) && preg_match("/(\d+) Slot.* (Bag|Pouch|Quiver)/", $tt['label'], $m))
+                return intval($m[1]);
+        return null;
+    }
+
+    public function getSourceCategory(): string|null {
         if(($source = $this->source) && is_array($source) && array_key_exists('category', $source))
             return $source['category'];
         return null;
     }
 
-    public function sourceIncludesQuest(): bool { return ($this->sourceCategory() === 'Quest'); }
+    /**
+     * Determine if an item's source data include quests
+     *
+     * @return bool
+     */
+    public function sourceIncludesQuest(): bool { return ($this->getSourceCategory() === 'Quest'); }
+
+    /**
+     * get quest data if it exists in source data
+     *
+     * @return array|null
+     * @see sourceIncludesQuest()
+     */
     public function getSourceQuests(): array|null {
         if(array_key_exists('quests', $this->source))
             return $this->source['quests'];
         return null;
     }
 
-    public function sourceIncludesVendor(): bool { return ($this->sourceCategory() === 'Vendor'); }
+    /**
+     * Determine if an item's source data include vendors
+     *
+     * @return bool
+     */
+    public function sourceIncludesVendor(): bool { return ($this->getSourceCategory() === 'Vendor'); }
 
-    private function parseTooltip(): void {
+    public function getVendorName(): string|null {
+        if($this->sourceIncludesVendor()) {
+            if(array_key_exists('name', $this->source))
+                return $this->source['name'];
+        }
+        return null;
+    }
+    public function getVendorFaction(): string|null {
+        if($this->sourceIncludesVendor()) {
+            if(array_key_exists('faction', $this->source))
+                return $this->source['faction'];
+        }
+        return null;
+    }
+
+    public function getVendorCost(): int {
+        if($this->sourceIncludesVendor()) {
+            if(array_key_exists('cost', $this->source))
+                return intval($this->source['cost']);
+        }
+        return 0;
+    }
+
+    public function sourceIncludesDrop(): string|null {
+        if(preg_match('/\: "(\w+ Drop)",$/', $this->getSourceCategory(), $m))
+            return $m[1];
+        else
+            return null;
+    }
+
+    protected function parseTooltip(): void {
 
         // parse class restrictions
         if($klasses = $this->tooltipStartsWith('Classes')) {
@@ -346,10 +505,44 @@ class Item extends Model
         }
 
     }
-    private function parseCreatedBy(): void {
+    protected function parseCreatedBy(): void {
         // @todo parse createdBy
+        $data = [];
+        $itemdata = json_decode(file_get_contents(download_path('data.json')), true);
+        $createdBys = $this->createdBy->toArray();
+        foreach($createdBys as $createdBy) {
+            if(array_key_exists('amount', $createdBy) && is_array($createdBy['amount'])) {
+                $data['amount_min'] = intval($createdBy['amount'][0]);
+                $data['amount_max'] = intval($createdBy['amount'][1]);
+            }
+            if(array_key_exists('requiredSkill', $createdBy) && !empty($createdBy['requiredSkill']))
+                $data['requiredSkill'] = intval($createdBy['requiredSkill']);
+            if(array_key_exists('category', $createdBy) && !empty($createdBy['category']))
+                $data['category'] = $createdBy['category'];
+            if(array_key_exists('reagents', $createdBy) && is_array($createdBy['reagents']))
+                $data['reagents'] = $createdBy['reagents'];
+            if(array_key_exists('recipes', $createdBy) && !empty($createdBy['recipes']))
+                $data['recipes'] = $createdBy['recipes'];
+
+            if($create = Wowdb\Item\Create::where($data)->exists()) {
+                $create = Wowdb\Item\Create::where($data)->first();
+            } else {
+                $create = new Wowdb\Item\Create($data);
+                $create->save();
+            }
+
+            if(array_key_exists('recipes', $data)) {
+                foreach($data['recipes'] as $recipeItemId) {
+                    $table = DB::connection($this->connection)->table('create_item');
+                    if(!$table->where('create_id', $create->id)->where('item_id', $recipeItemId)->exists()) {
+                        $create->recipe_items()->attach($recipeItemId);
+                    }
+                }
+            }
+        }
     }
-    private function parseSource(): void {
+    protected function parseSource(): void {
+        // grab quests
         if($this->sourceIncludesQuest()) {
             foreach($this->getSourceQuests() as $quest) {
                 if(!$this->quests->contains($quest['questId'])) {
@@ -366,15 +559,58 @@ class Item extends Model
                 }
             }
         }
-        // @todo parse source
+
+        // grab drops
+        if($type = $this->sourceIncludesDrop()) {
+            $dropObj = Drop::where('category', $type)->first();
+            if($dropObj && !$this->drops->contains($dropObj->id))
+                $this->drops()->attach($dropObj->id);
+            else {
+                $data = [
+                    'category' => $type
+                ];
+
+                if(array_key_exists('name', $this->source))
+                    $data['npc'] = $this->source['name'];
+
+                if(array_key_exists('zone', $this->source) && ($zoneRecord = Zone::where('name', $this->source['zone'])->first()))
+                    $data['zone_id'] = $zoneRecord->id;
+
+                if(array_key_exists('dropChance', $this->source))
+                    $data['dropChance'] = floatval($this->source['dropChance']);
+                elseif($chance = $this->getTooltipDropchance())
+                    $data['dropChance'] = $chance;
+
+                $this->drops()->create($data);
+            }
+        }
+
+        // grab vendor details
+        if($this->sourceIncludesVendor()) {
+            $vendorObj = Wowdb\Item\Buy::where('name', $this->getVendorName())->first();
+            if($vendorObj && !$this->vendors->contains($vendorObj->id))
+                $this->vendors()->attach($vendorObj->id);
+            else {
+                $data = [];
+                if($name = $this->getVendorName())
+                    $data['name'] = $name;
+                if($faction = $this->getVendorFaction())
+                    $data['faction'] = $faction;
+
+                $this->vendorPrice = $this->getVendorCost();
+
+                $this->vendors()->create($data);
+            }
+        }
     }
 
     /*
      * @todo handle relationships by parsing tooltip, createdby and source
+     * ---faction
      *   notes:
      *    tooltip array includes information like faction, class, bind-on-equip
      *    source contains list of quests/vendor(s) including faction
-     *    quests in source is an array
+     *    [x] quests in source is an array
      *    createdBy array includes single amount array, reagents array, recipe array
      */
 
@@ -394,6 +630,9 @@ class Item extends Model
      */
     public function klasses(): BelongsToMany { return $this->belongsToMany(Klass::class, 'item_klass', 'item_id', 'klass_id'); }
     public function hasKlassRestriction(): bool { return ($this->klasses->count() > 0); }
+
+    public function quests(): BelongsToMany { return $this->belongsToMany(Item\Quest::class, 'item_quest', 'item_id', 'quest_id'); }
+    public function hasQuests(): int { return $this->quests->count(); }
 
     public function canAllianceUse(): bool { return ($this->faction === 'Alliance' || $this->faction === 'Both'); }
     public function canHordeUse(): bool { return ($this->faction === 'Horde' || $this->faction === 'Both'); }
