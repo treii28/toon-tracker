@@ -57,7 +57,8 @@ class Create extends Model
     {
         parent::boot();
 
-        static::saving(function(Create $create): void {
+        // attach recipes after the Create record is saved
+        static::saved(function(Create $create): void {
             if(!empty($create->recipes))
                 foreach($create->recipes as $itemId)
                     if (!$create->recipe_items()->where('item_id', $itemId)->exists())
