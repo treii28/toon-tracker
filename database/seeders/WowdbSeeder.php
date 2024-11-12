@@ -7,11 +7,9 @@ use App\Models\Wowdb\Item;
 use App\Models\Wowdb\Race;
 use App\Models\Wowdb\Realm;
 use App\Models\Wowdb\Zone;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use App\Models\Wowdb\Klass;
-use App\Models\Wowdb\Klass\Spec;
 
 class WowdbSeeder extends Seeder
 {
@@ -45,7 +43,7 @@ class WowdbSeeder extends Seeder
                 Item::firstOrCreate($item);
             }
         }
-        echo PHP_EOL;
+        echo progress_bar($itemcount, $itemcount, "Done!") . PHP_EOL;
     }
 
     private function seedZones(): void
@@ -68,8 +66,9 @@ class WowdbSeeder extends Seeder
 
             Zone::firstOrCreate($data);
         }
-        echo PHP_EOL;
+        echo progress_bar($zonecount, $zonecount, "Done!") . PHP_EOL;
     }
+
     private function seedRealms(): void
     {
         $realmdata = json_decode(file_get_contents(download_path('realms.json')), true);
@@ -86,7 +85,7 @@ class WowdbSeeder extends Seeder
                 Realm::firstOrCreate($data);
             }
         }
-        echo PHP_EOL;
+        echo progress_bar($realmcount, $realmcount, "Done!") . PHP_EOL;
     }
 
     private function seedKlassesAndSpecs(): void
@@ -109,7 +108,7 @@ class WowdbSeeder extends Seeder
                 $klassRecord->specs()->firstOrCreate($spec);
             }
         }
-        echo PHP_EOL;
+        echo progress_bar($klasscount, $klasscount, "Done!") . PHP_EOL;
     }
 
     private function seedRaces(): void
@@ -131,6 +130,6 @@ class WowdbSeeder extends Seeder
                     $raceRecord->klasses()->attach($klassRecord);
             }
         }
-        echo PHP_EOL;
+        echo progress_bar($racecount, $racecount, "Done!") . PHP_EOL;
     }
 }

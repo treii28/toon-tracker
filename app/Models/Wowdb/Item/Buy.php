@@ -2,10 +2,12 @@
 
 namespace App\Models\Wowdb\Item;
 
+use App\Models\Wowdb\Item;
 use App\Models\Wowdb\Race;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Buy extends Model
 {
@@ -54,5 +56,9 @@ class Buy extends Model
      */
     protected $fillable = self::FILLABLE_COLUMNS;
 
+    public function items(): BelongsToMany
+    {
+        return $this->BelongsToMany(Item::class, 'item_buys', 'buy_id', 'item_id');
+    }
 }
 

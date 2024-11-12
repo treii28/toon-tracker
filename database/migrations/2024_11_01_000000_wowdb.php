@@ -37,7 +37,7 @@ return new class extends Migration
         Schema::connection(self::DB_CONNECTION)
             ->create(Wowdb\Item\Quest::TABLENAME, function (Blueprint $table) { Wowdb\Item\Quest::tableBlueprint($table); } );
 
-        Schema::connection(self::DB_CONNECTION)->create('race_klass', function (Blueprint $table) {
+        Schema::connection(self::DB_CONNECTION)->create('race_klasses', function (Blueprint $table) {
             $table->unsignedBigInteger('race_id');
             $table->unsignedBigInteger('klass_id');
             $table->unique(['race_id','klass_id']);
@@ -46,7 +46,7 @@ return new class extends Migration
             $table->foreign('klass_id')->references('id')->on('klasses')->onDelete('cascade');
         });
 
-        Schema::connection(self::DB_CONNECTION)->create('item_race', function (Blueprint $table) {
+        Schema::connection(self::DB_CONNECTION)->create('item_races', function (Blueprint $table) {
             $table->unsignedBigInteger('item_id');
             $table->unsignedBigInteger('race_id');
             $table->unique(['item_id', 'race_id']);
@@ -55,7 +55,7 @@ return new class extends Migration
             $table->foreign('race_id')->references('id')->on('races')->onDelete('cascade');
         });
 
-        Schema::connection(self::DB_CONNECTION)->create('item_klass', function (Blueprint $table) {
+        Schema::connection(self::DB_CONNECTION)->create('item_klasses', function (Blueprint $table) {
             $table->unsignedBigInteger('item_id');
             $table->unsignedBigInteger('klass_id');
             $table->unique(['item_id', 'klass_id']);
@@ -64,13 +64,22 @@ return new class extends Migration
             $table->foreign('klass_id')->references('id')->on('klasses')->onDelete('cascade');
         });
 
-        Schema::connection(self::DB_CONNECTION)->create('item_quest', function (Blueprint $table) {
+        Schema::connection(self::DB_CONNECTION)->create('item_quests', function (Blueprint $table) {
             $table->unsignedBigInteger('item_id');
             $table->unsignedBigInteger('quest_id');
             $table->unique(['item_id', 'quest_id']);
 
             $table->foreign('item_id')->references('id')->on('items')->onDelete('cascade');
             $table->foreign('quest_id')->references('id')->on('quests')->onDelete('cascade');
+        });
+
+        Schema::connection(self::DB_CONNECTION)->create('item_buys', function (Blueprint $table) {
+            $table->unsignedBigInteger('item_id');
+            $table->unsignedBigInteger('buy_id');
+            $table->unique(['item_id', 'buy_id']);
+
+            $table->foreign('item_id')->references('id')->on('items')->onDelete('cascade');
+            $table->foreign('buy_id')->references('id')->on('buys')->onDelete('cascade');
         });
 
         // item created_by links
@@ -112,9 +121,12 @@ return new class extends Migration
         Schema::connection(self::DB_CONNECTION)->dropIfExists(Wowdb\Item\Drop::TABLENAME);
         Schema::connection(self::DB_CONNECTION)->dropIfExists(Wowdb\Item\Quest::TABLENAME);
 
-        Schema::connection(self::DB_CONNECTION)->dropIfExists('item_race');
-        Schema::connection(self::DB_CONNECTION)->dropIfExists('item_klass');
+        Schema::connection(self::DB_CONNECTION)->dropIfExists('race_klasses');
+        Schema::connection(self::DB_CONNECTION)->dropIfExists('item_races');
+        Schema::connection(self::DB_CONNECTION)->dropIfExists('item_klasses');
         Schema::connection(self::DB_CONNECTION)->dropIfExists('item_creates');
+        Schema::connection(self::DB_CONNECTION)->dropIfExists('item_quests');
+        Schema::connection(self::DB_CONNECTION)->dropIfExists('item_buys');
         Schema::connection(self::DB_CONNECTION)->dropIfExists('create_items');
     }
 };

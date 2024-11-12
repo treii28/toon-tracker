@@ -39,7 +39,7 @@ class Race extends Model
         'Mag\'har Orc'
         */
     ];
-    const FACTIONS = ['Alliance', 'Horde'];
+    const FACTIONS = ['Alliance', 'Horde', 'Both'];
 
     protected $connection = 'wowdb';
 
@@ -90,6 +90,11 @@ class Race extends Model
 
     public function klasses(): BelongsToMany
     {
-        return $this->belongsToMany(Klass::class, 'race_klass', 'race_id', 'klass_id');
+        return $this->belongsToMany(Klass::class, 'race_klasses', 'race_id', 'klass_id');
+    }
+
+    public function items(): BelongsToMany
+    {
+        return $this->belongsToMany(Item::class, 'item_races', 'race_id', 'item_id');
     }
 }

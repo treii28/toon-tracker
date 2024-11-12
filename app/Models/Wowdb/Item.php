@@ -59,6 +59,7 @@ Summons and dismisses a [mount] (\u00a0Can only be used .*)?(Requires .*)
  */
 
 use App\Models\Wowdb;
+use Illuminate\Database\Eloquent\Casts\ArrayObject;
 use Illuminate\Database\Eloquent\Casts\AsArrayObject;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -369,8 +370,6 @@ class Item extends Model
      */
     public function isBindOnPickup(): bool { return !empty($this->tooltipStartsWith('Binds when picked up')); }
 
-
-
     /**
      * Check for labels that start with a given string, returning the remainder of the label if found or null if not
      *
@@ -425,8 +424,8 @@ class Item extends Model
     }
 
     public function getSourceCategory(): string|null {
-        if(($source = $this->source) && is_array($source) && array_key_exists('category', $source))
-            return $source['category'];
+        if(($this->source instanceof ArrayObject) && $this->source->offsetExists('category'))
+            return $this->source->offsetGet('category');
         return null;
     }
 
@@ -444,9 +443,7 @@ class Item extends Model
      * @see sourceIncludesQuest()
      */
     public function getSourceQuests(): array|null {
-        if(array_key_exists('quests', $this->source))
-            return $this->source['quests'];
-        return null;
+        return (($this->source instanceof ArrayObject) && $this->source->offsetExists('quests')) ? $this->source->offsetGet('quests') : null;
     }
 
     /**
@@ -458,23 +455,23 @@ class Item extends Model
 
     public function getVendorName(): string|null {
         if($this->sourceIncludesVendor()) {
-            if(array_key_exists('name', $this->source))
-                return $this->source['name'];
+            if($this->source->offsetExists('name'))
+                return $this->source->offsetGet('name');
         }
         return null;
     }
     public function getVendorFaction(): string|null {
         if($this->sourceIncludesVendor()) {
-            if(array_key_exists('faction', $this->source))
-                return $this->source['faction'];
+            if($this->source->offsetExists('faction'))
+                return $this->source->offsetGet('faction');
         }
         return null;
     }
 
     public function getVendorCost(): int {
         if($this->sourceIncludesVendor()) {
-            if(array_key_exists('cost', $this->source))
-                return intval($this->source['cost']);
+            if($this->source->offsetExists('cost'))
+                return intval($this->source->offsetGet('cost'));
         }
         return 0;
     }
@@ -492,7 +489,7 @@ class Item extends Model
         if($klasses = $this->tooltipStartsWith('Classes')) {
             foreach (parse_list($klasses) as $klass) {
                 $klassObj = Klass::where('name', $klass)->first();
-                if ($klassObj && !$this->klasses->contains($klassObj->id))
+                if ($klassObj && !$this->klasses()->where('klass_id', $klassObj->id)->exists())
                     $this->klasses()->attach($klassObj->id);
             };
         }
@@ -501,7 +498,7 @@ class Item extends Model
         if($races = $this->tooltipStartsWith('Races')) {
             foreach (parse_list($races) as $race) {
                 $raceObj = Race::where('name', $race)->first();
-                if ($raceObj && !$this->races->contains($raceObj->id))
+                if ($raceObj && !$this->races()->where('race_id', $raceObj->id)->exists())
                     $this->races()->attach($raceObj->id);
             }
         }
@@ -537,54 +534,59 @@ class Item extends Model
         }
     }
     protected function parseSource(): void {
+        $debug = [
+            'category' => $this->getSourceCategory(),
+            'drop' => $this->sourceIncludesDrop(),
+            'quest' => $this->sourceIncludesQuest(),
+            'vendor' => $this->sourceIncludesVendor()
+        ];
         // grab quests
         if($this->sourceIncludesQuest()) {
             foreach($this->getSourceQuests() as $quest) {
-                if(!$this->quests->contains($quest['questId'])) {
-                    $questObj = Quest::where('id', $quest['questId'])->first();
-                    if($questObj && !$this->quests->contains($questObj->id))
-                        $this->quests()->attach($questObj->id);
-                    else {
-                        if(array_key_exists('questId', $quest)) {
-                            $quest['id'] = $quest['questId'];
-                            unset($quest['questId']);
-                        }
-                        $this->quests()->create($quest);
+                if(($questObj = Wowdb\Item\Quest::find($quest['questId'])) &&
+                    !$this->quests()->where('quest_id', $quest['questId'])->exists())
+                    $this->quests()->attach($questObj->id);
+                else {
+                    if(array_key_exists('questId', $quest)) {
+                        $quest['id'] = $quest['questId'];
+                        unset($quest['questId']);
                     }
+                    $this->quests()->create($quest);
                 }
             }
         }
 
         // grab drops
         if($type = $this->sourceIncludesDrop()) {
-            $dropObj = Drop::where('category', $type)->first();
-            if($dropObj && !$this->drops->contains($dropObj->id))
+            if(($dropObj = Drop::where('category', $type)->first()) && !$this->drops->contains($dropObj->id))
                 $this->drops()->attach($dropObj->id);
             else {
                 $data = [
                     'category' => $type
                 ];
 
-                if(array_key_exists('name', $this->source))
-                    $data['npc'] = $this->source['name'];
+                if($this->source instanceof ArrayObject) {
+                    if($this->source->offsetExists('name'))
+                        $data['npc'] = $this->source->offsetGet('name');
 
-                if(array_key_exists('zone', $this->source) && ($zoneRecord = Zone::where('name', $this->source['zone'])->first()))
-                    $data['zone_id'] = $zoneRecord->id;
+                    if($this->source->offsetExists('zone') && ($zoneRecord = Zone::where('name', $this->source->offsetGet('zone'))->first()))
+                        $data['zone_id'] = $zoneRecord->id;
 
-                if(array_key_exists('dropChance', $this->source))
-                    $data['dropChance'] = floatval($this->source['dropChance']);
-                elseif($chance = $this->getTooltipDropchance())
-                    $data['dropChance'] = $chance;
+                    if($this->source->offsetExists('dropChance'))
+                        $data['dropChance'] = floatval($this->source->offsetGet('dropChance'));
+                    elseif($chance = $this->getTooltipDropchance())
+                        $data['dropChance'] = $chance;
 
-                $this->drops()->create($data);
+                    $this->drops()->create($data);
+                }
             }
         }
 
         // grab vendor details
         if($this->sourceIncludesVendor()) {
             $vendorObj = Wowdb\Item\Buy::where('name', $this->getVendorName())->first();
-            if($vendorObj && !$this->vendors->contains($vendorObj->id))
-                $this->vendors()->attach($vendorObj->id);
+            if($vendorObj && !$this->buys()->where('buy_id', $vendorObj->id)->exists())
+                $this->buys()->attach($vendorObj->id);
             else {
                 $data = [];
                 if($name = $this->getVendorName())
@@ -594,7 +596,7 @@ class Item extends Model
 
                 $this->vendorPrice = $this->getVendorCost();
 
-                $this->vendors()->create($data);
+                $this->buys()->create($data);
             }
         }
     }
@@ -637,16 +639,16 @@ class Item extends Model
     /**
      * Define the many-to-many relationship with Race.
      */
-    public function races(): BelongsToMany { return $this->belongsToMany(Race::class, 'item_race', 'item_id', 'race_id'); }
+    public function races(): BelongsToMany { return $this->belongsToMany(Race::class, 'item_races', 'item_id', 'race_id'); }
     public function hasRaceRestriction(): bool { return ($this->races->count() > 0); }
 
     /**
      * Define the many-to-many relationship with Klass.
      */
-    public function klasses(): BelongsToMany { return $this->belongsToMany(Klass::class, 'item_klass', 'item_id', 'klass_id'); }
+    public function klasses(): BelongsToMany { return $this->belongsToMany(Klass::class, 'item_klasses', 'item_id', 'klass_id'); }
     public function hasKlassRestriction(): bool { return ($this->klasses->count() > 0); }
 
-    public function quests(): BelongsToMany { return $this->belongsToMany(Item\Quest::class, 'item_quest', 'item_id', 'quest_id'); }
+    public function quests(): BelongsToMany { return $this->belongsToMany(Item\Quest::class, 'item_quests', 'item_id', 'quest_id'); }
     public function hasQuests(): int { return $this->quests->count(); }
 
     public function canAllianceUse(): bool { return ($this->faction === 'Alliance' || $this->faction === 'Both'); }
@@ -655,5 +657,10 @@ class Item extends Model
     public function creates(): BelongsToMany
     {
         return $this->belongsToMany(Item\Create::class, 'item_creates', 'item_id', 'create_id');
+    }
+
+    public function buys(): BelongsToMany
+    {
+        return $this->belongsToMany(Item\Buy::class, 'item_buys', 'item_id', 'buy_id');
     }
 }

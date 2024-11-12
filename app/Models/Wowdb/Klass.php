@@ -122,6 +122,11 @@ class Klass extends Model
 
     public function races(): BelongsToMany
     {
-        return $this->belongsToMany(Race::class, 'race_klass', 'klass_id', 'race_id');
+        return $this->belongsToMany(Race::class, 'race_klasses', 'klass_id', 'race_id');
+    }
+
+    public function items(): BelongsToMany
+    {
+        return $this->belongsToMany(Item::class, 'item_klasses', 'klass_id', 'item_id');
     }
 }
