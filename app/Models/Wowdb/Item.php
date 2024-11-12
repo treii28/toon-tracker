@@ -654,6 +654,13 @@ class Item extends Model
     public function canAllianceUse(): bool { return ($this->faction === 'Alliance' || $this->faction === 'Both'); }
     public function canHordeUse(): bool { return ($this->faction === 'Horde' || $this->faction === 'Both'); }
 
+    public static function convertPrice(int $price): string {
+        $gold = floor($price / 10000);
+        $silver = floor(($price % 10000) / 100);
+        $copper = $price % 100;
+        return sprintf("%dg %ds %dc", $gold, $silver, $copper);
+    }
+
     public function creates(): BelongsToMany
     {
         return $this->belongsToMany(Item\Create::class, 'item_creates', 'item_id', 'create_id');

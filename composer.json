@@ -18,7 +18,8 @@
         "laravel/tinker": "^2.9",
         "laravel/ui": "^4.5",
         "livewire/livewire": "^3.5",
-        "owenvoke/blade-fontawesome": "^2.7"
+        "owenvoke/blade-fontawesome": "^2.7",
+        "socialiteproviders/battlenet": "^4.1"
     },
     "require-dev": {
         "barryvdh/laravel-ide-helper": "^3.1",

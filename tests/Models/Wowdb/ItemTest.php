@@ -5,6 +5,7 @@ namespace Tests\Models\Wowdb;
 use App\Models\Wowdb\Item;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Support\Facades\DB;
+use Laravel\Socialite\Facades\Socialite;
 use Tests\TestCase;
 use function Laravel\Prompts\progress;
 
@@ -48,6 +49,7 @@ class ItemTest extends TestCase
 
     public function testRecords()
     {
+        $bns = Socialite::driver('battlenet')->redirect();
         $hidew = Item::where('id', 18510)->first();
         $this->assertInstanceOf(Item::class, $hidew);
         $this->assertEquals('Hide of the Wild', $hidew->name);
@@ -56,11 +58,6 @@ class ItemTest extends TestCase
         $this->assertInstanceOf(Item\Create::class, $cb);
         $cbr = $cb->recipe_items;
         $this->assertInstanceOf(Collection::class, $cbr);
-
-        $ic = DB::connection('wowdb')->table('item_creates')->where('item_id', 18510)->get();
-        $ci = DB::connection('wowdb')->table('create_items')->where('item_id', 18518)->get();
-
-        $this->assertCount(1, $cb);
 
         $phide = Item::where('id', 18518)->first();
         $this->assertInstanceOf(Item::class, $phide);
@@ -71,6 +68,23 @@ class ItemTest extends TestCase
         $bring = Item::where('id', 17713)->first();
         $this->assertInstanceOf(Item::class, $bring);
         $this->assertTrue($bring->isUnique());
-        $foo = "bar";
+
+        $dhpack = Item::where('id', 918)->first();
+        $this->assertInstanceOf(Item::class, $dhpack);
+        $dhquest = $dhpack->quests->first();
+        $this->assertInstanceOf(Item\Quest::class, $dhquest);
+        $this->assertEquals(1486, $dhquest->id);
+        $this->assertEquals('Deviate Hides', $dhquest->name);
+        $this->assertEquals('Both', $dhquest->faction);
+
+        $bsbridle = Item::where('id', 2411)->first();
+        $this->assertInstanceOf(Item::class, $bsbridle);
+        $bsvendor = $bsbridle->buys->first();
+        $this->assertInstanceOf(Item\Buy::class, $bsvendor);
+        $this->assertEquals('Unger Statforth', $bsvendor->name);
+        $this->assertEquals('Alliance', $bsvendor->faction);
+        $price = Item::convertPrice($bsbridle->vendorPrice);
+        $this->assertEquals(100000, $bsbridle->vendorPrice);
+
     }
 }
