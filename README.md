@@ -1,3 +1,33 @@
+`composer install`
+
+copy the .env.example file to .env and generate an app key
+
+`php artisan key:generate`
+
+optional to reset the database (THIS WILL ERASE ALL DATA AND USERS)
+
+`./artisan db:wipe && ./artisan migrate && ./artisan db:seed`
+`./artisan shield:setup`
+
+optional to install the frontend
+
+`npm install && npm run dev`
+
+Url for admin interface is http://{server address}/admin
+
+Configured user: test@example.com / password: ExampleTest
+
+See <a href="https://github.com/bezhanSalleh/filament-shield">filament-shield repository</a> documentation for more details on configuration and user management.
+
+#### potential issues
+
+* On windows systems make sure port 8000 is open in windows firewall if using artisan serve
+* Check file permissions for the storage directory and possible the database/database.sqlite file
+
+---
+
+### original laravel readme content:
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
