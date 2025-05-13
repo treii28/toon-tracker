@@ -1,3 +1,9 @@
+### code sample details:
+
+A sandbox code sample utilzing the laravel 11 platform with filament v3 and filament shield for an admin backend with user management.
+
+The code itself was set up for tracking details about items and their sources in an online MMORPG.  But that was primarily used as it fit a use case need and data for the individual items was readily available.
+### initialization after cloning:
 `composer install`
 
 copy the .env.example file to .env and generate an app key
